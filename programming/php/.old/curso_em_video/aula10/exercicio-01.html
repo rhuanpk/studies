@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8"/>
+   <link rel="stylesheet" href="../_css/estilo.css"/>
+   <title>Project</title>
+</head>
+<body>
+   <div>
+      <!-- Ler um número e qual operação realizar: dobro, cubo ou raiz quadrada -->
+      <form method="get" action="exercicio-01.php">
+         <fieldset><legend>Escolha a operação a ser feita</legend>
+            <input type="radio" name="op" id="dobro" value="dobro">
+            <label for="dobro">x2 (dobro)</label></br>
+            <input type="radio" name="op" id="cubo" value="cubo">
+            <label for="cubo">x³ (cubo)</label></br>
+            <input type="radio" name="op" id="raiz" value="raiz">
+            <label for="raiz">raiz (quadrada)</label></br>
+         </fieldset></br>
+         <fieldset><legend>Informe o valor e envie o calculo</legend>
+            </br>Valor: <input type="number" name="numero"></br>
+            </br><input type="submit" value="Calcular">
+         </fieldset>
+      </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+Primeiro ensinamento
+
+- Vasculhar de tudo (ter vontade de aprender)
+- Explorando uma falha de um sistema você, você consegue hackear todos os outros sistemas que utilizam daquele sistema. Se você entende a base daquela falha, o conceito por trás, você entende a lógica e todos as outras falhas ficaram mais claras de serem exploradas
+- O Hack conciste em pegar a base das falhas que você já sabe e saber aplicar ela nos desafios que se deparar
+- HTTP = Hyper Text Transfer Protocol
+- Por que HACKERS existem? (Identidade)
+	- 1 Motivação
+		- Informação não é apenas coisas fúteis (chats, fotos, etc...), é PODER! Isso por que a cada dia que passa informação vale mais, é a cosia mais valiosa da nossa era.
+	- 2 Times
+		- Primeiro: Se info = dinheiro, alguém vai roubar: The Dark Side (Roubo (Phishing, Ransomware), Fraudes, Pirataria, Vazamento, Espionagem)
+		- Segundo: Se alguém vai roubar, alguém vai defendelo: Segurança da Informação (Ofensiva (Pentest (Bug Bounty, Red Team), Defensiva (Forense, Sys Admin, Blue Team))
+
+		- TODA A BASE DA SEGURANÇA
+			- CID
+			- Confidencialidade (Ter acesso somente quem pode ter acesso)
+			- Integridade (Ele não pode ser alterada)
+			- Disponibilidade (Estar disponível quando for necessário)
+
+- Os dois times dão muito dinheiro desde que tenham ROI (Return over Investment)
+
+Segundo ensinamento
+
+site: campusdna.com.br
+
+1. RECON (conhecer o alvo): Amplicar o escopo do ataque, na maioria das vezes as falhas estará nos serviços do alvo e não na "aplicação pincipal"
+	1.1 Verificar se a empresa tem subdominios: terra.com.br -> mail.terra.com.br
+	1.2 Feramenta SUBFINDER 
+	1.3 Verificar se tem diretorios/URLs : mail.terra.com.br/login ou mail.terra.com.br/img
+	1.4 Arquivos sensíveis vazados?
+
+2. BurpSuite
+

@@ -1,0 +1,37 @@
+---
+
+### baixar imagem docker ###
+
+docker pull docker_image
+
+### subir um container a partir de uma imagem ###
+ 
+docker run -d --name name_container docker_image 
+
+### logar num container ###
+
+docker exec -it caontiner_name bash
+
+---
+
+### startar um container ###
+
+docker start container_name
+
+### parar um container ###
+
+docker stop container_name
+
+---
+
+### construir um nova imagem docker com docker file ###
+
+docker build -t new_container_name .
+
+---
+
+### subir e start um container a partir de um docker-compose ###
+
+docker-compose up
+
+---

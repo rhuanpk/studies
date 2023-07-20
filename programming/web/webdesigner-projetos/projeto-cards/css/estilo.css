@@ -1,0 +1,113 @@
+body{
+    background-color: rgb(151, 163, 194);
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* HEADER */
+
+.cabeca{
+    background-image: url(../imagens/bg-3.jpg);
+    background-size: cover;
+    background-position: right center;
+    height: 500px;
+    padding: 1px;
+    padding-bottom: 50px;
+}
+.contem-cabeca{
+    /*Formatação*/
+    color: white;
+    text-align: center;
+    /*Dimenções*/
+    margin-top: 11%;
+    /*Borda para visualização
+    border: 2px solid red;*/
+}
+.contem-cabeca h1{
+    /*Formatação*/
+    font-size: 46px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+.contem-cabeca p{
+    border-bottom: 2px solid white;
+    padding: 15px 1px;
+    margin: 50px 35%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.cabeca nav ul{
+    text-align: right;
+    margin: 28px 20px;
+}
+
+.cabeca nav li{
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.cabeca nav a{
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border: 1px solid white;
+}
+
+.cabeca nav a:hover{
+    background-color:rgb(41, 41, 41)
+}
+
+/* MAIN */
+
+main section{
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 5%;
+}
+
+main section article header h2{
+    margin-top: 0px;
+    padding: 15px;
+    border-bottom: 2px solid rgb(148, 148, 148);
+    background-color: #ccc;
+}
+
+#pai{
+    padding: 15px 5px;
+    overflow: auto;
+}
+
+.card{
+    float: left;
+    width: 32%;
+    box-sizing: border-box;
+    margin-left: 1%;
+}
+
+.card img{
+    display: block;
+    width: 100%;
+}
+
+.card p{
+    color: white;
+    background-color:rgb(89, 89, 89);
+    margin: 0;
+    padding: 5%;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align: center;
+    color:white;
+    background-color: rgb(77, 77, 77);
+    padding: 30px;
+    margin-top: 20px;
+    text-shadow: 1px 1px 3px rgb(61, 61, 61);
+}

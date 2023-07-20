@@ -1,0 +1,95 @@
+body{
+    font-family:Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+/*HEADER*/
+
+.menu{
+    background-color: #ccc;
+    overflow: auto;
+}
+
+.menu img{
+    float: left;
+    margin-left: 25%;
+}
+
+.menu ul{
+    float: right;
+    margin-right: 25%;
+    margin-top: 9%;
+}
+
+.menu ul li{
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+a{
+    text-decoration: none;
+    color: black
+}
+
+/*MAIN*/
+section{
+    overflow: auto;
+    margin: 20px 10% 20px 18%;
+    padding-right: 0;
+    height: 380px;
+    
+}
+
+.cardprodutos{
+    border: 2px solid black;
+    float: left;
+    margin-right: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    height:376px;
+    transition: linear 0.3s;
+    color: rgb(51, 51, 51);
+}
+
+.cardprodutos:hover{
+    border-color: gold;
+    color: black;
+    cursor: pointer;
+    padding: 0 20px 0 20px;
+}
+
+.cardprodutos img{
+    block-size: 50%;
+}
+
+.cardprodutos h2{
+    font-size: 30px;
+}
+
+.texto{
+    padding: 0% 10%;
+}
+
+.valor{
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+/*FOOTER*/
+
+#fpai{
+    background-image: url(imagens/bg.jpg);
+    padding-bottom: 10px;
+}
+
+footer img{
+    margin-left: 42%;
+}
+
+footer p{
+    text-align: center;
+    color: white;
+}

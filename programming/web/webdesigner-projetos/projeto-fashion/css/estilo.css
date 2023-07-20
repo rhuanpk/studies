@@ -1,0 +1,164 @@
+body{
+    font-family: tahoma, arial, sans-serif;
+}
+
+#conteiner{
+    margin: 5%;
+}
+
+/*HEADER*/
+
+.hheader{
+    margin-bottom: 80px;
+}
+
+/*Topo do header (navegação)*/
+
+.hheader nav{
+    overflow: auto;
+    background-color: #142a38;
+}
+
+.hheader nav img{
+    float: left;
+    margin-left: 20%;
+    margin-top: 3px;
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    margin-left: 32%;
+}
+
+.menu li{
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 30px;
+    letter-spacing: 5px;
+    font-size: 11px;
+}
+
+header ul a{
+    color: #4980a2;
+    transition:all 0.5s;
+}
+
+header ul a:hover{
+    color: white
+}
+
+/*Imagem do header*/
+
+#imagentop{
+    width: 100%;
+    display: block;
+}
+
+/*MAIN*/
+
+/*Portfolio*/
+
+.duplo{
+    margin: 0 12.5%;
+}
+
+.portfolio{
+    text-align: center;
+}
+
+.portfolio h1{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.portfolio p{
+    line-height: 32.5px;
+    color: rgb(89, 89, 89);
+    font-size: 17px;
+}
+
+/*Gallery*/
+
+.gallery{
+    margin-top: 100px;
+    overflow: auto;
+    width: 103%;
+}
+
+.pgallery{
+    float: left;
+    margin-right: 4%;
+    text-align: center;
+    color: rgb(89, 89, 89);
+}
+
+#card2{
+    position: relative;
+    left: 43px;
+}
+
+#card3{
+    position: relative;
+    left: 75px;
+}
+
+.titulocard{
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/*About*/
+
+.about{
+    margin: 90px 38px;
+    padding: 20px 110px;
+    background-image: url(../imagens/bg_detalhe.png);
+    color: white;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-color: #003d52;
+    margin-bottom: 55px;
+}
+
+.about h2{
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: normal;
+    margin-top: 90px;
+}
+
+.about p{
+    padding-right: 335px;
+    line-height: 25px;
+    padding-bottom: 70px;
+}
+
+/*Contact*/
+
+.contact{
+    text-align: center;
+    text-transform: uppercase;
+    color: #003d52;
+    font-size: 18px;
+}
+
+.contact h2{
+    margin-bottom: 50px;
+}
+
+.contact iframe{
+    margin-bottom: 50px;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: #003d52;
+    padding: 12.5px;
+    text-align: center;
+    color: #4980a2;
+    letter-spacing: 5px; 
+}

@@ -1,0 +1,15 @@
+FROM python:3.8.12-bullseye
+
+WORKDIR /app
+
+COPY requiriments.txt .
+
+RUN pip install -r requiriments.txt
+
+EXPOSE 5000
+
+ENV FLASK_ENV development
+
+COPY app.py .
+
+CMD [ "flask", "run", "--host", "0.0.0.0" ]

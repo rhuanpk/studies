@@ -1,0 +1,25 @@
+# Docker Commands
+
+- Construir um nova imagem a partir de uma existente com docker file, rodando o comando de construção no dir que estiver o Dockerfile:
+
+```bash
+docker build -t flask-app:dev-0.0.1 .
+```
+
+- Subir um container a partir da imgem que foi criada
+
+```bash
+docker run -d -P flask-app:dev-0.0.1
+```
+
+- Logar no container ativo
+
+```bash
+docker exec -it 9ef7ec237f4b bash
+```
+
+- Verificar os processos docker ativos
+
+```bash
+docker ps
+```

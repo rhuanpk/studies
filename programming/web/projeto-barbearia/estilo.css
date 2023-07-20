@@ -1,0 +1,140 @@
+body{
+    font-family:Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+/*HEADER*/
+
+/*Parte de cima do header*/
+
+.menu{
+    background-color: #ccc;
+    overflow: auto;
+}
+
+.menu img{
+    float: left;
+    margin-left: 25%;
+}
+
+.menu ul{
+    float: right;
+    margin-right: 25%;
+    margin-top: 9%;
+}
+
+.menu ul li{
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+a{
+    text-decoration: none;
+    color: black
+}
+
+/*Parte de baixo do header (baner)*/
+
+.baner img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/*MAIN*/
+
+#mpai{
+    background-image: linear-gradient(white, grey);
+    padding-bottom: 1%;
+}
+
+#mpai h1, h2{
+    font-weight:normal;
+}
+
+.secoes{
+    margin: 2.5% 16.8% 3% 16.8%;
+}
+
+/*Sobre*/
+
+.secoessobre h1{
+    text-align: center;
+}
+
+.secoessobre p{
+    text-align: left;
+    margin-bottom: 80PX;
+}
+
+.utensilios{
+    width: 130px;
+    float: left;
+}
+
+.utensilios img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.utentexto{
+    margin-left: 16.5%;
+}
+
+/*Nosso*/
+
+.secoesnosso h2, p{
+    text-align: center;
+}
+
+.secoesnosso p{
+    margin-bottom: 3%;
+}
+
+.secoesnosso iframe{
+    margin-left: 5%;
+}
+
+/*Beneficios*/
+
+.secoesbeneficios h2{
+    text-align: center;
+}
+
+.secoesbeneficios ul{
+    float: left;
+    margin-left: 15%;
+    margin-top: 3px;
+    margin-right: 5%;
+}
+
+.secoesbeneficios ul li{
+    margin-bottom: 5px;
+}
+
+.secoesbeneficios img{
+    width: 40%;
+    box-shadow: 10px 10px 5px black;
+}
+
+.secoesbeneficios iframe{
+    margin: 3% 17% 0 20.5%;    
+}
+
+/*FOOTER*/
+
+#fpai{
+    /*Cor background incorreta*/
+    background-image: url(imagens/bg.jpg);
+    padding-bottom: 10px;
+}
+
+footer img{
+    margin-left: 42%;
+}
+
+footer p{
+    color: white;
+}

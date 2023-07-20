@@ -1,0 +1,13 @@
+
+Estudos complementares ao de PHP
+
+----------------------------------------------------
+
+Acessando PHP dentro do css
+
+<style>
+    span.span {
+        font-size: <?php echo "$tam"; ?>;
+        color: <?php echo "$cor"; ?>;
+    }
+</style>

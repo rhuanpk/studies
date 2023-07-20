@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8"/>
+   <link rel="stylesheet" href="../../_css/estilo.css"/>
+   <title>Project</title>
+
+
+</head>
+<body>
+   <div>
+      <!-- Ler um valor e mostrar sua raiz quadrada -->
+      <p>Informe qualquer valor para saber a raiz quadrada</p>
+      <form action="javascript:;" onsubmit="enviar()">
+         Valor: <input class="v" type="number" name="v" placeholder="Qualquer valor"/>
+         <input type="submit" value="Enviar"/>
+      </form>
+
+      <div class="resultado">
+
+      </div>
+   </div>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+      function enviar(){
+         $.ajax({
+            url : "exercicio-01.php",
+            type : 'get',
+            data : {
+                  v : $(".v").val()
+            },
+            beforeSend : function(){
+                  $(".resultado").html("ENVIANDO...");
+            }
+         })
+         .done(function(msg){
+            $(".resultado").html(msg);
+         })
+         .fail(function(jqXHR, textStatus, msg){
+            alert(msg);
+         });
+      }
+   </script>
+</body>
+</html>

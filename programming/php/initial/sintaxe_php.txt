@@ -1,0 +1,182 @@
+
+Estudos de PHP
+
+----------------------------------------------------
+
+Comando echo
+
+echo "Hello World!";
+echo "Hello World! <br/>";
+echo "A soma vale ".($n1 + $n2);
+echo $nome." tem ".$idade." anos!";
+echo "$nome tem $idade anos!";
+
+----------------------------------------------------
+
+Declaração de variáveis
+
+$idade = 3;
+$saladio = 1825.54;
+$nome = "Leonardo";
+$casado = false;
+
+----------------------------------------------------
+
+Type Cast
+
+inteiro (int), (integer)
+real (real), (float), (double)
+caractere (string)
+lógico (???) true = 1
+             false = vazio
+
+----------------------------------------------------
+
+http://localhost/projects/segundo_projeto/index.php?a=5&b=8
+
+----------------------------------------------------
+
+Funções
+
+pow($x, $y) - $x elevado a $y
+sqrt($x) - raiz quadrada
+round($x) - arredonda
+   ceil($x) - sempre arredonda para cima
+   floor($x) - sempre arredonda para baixo
+intval($x) - parte inteira da variável (truncar)
+number_format($x, 2, ",", ".") - transforma em moeda
+isset($_GET["value"]) - significa: foi configurado/passado; retorna "true" caso tenha sido passado o valor, true caso não
+
+----------------------------------------------------
+
+Operadores de atribuição
+
+Adição $a = $a + $b ---> $a += $b
+Subtração $a = $a - $b ---> $a -= $b
+Multiplicação $a = $a * $b ---> $a *= $b
+Divisão $a = $a / $b ---> $a /= $b
+Módulo $a = $a % $b ---> $a %= $b
+Concatenação $a = $a . $b ---> $a .= $b
+
+----------------------------------------------------
+
+Comentários
+
+inline: // ou #
+multline: /* */
+
+----------------------------------------------------
+
+Referência de variáveis
+
+$a = 3;
+$b = &$a;
+$b += 5;
+
+echo $a;
+---> 8
+echo $b;
+---> 8
+
+----------------------------------------------------
+
+if ternário
+
+// executa
+(isset($options['index'])/$foo = $options['index']) ?: null;
+// executa
+isset($options['index']) ? $foo = $options['index'] : null;
+// retorna
+$foo = (isset($options['index'])) ? $options['index'] : null;
+// retorna
+$foo = $options['index'] ?? null;
+
+----------------------------------------------------
+
+Operadores relacionais
+
+maior: $a > $b
+menor: $a < $b
+maior ou igual: $a >= $b
+menor ou igual: $a <= $b
+diferente: $a <> $b ou $a != $b
+igual: $a == $b (compara o conteúdo)
+idêntico: $a === $b (compara além do conteúdo o tipo das variáveis)
+
+----------------------------------------------------
+
+Operador ternário ( ? : )
+
+sintaxe: expressao ? retorno_se_verdadeiro : retorno_se_falso
+
+# No exemplo a seguir a variável "$maior" irá receber a variável "$a" caso a expressão ($a > $b) for verdadeiro ou irá receber "$b" caso a expressão seja falsa
+exemplo (if/operador ternário): $maior = $a > $b ? $a : $b
+
+outros exemplos:
+
+$resultado = $a > $b ? $a + $b : $a - $b
+$situacao = $media < 7 ? "Recuperação" : "Aprovado"
+
+----------------------------------------------------
+
+Operadores lógicos
+
+operador E: "and" ou "&&"
+operador OU: "or" ou "||"
+# operador que pode uma coisa ou outra mas nunca as duas pode ser iguais (se não retorna falso)
+V V = false
+V F = true
+F V = true
+F F = false
+operador OU EXCLUSIVO: "xor"
+operador NEGAÇÃO: "!"
+
+----------------------------------------------------
+
+Estruturas condicionais
+
+sintaxe IF:
+
+   if() {
+
+   } elseif {
+      
+   } else {
+
+   }
+
+sintaxe SWITCH:
+
+   switch() {
+      case 1:
+         
+         break;
+      case 2:
+         
+         break;
+      default:
+         
+   }
+
+sintaxe SWITCH múltiplos casos:
+
+   switch() {
+      case 1:
+      case 2:
+      case 3:
+         
+         break;
+      case 4:
+      case 5:
+         
+         break;
+      default:
+         
+   }
+
+sintaxe WHILE
+
+   while() {
+
+   }
+   

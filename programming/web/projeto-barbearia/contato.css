@@ -1,0 +1,133 @@
+body{
+    font-family:Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+/*HEADER*/
+
+.menu{
+    background-color: #ccc;
+    overflow: auto;
+}
+
+.menu img{
+    float: left;
+    margin-left: 25%;
+}
+
+.menu ul{
+    float: right;
+    margin-right: 25%;
+    margin-top: 9%;
+}
+
+.menu ul li{
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: black
+}
+
+/*MAIN*/
+
+#formmain{
+    margin-left: 15%;
+    width: 500px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+}
+
+fieldset{
+    border: none;
+}
+
+/*Form Top*/
+
+.sobre{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 7.5px;
+}
+
+.sobre, textarea{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.labelcontato{
+    font-weight: lighter;
+}
+
+textarea{
+    resize: none;
+    padding: 7.5px;
+}
+
+/*Como prefere nosso contato*/
+
+#fieldtop label{
+    display: block;
+}
+
+#fieldtop input{
+    display: inline;
+}
+
+.radio{
+    margin-bottom: 15px;
+    margin-left: 0;
+}
+
+#horario{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#submit{
+    padding: 15px;
+    width: 85%;
+    background-color: #ffaa41e0;
+    border: none;
+    border-radius: 3px;
+    font-weight:bold;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/*Dia e hora*/
+
+table{
+    margin-left: 15.5%;
+    border-spacing: 20px;
+    margin-bottom: 24.5px;
+}
+
+td, th{
+    font-weight: normal;
+    text-align: left;
+    
+}
+
+/*FOOTER*/
+
+#fpai{
+    background-image: url(imagens/bg.jpg);
+    padding-bottom: 10px;
+}
+
+footer img{
+    margin-left: 42%;
+}
+
+footer p{
+    text-align: center;
+    color: white;
+}
