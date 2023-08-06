@@ -26,7 +26,7 @@ Dinâmica:
 - **Não é necessário** informar o tipo de dado da variável na sua declaração.
 - **É possível** atribuir um tipo de dado diferente do seu tipo original.
 
-## Classes Abstratas X Interfaces
+## Classes Abstratas x Interfaces
 
 **classes abstratas** e **interfaces** servem para definir padrões para outros classes herdarem e implementarem.
 
