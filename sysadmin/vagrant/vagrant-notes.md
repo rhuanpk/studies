@@ -55,3 +55,23 @@ vagrant ssh
 ```sh
 vagrant destroy
 ```
+
+## Commands
+
+- Listar _boxes_:
+
+```sh
+vagrant box list
+```
+
+- Baixar _box_:
+
+```sh
+vagrant box add <user>/<box>
+```
+
+---
+
+_OBSERVATIONS_:
+
+- Os comandos são referentes ao _workspace_ que você está (o lugar aonde estão o **Vagrantfile** & **.vagrant**), por esse motivo que não precisamos especificar qual _box_ que queremos conectar quando executamos `vagrant ssh` por exemplo ou também quando listamos as _boxes_ (`vagrant box list`), aparecerá as _boxes_ baixadas para o _workspace_ em que está.
