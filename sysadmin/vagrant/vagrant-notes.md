@@ -50,6 +50,12 @@ vagrant up
 vagrant ssh
 ```
 
+6. Caso deseje desligar a _VM_:
+
+```sh
+vagrant halt
+```
+
 6. Caso deseje remover a _VM_:
 
 ```sh
@@ -75,3 +81,5 @@ vagrant box add <user>/<box>
 _OBSERVATIONS_:
 
 - Quase todos os comandos são referentes ao _workspace_ que você está (o lugar aonde estão o **Vagrantfile** & **.vagrant** pasta), por esse motivo que não precisamos especificar qual _box_ queremos conectar quando executamos `vagrant ssh` por exemplo.
+
+- Caso alguma das _boxes_ precise do **VirtualBox**, no meu caso, um _debian base_ minimo, depois de instalar o _VB_, é necessário rodar o _script_ de configuração (`/sbin/vboxconfig`), posteriormente reiniciar a máquina para aplicar as configuração e por fim habilitar os módulos do _VB_ no _kernel_ (`sudo modprobe vboxdrv vboxnetflt vboxnetadp vboxpci`).
