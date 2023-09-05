@@ -74,4 +74,4 @@ vagrant box add <user>/<box>
 
 _OBSERVATIONS_:
 
-- Os comandos são referentes ao _workspace_ que você está (o lugar aonde estão o **Vagrantfile** & **.vagrant**), por esse motivo que não precisamos especificar qual _box_ que queremos conectar quando executamos `vagrant ssh` por exemplo ou também quando listamos as _boxes_ (`vagrant box list`), aparecerá as _boxes_ baixadas para o _workspace_ em que está.
+- Quase todos os comandos são referentes ao _workspace_ que você está (o lugar aonde estão o **Vagrantfile** & **.vagrant** pasta), por esse motivo que não precisamos especificar qual _box_ queremos conectar quando executamos `vagrant ssh` por exemplo.
