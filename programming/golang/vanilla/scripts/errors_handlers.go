@@ -27,7 +27,7 @@ func returnStructError(message string) error {
 	return fmt.Errorf("an error ocurred: %w", &errStruct{message: message})
 }
 
-// go playground: https://go.dev/play/p/UERQmS21QY2
+// go playground: https://go.dev/play/p/BtCcgSnuipr
 func main() {
 	err := returnError()
 
@@ -70,7 +70,26 @@ func main() {
 		println(false)
 	}
 
-	unwrap = errors.Unwrap(err)
+	unwrapedError := errors.Unwrap(err)
+	fmt.Printf("unwrapedError (%%v): %v\nunwrapedError (%%#v): %#v\n", unwrapedError, unwrapedError)
+
+	println("***")
+
+	print("unwrapedError != nil: ")
+	if unwrapedError != nil {
+		println(true)
+	} else {
+		println(false)
+	}
+
+	print("errors.Is(errAnyone, unwrapedError): ")
+	if errors.Is(errAnyone, unwrapedError) {
+		println(true)
+	} else {
+		println(false)
+	}
+
+	unwrap = errors.Unwrap(unwrapedError)
 	fmt.Printf("unwrap (%%v): %v\nunwrap (%%#v): %#v\n", unwrap, unwrap)
 
 	// --------------------------------------------------
