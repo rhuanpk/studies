@@ -99,6 +99,14 @@ docker container run -d --name mysql-db --mount 'type=volume,source=mysql-db,tar
 
 - cuidado com a utilização de _data volumes_ pois pode causar efeitos não esperados nos containers, no caso de uso de um container _MySQL_, quando um novo container utiliza um _data volume_, além de todos os dados (todos os _databases_ e tabelas), ele também puxará as informações "administrativas", logo a senha permanesse a mesma na primeira instâncias também;
 
+## compose
+
+remove todos os recursos referentes aquele compose:
+
+```bash
+docker compose down --rmi all
+```
+
 ## links
 
 - [docker swarm/service](https://www.cloudbees.com/blog/running-services-within-docker-swarm);
