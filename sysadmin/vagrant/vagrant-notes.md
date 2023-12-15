@@ -22,6 +22,9 @@ sudo apt update && sudo apt install -y vagrant
 
 ## Getting Started
 
+- `-m`: template mínimalista;
+- `--provider`: especifica o provedor.
+
 1.  Pesquise a _box_ que desejará subir: <https://vagrantcloud.com/search>;
 
 2. Crie um diretório e entre nele:
@@ -33,7 +36,7 @@ mkdir -pv /tmp/vagrant/ && cd /tmp/vagrant/
 3. Inicie um projeto **vagrant** (isso criará um Vagrantfile que contem configurações comuns pré-definidas):
 
 ```sh
-vagrant init hashicorp/bionic64
+vagrant init [-m] <repo/box>
 ```
 
 OBS: modifique o arquivo conforme achar necessário.
@@ -41,10 +44,10 @@ OBS: modifique o arquivo conforme achar necessário.
 4. Depois disso basta subir a _VM_:
 
 ```sh
-vagrant up
+vagrant [--provider={virtualbox|qemu}] up
 ```
 
-5. Caso deseja se conectar via `ssh` na _VN_:
+5. Caso deseja se conectar via `ssh` na _VM_:
 
 ```sh
 vagrant ssh
@@ -73,7 +76,13 @@ vagrant box list
 - Baixar _box_:
 
 ```sh
-vagrant box add <user>/<box>
+vagrant box add <repo/box>
+```
+
+- Instalar plugins:
+
+```sh
+vagrant plugin install <plugin>
 ```
 
 ---
