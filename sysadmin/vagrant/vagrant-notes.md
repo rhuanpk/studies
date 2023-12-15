@@ -23,7 +23,7 @@ sudo apt update && sudo apt install -y vagrant
 ## Getting Started
 
 - `-m`: template mínimalista;
-- `--provider`: especifica o provedor.
+- `--provider=<provider>`: especifica o provedor.
 
 1.  Pesquise a _box_ que desejará subir: <https://vagrantcloud.com/search>;
 
@@ -44,7 +44,7 @@ OBS: modifique o arquivo conforme achar necessário.
 4. Depois disso basta subir a _VM_:
 
 ```sh
-vagrant [--provider={virtualbox|qemu}] up
+vagrant [--provider=<provider>] up
 ```
 
 5. Caso deseja se conectar via `ssh` na _VM_:
@@ -83,6 +83,20 @@ vagrant box add <repo/box>
 
 ```sh
 vagrant plugin install <plugin>
+```
+
+## Providers
+
+VirtualBox:
+
+```sh
+vagrant plugin install vagrant-virtualbox
+```
+
+Qemu/KVM:
+
+```sh
+vagrant plugin install vagrant-qemu
 ```
 
 ---
