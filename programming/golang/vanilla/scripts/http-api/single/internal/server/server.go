@@ -17,28 +17,40 @@ func Handler(response http.ResponseWriter, request *http.Request) {
 
 	// trace logs
 	log.Short()
-	log.Printf(`"%s" was called`, endpoint)
+	log.Printf(
+		`"%s" was called`,
+		map[bool]string{
+			true:  request.URL.Path,
+			false: endpoint,
+		}[endpoint == ""],
+	)
 
 	// log request url
 	log.Println("request url:")
 	log.Println("\t" + request.URL.String())
 
 	// get request headers
-	log.Println("request headers:")
-	for key, value := range request.Header {
-		log.Printf("\tkey: %v", key)
-		log.Printf("\tvalue: %v", value)
+	if len(request.Header) > 0 {
+		log.Println("request headers:")
+		for key, value := range request.Header {
+			log.Printf("\tkey: %v", key)
+			log.Printf("\tvalue: %v", value)
+		}
 	}
 
 	// get path param
-	log.Println("request path param:")
-	log.Println("\t" + param[1])
+	if len(param) > 1 {
+		log.Println("request path param:")
+		log.Println("\t" + param[1])
+	}
 
 	// get query params
-	log.Println("request query params:")
-	for key, value := range request.URL.Query() {
-		log.Printf("\tkey: %v", key)
-		log.Printf("\tvalue: %v", value)
+	if len(request.URL.Query()) > 0 {
+		log.Println("request query params:")
+		for key, value := range request.URL.Query() {
+			log.Printf("\tkey: %v", key)
+			log.Printf("\tvalue: %v", value)
+		}
 	}
 
 	// get request body
