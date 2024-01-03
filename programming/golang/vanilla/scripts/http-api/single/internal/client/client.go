@@ -22,12 +22,12 @@ func Request() {
 	query.Add("key1", "value1")
 	query.Add("key2", "value2")
 	URL := url.URL{
-		Scheme:   consts.ServerHost.Protocol(),
-		Host:     string(consts.ServerHost) + consts.ServerPort.Parse(),
-		Path:     consts.APIEndpoint.Parse(false) + param,
-		RawQuery: query.Encode(),
+		Scheme:   consts.ServerHost.Protocol(), // http
+		Host:     string(consts.ServerHost) + consts.ServerPort.Parse(), // localhost:9999
+		Path:     consts.APIEndpoint.Parse(false) + param, // /xpto/value
+		RawQuery: query.Encode(), // key1=value1&key2=value2
 	}
-	endpoint := URL.String()
+	endpoint := URL.String() // http://localhost:9999/xpto/value?key1=value1&key2=value2
 
 	// prepare payload
 	payload, err := json.Marshal(
