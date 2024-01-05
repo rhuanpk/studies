@@ -5,22 +5,30 @@ import (
 	"reflect"
 )
 
-// go playground: https://go.dev/play/p/eKC5__Egz_Z
+type (
+	customAny    any
+	customPtr    *any
+	customStruct struct{}
+)
+
+// go playground: https://go.dev/play/p/hLTi_MK7OCG
 func main() {
 
 	structOfTypes := struct {
-		first   string
-		second  int
-		third   float64
-		fourth  bool
-		fifth   [0]any
-		sixth   []any
-		seventh map[string]bool
-		eighth  func()
-		ninth   struct{}
-		tenth   interface{}
-		// eleventh any
-		twelfth *any
+		first      string
+		second     int
+		third      float64
+		fourth     bool
+		fifth      [0]any
+		sixth      []any
+		seventh    map[string]bool
+		eighth     func()
+		ninth      struct{}
+		tenth      interface{}
+		eleventh   *interface{}
+		twelfth    customAny
+		thirteenth customPtr
+		fourteenth customStruct
 	}{}
 
 	const (
