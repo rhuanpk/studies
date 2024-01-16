@@ -82,14 +82,7 @@ Se necessário:
 vagrant plugin install vagrant-virtualbox
 ```
 
-### Qemu/KVM
-
-Se necessário:
-```sh
-vagrant plugin install vagrant-qemu
-```
-
-### Libvirt
+### Libvirt & Qemu/KVM
 
 Sistemas operacionais:
 
@@ -97,9 +90,18 @@ Sistemas operacionais:
     1. `apt install vagrant-libvirt libvirt-daemon-system`
     1. `usermod -aG libvirt "$USER"`
 
+#### Libvirt
+
 Se necessário:
 ```sh
 vagrant plugin install vagrant-libvirt
+```
+
+#### Qemu/KVM
+
+Se necessário:
+```sh
+vagrant plugin install vagrant-qemu
 ```
 
 ---
