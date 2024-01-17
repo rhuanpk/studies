@@ -68,9 +68,21 @@ Baixar _box_:
 vagrant box add <repo/box>
 ```
 
+Reiniciar _box_ (também utilizado quando Vagrantfile é alterado):
+```sh
+vagrant reload [--provision]
+```
+
+### Plugins
+
 Instalar plugins:
 ```sh
 vagrant plugin install <plugin>
+```
+
+Atualizar plugins:
+```sh
+vagrant plugin update
 ```
 
 ## Providers
@@ -103,6 +115,41 @@ Se necessário:
 ```sh
 vagrant plugin install vagrant-qemu
 ```
+
+_REFERENCELINKS_:
+- [Community Wiki](https://github.com/ppggff/vagrant-qemu).
+
+## Vagrant Files
+
+- <details>
+	<summary>Debian (Qemu/KVM)</summary>
+
+	```ruby
+	Vagrant.configure("2") do |config|
+	  config.vm.box = "debian/buster64"
+	  config.vm.synced_folder ".", "/vagrant", disabled: true
+	  #config.vm.network "forwarded_port", guest: 80, host: 80
+	  config.vm.provider "qemu" do |qe|
+	    qe.qemu_dir = "/usr/bin/"
+	    qe.arch="x86_64"
+	    qe.memory = "512"
+	    qe.smp = "1"
+
+	    # need for x86_64
+	    qe.machine = "q35"
+	    qe.cpu = "max"
+	    qe.net_device = "virtio-net-pci"
+
+	    # it seems this box need a VGA device (the debug serial port doesn't work... I don't know why)
+	    qe.extra_qemu_args = %w(-vga std)
+
+	    #config.vm.provision "shell", inline: <<-SHELL
+	    #  apt update && apt upgrade -y && apt install -y nginx
+	    #SHELL
+	  end
+	end
+	```
+</details>
 
 ---
 
