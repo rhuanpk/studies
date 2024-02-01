@@ -6,15 +6,15 @@ import (
 	"module/structure"
 )
 
-// StructA struct A for tests.
-type StructA struct {
+type structA struct {
 	Field1 string
 	Field2 int
 	Field3 any
+	field4 float64
+	Field5 interface{}
 }
 
-// StructB struct B for tests.
-type StructB struct {
+type structB struct {
 	Field1 any
 	Field2 bool
 	Field3 time.Time
@@ -22,13 +22,13 @@ type StructB struct {
 }
 
 func main() {
-	objectB := &StructB{
+	objectA := &structA{}
+	objectB := &structB{
 		Field1: "hello",
 		Field2: true,
 		Field3: time.Now(),
 		Field4: 42,
 	}
-	objectA := &StructA{}
 
-	structure.Assign(objectA, objectB)
+	structure.Assign(objectB, objectA)
 }
