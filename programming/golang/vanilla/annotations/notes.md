@@ -28,6 +28,12 @@ Links:
 
 Quando a conexão é estabelecida com o `http.Handler` o *handler* fica aberto e você pode enviar quantos `http.ResponseWriter.Write()` quiser e a cada `Write()` é uma nova resposta que é enviada (em tempo real), é encerrado a conexão com a função *handler* encerrar.
 
+## Atualizando Dependências
+
+```sh
+go get -u ./...
+```
+
 ---
 
 _REFERENCELINKS_:
