@@ -54,6 +54,13 @@ Em contrapartida, dos "locais" especificados com _RegEx_, é pego o primeiro res
 - `location /example { }`: corresponde a `http[s]://domain.any/example` e suas subpastas;
 - `location /example/ { }`: corresponde **SOMENTE** a subpastas de `http[s]://domain.any/example`.
 
+## TIPS/TRICKS
+
+Pegar o link da versão estável:
+```sh
+curl -fsL 'https://nginx.org/en/download.html' | sed 's~<a~\n&~g' | grep -A2 'Stable version' | sed -nE 's~^.*"(.*)".*$~https://nginx.org\1~p' | tail -1
+```
+
 ---
 
 _REFERENCELINKS_:
