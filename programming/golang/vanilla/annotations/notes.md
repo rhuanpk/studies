@@ -31,7 +31,7 @@ Quando a conexão é estabelecida com o `http.Handler` o *handler* fica aberto e
 ## Atualizando Dependências
 
 ```sh
-go get -u ./...
+go get -u -t all && go mod tidy
 ```
 
 ---
