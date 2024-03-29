@@ -7,43 +7,45 @@ import (
 	"net/http"
 	"net/url"
 
-	"backend/internal/consts"
-	"backend/pkg/logger"
+	"dev/internal/consts"
+	"dev/pkg/logger"
 )
 
 // Request do the request.
 func Request() {
 	// set variables
-	const param = "/value"
-	log := logger.NewLogger(logger.Client)
+	const param = "otpx"
+	log := logger.NewLogger("client")
 
 	//endpoint := consts.APIEndpoint.URL() + param + "?key1=value1&key2=value2"
 	query := url.Values{}
 	query.Add("key1", "value1")
 	query.Add("key2", "value2")
 	URL := url.URL{
-		Scheme:   consts.ServerHost.Protocol(), // http
-		Host:     string(consts.ServerHost) + consts.ServerPort.Parse(), // localhost:9999
-		Path:     consts.APIEndpoint.Parse(false) + param, // /xpto/value
-		RawQuery: query.Encode(), // key1=value1&key2=value2
+		Scheme:   string(consts.ServerHost.Proto),                    // http
+		Host:     consts.ServerHost.Host + consts.ServerPort.Parse(), // localhost:9999
+		Path:     "xpto/" + param,                                    // /xpto/value
+		RawQuery: query.Encode(),                                     // key1=value1&key2=value2
 	}
 	endpoint := URL.String() // http://localhost:9999/xpto/value?key1=value1&key2=value2
 
 	// prepare payload
 	payload, err := json.Marshal(
 		map[string]any{
+			"client": "side",
 			"foo":    "bar",
-			"client": "body",
+			"xpto":   map[string]any{"hello": "world"},
+			"array":  []any{"string", 0, true, 4.2},
 		},
 	)
 	if err != nil {
-		log.Println("error in marshal payload:", err)
+		log.Println("err: in marshal payload:", err)
 	}
 
 	// prepare request
 	request, err := http.NewRequest(http.MethodGet, endpoint, bytes.NewBuffer(payload))
 	if err != nil {
-		log.Fatalln("error in create request:", err)
+		log.Println("err: in create request:", err)
 		return
 	}
 	request.Header.Add("client", "header")
@@ -53,7 +55,7 @@ func Request() {
 	client := new(http.Client)
 	response, err := client.Do(request)
 	if err != nil {
-		log.Fatalln("error in doing request:", err)
+		log.Println("err: in doing request:", err)
 		return
 	}
 	defer response.Body.Close()
@@ -61,13 +63,13 @@ func Request() {
 	// get response body
 	payload, err = io.ReadAll(response.Body)
 	if err != nil {
-		log.Fatalln("error in read response body:", err)
+		log.Println("err: in read response body:", err)
 		return
 	}
 
 	// trace logs
 	log.Short()
-	log.Printf(`"%s" was requested`, consts.APIEndpoint.Parse(false))
+	log.Println(`"xpto" was requested`)
 	log.Println("response status:")
 	log.Println("\t" + response.Status)
 
@@ -94,8 +96,9 @@ func Request() {
 	var indented bytes.Buffer
 	err = json.Indent(&indented, payload, log.FullPrefix(), "\t")
 	if err != nil {
-		log.Fatalln("error in indent response body:", err)
-		return
+		log.Print("\t" + string(payload))
+		log.Println("warn: in indent response body:", err)
+	} else {
+		log.Print(indented.String())
 	}
-	log.Print(indented.String())
 }

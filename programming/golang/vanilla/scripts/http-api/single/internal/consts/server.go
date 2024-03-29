@@ -2,25 +2,27 @@ package consts
 
 import "strconv"
 
-type serverHost string
+// PROTO Type
+type serverProto string
 
-// ServerHost is the server host.
-const ServerHost serverHost = "localhost"
+const (
+	http  serverProto = "http"
+	https serverProto = "https"
+)
 
-// Protocol return the host protocol: `http`.
-func (sh serverHost) Protocol() string {
-	return "http"
+// HOST Type
+type serverHost struct {
+	Host  string
+	Proto serverProto
 }
 
-// Parse return the server host parsed like "http://<host>".
+// Parse return the server host parsed like "<proto>://<host>".
 func (sh serverHost) Parse() string {
-	return sh.Protocol() + "://" + string(sh)
+	return string(sh.Proto) + "://" + sh.Host
 }
 
+// PORT Type
 type serverPort int
-
-// ServerPort is the api port.
-const ServerPort serverPort = 9999
 
 // String return the api port like string.
 func (sp serverPort) String() string {

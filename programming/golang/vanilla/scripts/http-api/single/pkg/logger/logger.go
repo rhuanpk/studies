@@ -7,19 +7,10 @@ import (
 	"time"
 )
 
-type logger string
-
-// Logger constants.
-const (
-	Main   logger = "main"
-	Client logger = "client"
-	Server logger = "server"
-)
-
 // Logger is the logger struct.
 type Logger struct {
 	log    *log.Logger
-	place  logger
+	place  string
 	Prefix string
 }
 
@@ -43,9 +34,15 @@ func (l Logger) Fatalln(args ...any) {
 	l.log.Fatalln(args...)
 }
 
-// Short prints a default message with itself defined place.
-func (l Logger) Short() {
-	println("> " + strings.ToUpper(string(l.place)) + "!")
+// Short prints a default message with itself defined place or passa a label to overwrite once.
+func (l Logger) Short(label ...string) {
+	var message string
+	if len(label) < 1 {
+		message = string(l.place)
+	} else {
+		message = label[0]
+	}
+	println("> " + strings.ToUpper(message) + "!")
 }
 
 // FullPrefix return manualy the full prefix of logger.
@@ -53,16 +50,16 @@ func (l Logger) FullPrefix() string {
 	return l.Prefix + time.Now().Format("15:04:05") + " "
 }
 
-// NewLogger return a pointer to Logger
-func NewLogger(place logger) *Logger {
+// NewLogger return a pointer to Logger, "place" param is the function where you call this one.
+func NewLogger(place string) *Logger {
 	logger := &Logger{
-		Prefix: "[" + string(place) + "] ",
+		place:  place,
+		Prefix: "[" + place + "] ",
 	}
 	logger.log = log.New(
 		os.Stderr,
 		logger.Prefix,
 		log.Ltime,
 	)
-	logger.place = place
 	return logger
 }

@@ -5,33 +5,35 @@ import (
 	"strings"
 	"time"
 
-	"backend/internal/api"
-	"backend/internal/client"
-	"backend/internal/consts"
-	"backend/internal/server"
-	"backend/pkg/logger"
+	"dev/internal/client"
+	"dev/internal/consts"
+	"dev/pkg/logger"
+	"dev/pkg/router"
+
+	_ "dev/internal/process/inits"
 )
 
 func main() {
-	// set variavles
-	const banner = `»--> Golang HTTP API With Standard Library <--«`
-	var requests = make(chan *http.Request, 1)
-	log := logger.NewLogger(logger.Main)
+	// set variables
+	const (
+		banner = `»--> Golang HTTP API <--«`
+		delay  = 3
+	)
+	done := make(chan bool, 1)
+	requests := make(chan bool, 1)
+	log := logger.NewLogger("main")
 
 	// trace logs
 	println(banner + "\n" + strings.Repeat("-", len(banner)))
 	log.Short()
-	log.Printf(`listening on "%v%v"`, consts.ServerHost, consts.ServerPort.Parse())
+	log.Printf(`listening on "%v%v"`, consts.ServerHost.Host, consts.ServerPort.Parse())
 
 	// start background server
 	go func() {
-		http.HandleFunc(
-			consts.APIEndpoint.Parse(true),
-			api.Middleware(&requests, server.Handler),
-		)
+		router.Setup(&done, &requests, router.Schemes)
 		log.Fatalln(http.ListenAndServe(consts.ServerPort.Parse(), nil))
 	}()
-	time.Sleep(time.Second)
+	<-done // wait setup done
 
 	// client do request
 	client.Request()
@@ -45,6 +47,6 @@ func main() {
 		default:
 			log.Println("> waiting requests <")
 		}
-		time.Sleep(time.Second * 3)
+		time.Sleep(time.Second * delay)
 	}
 }
