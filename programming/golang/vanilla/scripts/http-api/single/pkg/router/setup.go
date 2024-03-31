@@ -28,6 +28,6 @@ func Setup(done *chan bool, requests *chan bool, schemes []Scheme) {
 		)
 	}
 
-	// send done signal to main function procced
-	*done <- true
+	*requests <- true // send done signal to requests channel
+	*done <- true     // send done signal to main function procced
 }
