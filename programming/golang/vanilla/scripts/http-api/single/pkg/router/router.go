@@ -6,7 +6,7 @@ import (
 	"dev/pkg/router/middle"
 )
 
-// Scheme struct to define endpoints, e.g.:
+// Scheme struct to define endpoints e.g.:
 //
 //	scheme := Scheme{
 //		Method:      http.MethodGet,
@@ -16,14 +16,29 @@ import (
 //	}
 type Scheme struct {
 	Method      string
-	Route       string
+	Routes      []string
 	Handler     http.HandlerFunc
 	Middlewares []middle.Middleware
 }
 
 // Parse return the Method and Route for http.HandleFunc() to set.
-func (s Scheme) Parse() string {
-	return s.Method + " " + s.Route
+// If index is less then 0 or greater then len(s) returns empty string.
+// E.g.:
+//
+//	"METHOD /foo/{bar}"
+func (s Scheme) Parse(index int) string {
+	if index < 0 || index >= len(s.Routes) {
+		return ""
+	}
+	return s.Method + " " + s.Routes[index]
+}
+
+// Parses iterates over s.Routes returning a slice of Parse() returns.
+func (s Scheme) Parses() (parses []string) {
+	for _, route := range s.Routes {
+		parses = append(parses, s.Method+" "+route)
+	}
+	return
 }
 
 // Schemes is the global variable to add scheme routers.

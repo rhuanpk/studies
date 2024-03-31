@@ -5,7 +5,7 @@ import (
 	_ "dev/pkg/router"
 
 	// Packages to import 2th.
+	_ "dev/internal/server/all"
 	_ "dev/internal/server/check"
-	_ "dev/internal/server/test"
-	_ "dev/internal/server/xpto"
+	_ "dev/internal/server/middles"
 )

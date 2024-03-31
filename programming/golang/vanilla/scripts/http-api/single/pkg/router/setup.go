@@ -1,6 +1,7 @@
 package router
 
 import (
+	"fmt"
 	"net/http"
 
 	"dev/pkg/logger"
@@ -17,15 +18,23 @@ func Setup(done *chan bool, requests *chan bool, schemes []Scheme) {
 
 	// iterate over all scheme to setup them
 	for _, scheme := range schemes {
-		log.Println(scheme.Method, "->", scheme.Route)
-		http.HandleFunc(
-			scheme.Parse(),
-			middle.Wrapper(
-				requests,
-				scheme.Handler,
-				scheme.Middlewares...,
-			),
-		)
+		if scheme.Method == "" {
+			scheme.Method = "ANY"
+		}
+		for index, parse := range scheme.Parses() {
+			log.Printf(
+				`%s%`+fmt.Sprint((4+(7-len(scheme.Method))))+`s%s`,
+				scheme.Method, " -> ", scheme.Routes[index],
+			)
+			http.HandleFunc(
+				parse,
+				middle.Wrapper(
+					requests,
+					scheme.Handler,
+					scheme.Middlewares...,
+				),
+			)
+		}
 	}
 
 	*requests <- true // send done signal to requests channel

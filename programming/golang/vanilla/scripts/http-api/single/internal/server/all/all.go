@@ -1,4 +1,4 @@
-package xpto
+package all
 
 import (
 	"encoding/json"
@@ -8,9 +8,9 @@ import (
 	"dev/pkg/logger"
 )
 
-func xpto(response http.ResponseWriter, request *http.Request) {
+func all(response http.ResponseWriter, request *http.Request) {
 	// set variables
-	log := logger.NewLogger("xpto")
+	log := logger.NewLogger("[all]")
 	endpoint := regexp.MustCompile(`^/[^/]+`).FindString(request.URL.Path)
 	param := request.PathValue("param")
 
@@ -42,7 +42,7 @@ func xpto(response http.ResponseWriter, request *http.Request) {
 	}
 
 	// get path param
-	if len(param) > 1 {
+	if param != "" {
 		log.Println("request path param:")
 		log.Println("\t" + param)
 	}

@@ -1,4 +1,4 @@
-package test
+package middles
 
 import (
 	"net/http"
@@ -6,14 +6,14 @@ import (
 	"dev/pkg/logger"
 )
 
-func test(response http.ResponseWriter, _ *http.Request) {
+func middles(response http.ResponseWriter, _ *http.Request) {
 	// set variables
-	log := logger.NewLogger("test")
+	log := logger.NewLogger("middles")
 
 	// reply request
 	response.WriteHeader(http.StatusOK)
 
 	// trace logs
 	log.Short("server")
-	log.Println("testing ok")
+	log.Println("middlewares test ok")
 }

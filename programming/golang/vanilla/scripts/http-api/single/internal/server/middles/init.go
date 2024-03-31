@@ -1,4 +1,4 @@
-package test
+package middles
 
 import (
 	"net/http"
@@ -11,8 +11,8 @@ func init() {
 	router.AddScheme(
 		router.Scheme{
 			Method:  http.MethodGet,
-			Route:   "/test",
-			Handler: test,
+			Routes:  []string{"/middles"},
+			Handler: middles,
 			Middlewares: []middle.Middleware{
 				middle.Foo,
 				middle.Bar,

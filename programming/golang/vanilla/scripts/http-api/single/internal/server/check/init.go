@@ -10,7 +10,7 @@ func init() {
 	router.AddScheme(
 		router.Scheme{
 			Method:  http.MethodGet,
-			Route:   "/check",
+			Routes:  []string{"/check"},
 			Handler: check,
 		},
 	)
