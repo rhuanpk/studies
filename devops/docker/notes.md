@@ -2,6 +2,12 @@
 
 ## Commands
 
+### `up`
+
+- `--build`: _rebuilda_ a imagem do _container_, ou seja, útil quando algo que influência a imagem foi alterado como o `Dockerfile` e qualquer outro recurso que interage com ele (arquivos de configuração/variáveis de ambiente);
+
+- `--force-recreate`: reconstroi o _container_, ou seja, útil quando precisa "resetar" o container ou algúm recurso afeta diretamente ele foi alterado (assim como em "`--build`").
+
 ### `inspect`
 
 Verificar _ip's_ do container:
