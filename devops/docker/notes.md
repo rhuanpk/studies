@@ -117,3 +117,11 @@ docker rm -f `docker container ls -aq`
 ## Links
 
 - [Docker Swarm/Service](https://www.cloudbees.com/blog/running-services-within-docker-swarm).
+
+---
+
+## MySQL
+
+### Env Vars
+
+- `MYSQL_DATABASE`: Define o nome de um _database_ para ser criado junto com a criação do container, ou seja, caso o banco seja _dropado_ é necessário remover e recriar o container. Caso esteja usando volumes isso não resolverá, terá que remover e recriar o volume também.
