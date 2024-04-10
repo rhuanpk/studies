@@ -4,9 +4,10 @@
 
 ### `up`
 
-- `--build`: _rebuilda_ a imagem do _container_, ou seja, útil quando algo que influência a imagem foi alterado como o `Dockerfile` e qualquer outro recurso que interage com ele (arquivos de configuração/variáveis de ambiente);
+- `--build`: _rebuilda_ a imagem do _container_, ou seja, útil quando algo que influência a imagem foi alterado como no `Dockerfile` ou em qualquer outro recurso que interaja com ele (arquivos de configuração/variáveis de ambiente):
+    - Usado para serviços que rodam sobre imagens construídas com `Dockerfile`.
 
-- `--force-recreate`: reconstroi o _container_, ou seja, útil quando precisa "resetar" o container ou algúm recurso afeta diretamente ele foi alterado (assim como em "`--build`").
+- `--force-recreate`: reconstroi o _container_, ou seja, útil quando precisa "_resetar_" o container ou quando algúm recurso dentro do container (ou fora caso o mesmo esteja interagindo com algo externo) que afeta o programa diretamente foi alterado (como variáveis de ambiente ou arquivos de configuração).
 
 ### `inspect`
 
