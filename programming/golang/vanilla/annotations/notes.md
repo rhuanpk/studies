@@ -1,5 +1,18 @@
 # Golang
 
+## Setup
+
+1. Instalar `golang` (a linguágem no sistema);
+1. Mudar env var `GOPATH`:
+    1. E mover `~/.go/`.
+1. No VSCode instalar a extensão:
+    1. E executar a pela Go para baixar as _tools_.
+1. Definir env var `GOPRIVATE` (se necessário);
+
+```sh
+go get -u -t all && go mod tidy
+```
+
 ## Escopo de Objetos
 
 Caso queira usar o recurso de um pacote em outro, além de precisar importa-lo, caso ele não esteja exportado (o nome do recurso está com a primeira letra minúscula) não será possível nem acessa-lo.
@@ -24,14 +37,34 @@ Links:
 
 - <https://go.dev/doc/tutorial/generics>.
 
+---
+
 ## Estrutura *http.ResponseWriter*
 
 Quando a conexão é estabelecida com o `http.Handler` o *handler* fica aberto e você pode enviar quantos `http.ResponseWriter.Write()` quiser e a cada `Write()` é uma nova resposta que é enviada (em tempo real), é encerrado a conexão com a função *handler* encerrar.
 
-## Atualizando Dependências
+---
 
+## Comandos
+
+Env vars:
+- `go env`: Lista todas as variáveis de ambiente Go;
+- `go env <ENV>`: Retorna o valor da variável de ambient especificada;
+- `go env -w <ENV>=<value>`: Atualiza o valor de uma variável de ambiente Go e caso não exista, será criada;
+
+Get packages:
+- `[GOPROXY=direct] go get -u [-t all]`: Atualiza todos os pacotes do módulo.
+
+Tidy:
+- Na hora de executar algum `go mod tidy` pode ser necessário:
 ```sh
-go get -u -t all && go mod tidy
+GIT_PROMPT=1 go mod tidy
+```
+
+Ou para praticidade em algum `.gitconfig`:
+```sh
+[url "ssh://git@"]
+        insteadOf = https://
 ```
 
 ---
