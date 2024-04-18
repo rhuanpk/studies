@@ -1,17 +1,24 @@
 # Golang
 
-## Setup
+## Setup's
 
-1. Instalar `golang` (a linguágem no sistema);
-1. Mudar env var `GOPATH`:
-    1. E mover `~/.go/`.
-1. No VSCode instalar a extensão:
-    1. E executar a pela Go para baixar as _tools_.
-1. Definir env var `GOPRIVATE` (se necessário);
+### Inicial
 
-```sh
-go get -u -t all && go mod tidy
-```
+1. Instalar a linguagem no sistema;
+
+1. Mudar variável de ambiente `GOPATH`:
+    1. Depois mover: `mv -v ~/{,.}go/`
+
+1. No VSCode instalar a extensão do Go (`@id:golang.go`):
+    1. Esperar a extensão carregar e executar a paleta de comandos Go para baixar as _tools_.
+
+### Repositórios Privados
+
+1. Definir variável de ambiente `GOPRIVATE`:
+    `go env -w GOPRIVATE='<remote>/user/[*|repo][,...]'`
+
+1. Caso queira usar SSH para manipular o _get_ das dependências execute:
+    `git config --global url.'ssh://git@'.insteadOf 'https://'`
 
 ## Escopo de Objetos
 
@@ -47,25 +54,19 @@ Quando a conexão é estabelecida com o `http.Handler` o *handler* fica aberto e
 
 ## Comandos
 
-Env vars:
+Env:
+
 - `go env`: Lista todas as variáveis de ambiente Go;
 - `go env <ENV>`: Retorna o valor da variável de ambient especificada;
 - `go env -w <ENV>=<value>`: Atualiza o valor de uma variável de ambiente Go e caso não exista, será criada;
 
-Get packages:
+Get:
+
 - `[GOPROXY=direct] go get -u [-t all]`: Atualiza todos os pacotes do módulo.
 
 Tidy:
-- Na hora de executar algum `go mod tidy` pode ser necessário:
-```sh
-GIT_PROMPT=1 go mod tidy
-```
 
-Ou para praticidade em algum `.gitconfig`:
-```sh
-[url "ssh://git@"]
-        insteadOf = https://
-```
+- `[GIT_PROMPT=1] go mod tidy`: Atualização automática das dependencias.
 
 ---
 
