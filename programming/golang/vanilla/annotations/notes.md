@@ -12,6 +12,15 @@
 1. No VSCode instalar a extensão do Go (`@id:golang.go`):
     1. Esperar a extensão carregar e executar a paleta de comandos Go para baixar as _tools_.
 
+1. No VSCode definir nas configurações:
+```json
+    "go.lintTool": "golint",
+    "go.lintOnSave": "file",
+    "gopls": {
+        "ui.semanticTokens": true
+    }
+```
+
 ### Repositórios Privados
 
 1. Definir variável de ambiente `GOPRIVATE`:
