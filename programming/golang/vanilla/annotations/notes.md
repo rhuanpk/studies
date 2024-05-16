@@ -24,7 +24,7 @@
 ### Repositórios Privados
 
 1. Definir variável de ambiente `GOPRIVATE`:
-    `go env -w GOPRIVATE='<remote>/user/[*|repo][,...]'`
+    `go env -w GOPRIVATE='<remote>/<user>[/[*|<repo>[,...]]]'`
 
 1. Caso queira usar SSH para manipular o _get_ das dependências execute:
     `git config --global url.'ssh://git@'.insteadOf 'https://'`
