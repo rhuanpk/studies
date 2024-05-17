@@ -4,10 +4,9 @@
 
 ### `up`
 
-- `--build`: _rebuilda_ a imagem do _container_, ou seja, útil quando algo que influência a imagem foi alterado como no `Dockerfile` ou em qualquer outro recurso que interaja com ele (arquivos de configuração/variáveis de ambiente):
-    - Usado para serviços que rodam sobre imagens construídas com `Dockerfile`.
+- `--build`: _rebuilda_ a imagem do _container_, quando o nosso serviço roda em cima de uma imagem que construímos por conta própria (a partir de um Dockerfile), sempre que qualquer coisa que faça parte do _build_ da imagem (ou seja, os recursos descritos dentro do Dockerfile) for alterado, precisamos usar `--build`, porque, por mais que reiniciamos/recriamos o container, ele usará a imagem já existente, que não contem as novas alterações.
 
-- `--force-recreate`: reconstroi o _container_, ou seja, útil quando precisa "_resetar_" o container ou quando algúm recurso dentro do container (ou fora caso o mesmo esteja interagindo com algo externo) que afeta o programa diretamente foi alterado (como variáveis de ambiente ou arquivos de configuração).
+- `--force-recreate`: recria o _container_ do zero (como se tivesse sendo criando pela primeira vez), quando usamos o comando `docker compose up`, por padrão, o Docker tenta reutilizar os _containers_ existentes se não houver alterações nos serviços ou nas imagens, no entanto, pode haver situações em que desejamos garantir que os containers sejam sempre recriados do zero, por exemplo, para garantir que os volumes sejam remontados, variáveis de ambiente sejam aplicadas novamente, ou simplesmente para garantir um estado limpo do container.
 
 ### `inspect`
 
