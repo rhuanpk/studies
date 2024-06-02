@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// go playground: https://go.dev/play/p/FeSzDMRBZuz
 func main() {
 	wg := sync.WaitGroup{}
 	for i := 0; i < 5; i++ {
