@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+curl ipecho.net/plain
+echo $'\nfoobar'
+tput cup `tput lines`; read -sn 1
+#exec $SHELL
