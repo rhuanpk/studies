@@ -58,7 +58,7 @@ Quando falamos a respeito desse assunto, deveras temos muitos termos as vezes pa
 
 ### Arquitetura de Software
 
-Arquitetura de Software diz respeito a **organização/separação do _software_** e como essas partes interagem entre si. Ou seja, como você vai particionar o seu código. Fala diretamente a respeito de escalabilidade, segurança e distribuição do código.
+Arquitetura de Software diz respeito a **organização/separação do _software_** e como essas partes interagem entre si. Ou seja, como você vai particionar o seu código. Fala diretamente a respeito de escalabilidade, segurança, distribuição do código e infraestrutura.
 
 > Arquitetura de Software: A arquitetura de software é um nível acima do design de software e envolve a organização de componentes maiores e suas interações, como módulos, camadas, serviços e subsistemas. A arquitetura lida com a estrutura geral do sistema, suas decisões de design de alto nível, escalabilidade, segurança e distribuição.
 
