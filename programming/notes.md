@@ -81,3 +81,15 @@ Na prática, é quando pensamos em como escrever o nosso código, o nome que dam
 - Factory's;
 - Builder;
 - Obverver.
+
+### Insights
+
+No final, se usarmos o exemplo da construção de uma casa, podemos dizer que:
+- A Arquitetura de Software seria
+    - A fundação da casa
+    - A parte elétrica da casa
+    - Os materiais usados para construção
+- O Design de Software seria
+    - Quais móveis serão usados (tipo/marca)
+    - Como os móveis são dispostos nos cômodos
+    - A decoração externa e interna da casa
