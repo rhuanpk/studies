@@ -41,30 +41,29 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 ```
 
 Comandos:
-- `kubectl get pod [-A] [-owide]`: lista os pods
+- `kubectl get [-A] [-v9] [-owide] [--show-labels] {pod|node|svc|endpoints|deployment|replicaset} [label-name]`
+    - lista os _pods/nodes/services/endpoints_
     - `-A`: todos os _namespaces_
+    - `-v9`: full verbose
     - `-owide`: mais verbosidade na saída
-    - `--show-labels`: mostra as labels dos pods
-- `kubectl get node [-v9]`: lista os _nodes_
-    - `-v9`: _full verbose_
-- `kubectl run --image <docker-hub-image> [-it] [--dry-run -oyaml] <pod-name> [<command>] [> ./pod.yaml]`: cria um novo pod
+    - `--show-labels`: mostra as _labels_ dos _pods_
+- `kubectl run --image <dockerhub-image> [-it] [--dry-run -oyaml] <pod-name> [<command>] [> ./pod.yaml]`
+    - cria um novo _pod_
     - `-i`: executa de forma interativa
     - `-t`: aloca um tty
-    - `--dry-run`: apenas executa o comando sem de fato subir o pod
+    - `--dry-run`: apenas executa o comando sem de fato subir o _pod_
     - `-oyaml`: _printa_ a configuração do comando executado em YAML
-- `kubectl delete pod <pod-{name|id}>`: daleta um pod
-- `kubectl apply -f ./{pod|deployment}.yaml`: sobe a configuração pelo manifesto (arquivo de configuração)
-- `kubectl create deployment --image <docker-hub-image> [--dry-run -oyaml] <deployment-name> [> ./deployment.yaml]`: cria um novo _deployment_ > _replicaset_ > _pod_
+- `kubectl create deployment --image <dockerhub-image> [--dry-run -oyaml] <deployment-name> [> ./deployment.yaml]`
+    - cria um novo _deployment_ > _replicaset_ > _pod_
     - `--dry-run`: apenas executa o comando sem de fato subir o _deployment_
     - `-oyaml`: _printa_ a configuração do comando executado em YAML
-- `kubectl get deployment`: lista os _deployments_
-- `kubectl get replicaset`: lista os _replicaset's_
-- `kubectl scale deployment <deployment-name> --replicas <count>`: define a quantidade de replica para determinado pod (e todos os containers dentro dele?)
-- `kubectl delete deployment <deployment-name>`: delete todo um _deployment_, suas replicas e pods
-- `kubectl expose deployment <deployment-name> --port <incoming-request-port> --target-port <outgoing-pod-port>`: cria um _service_ na frente de um deployment, ou seja, expõe a porta do _deployment_ para redirecionar a requisição a algum pod que está escutando nessa mesma porta
-- `kubectl get service [<service-name>] [-oyaml]`: lista os _services_
-    - `-oyaml`: _printa_ a configuração do comando executado em YAML
-- `kubectl get endpoints <label-name>`: lista todos os pods com a label, ou seja, caso seja feito um _deployment_, listará todo o _deployment_ (ou seja, os pods por trás dele)
+- `kubectl expose deployment <deployment-name> --port <incoming-request-port> --target-port <outgoing-pod-port>`
+    - cria um _service_ na frente de um _deployment_
+    - expõe a porta do _deployment_ para redirecionar a requisição a algum _pod_ que está escutando nessa mesma porta
+- `kubectl apply -f ./{pod|deployment}.yaml`: sobe a configuração pelo manifesto (arquivo de configuração)
+- `kubectl delete pod <pod-{name|id}>`: daleta um _pod_
+- `kubectl scale deployment <deployment-name> --replicas <count>`: define a quantidade de replica para determinado _pod_
+- `kubectl delete deployment <deployment-name>`: delete todo um _deployment_, suas replicas e _pods_
 
 Quando um pod é criado com `run`, além de todas as coisas, ele recebe também uma _label_, que é basicamente um grupo no qual está insirido. Quando criamos um _deployment_, basicamente criamos vários pods com as mesma _label_, ou seja, estarão dentro do mesmo grupo, dessa forma, o _load balancer_ do Kubernetes começa a atuar pois, dessa forma, por de baixo dos panos, teremos um único _endpoit_, que será a _label_, então, o próprio Kubernetes cuidará de fazer os redirecionamento para os pods dentro desse grupo. A um nível maior na hierarquia do Kubernetes, os _namespaces_ também atuam como agrupadores.
 
