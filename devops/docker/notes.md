@@ -50,7 +50,7 @@ OBS: caso queira utulizar essa "tecnica" para criar seus volumes nomeados em ima
 
 ### Volumes na Criação de Containers
 
-#### Opção `-v || --volume`
+#### Opção `-v` || `--volume`
 
 Sintaxe:
 ```sh
