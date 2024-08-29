@@ -4,3 +4,6 @@ docker run -d --name postgres -e POSTGRES_PASSWORD=postgres [-v [/path/]postgres
 
 >>> ADMINER <<<
 docker run -d --rm --name adminer [--link database:db] -p 80:8080 adminer
+
+>>> WINDOWS <<<
+docker run {-d|-it} --rm --name windows --device=/dev/kvm --cap-add NET_ADMIN --stop-timeout 120 [-v ./:/shared/[:rw]] [-e VERSION=win10] -p 8006:8006 dockurr/windows
