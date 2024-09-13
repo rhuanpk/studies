@@ -18,7 +18,8 @@
     "go.lintOnSave": "file",
     "gopls": {
         "ui.semanticTokens": true
-    }
+    },
+    "go.toolsManagement.autoUpdate": true
 ```
 
 ### Repositórios Privados
