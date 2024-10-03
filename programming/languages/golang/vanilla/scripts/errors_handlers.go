@@ -251,6 +251,12 @@ func main() {
 
 	// --------------------------------------------------
 
+	err = fmt.Errorf("error occured: %w", errAnyone)
+	println("\n----- fmt.Errorf(\"error occured: %w\", errAnyone) -----")
+	logError(err)
+
+	// --------------------------------------------------
+
 	err = fmt.Errorf("%w", &errStructone{"structone error"})
 	println("\n----- fmt.Errorf(\"%w\", &errStruct{}) -----")
 	logError(err)
