@@ -239,6 +239,12 @@ func main() {
 
 	println("\n##################################################")
 
+	err = errors.Join(errAnyone, errAnytwo)
+	println("\n----- errors.Join(errAnyone, errAnytwo) -----")
+	logError(err)
+
+	// --------------------------------------------------
+
 	err = errors.New("new error")
 	println("\n----- errors.New() -----")
 	logError(err)
