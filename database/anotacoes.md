@@ -21,7 +21,7 @@ SELECT <coluna(s)> FROM <tabela(s)> [WHERE,GROUP BY, ORDER BY [AND, OR, NOT]];
 ```sql
 SELECT SETVAL(
     pg_get_serial_sequence('table_name', 'column_name'),
-    (SELECT MAX(column_name) FROM table_name>)
+    (SELECT MAX(column_name) FROM <table_name>)
 )
 ```
 
