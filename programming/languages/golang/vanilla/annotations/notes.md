@@ -22,6 +22,11 @@
     "go.toolsManagement.autoUpdate": true
 ```
 
+1. No Linux, caso precise adicionar a pasta do binários do Go no `PATH`:
+```sh
+echo 'PATH+=":$HOME/.go/bin"' >> ~/.profile
+```
+
 ### Repositórios Privados
 
 1. Definir variável de ambiente `GOPRIVATE`:
