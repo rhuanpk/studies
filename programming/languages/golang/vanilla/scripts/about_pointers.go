@@ -6,6 +6,11 @@ import "fmt"
 // memória e não com o valor diretamente, ou seja, estamos manipulando o
 // endereço de um espaço na memória que está reservado para guardar algum valor.
 
+// Devemos sempre lembrar que o que gera _segfault_ é a desreferência de um
+// ponteiro não inicializado (que é `nil`) e não algum outro tipo de dado `nil`,
+// por exemplo, num _for-range_, Go consegue lidar tranquilamente com uma
+// _slice_ `nil` (basicamente não haverá nenhuma iteração).
+
 // go playground: https://go.dev/play/p/8eLOPap_D-S
 func main() {
 	println("-----> first example <-----")
