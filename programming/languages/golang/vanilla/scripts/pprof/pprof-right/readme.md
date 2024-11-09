@@ -9,7 +9,7 @@ go tool pprof 'http://localhost:6060/debug/pprof/profile?seconds=5'
 
 - In the end of program put some code to stop it then run this to get all other profiles (while the program is running):
 ```sh
-for type in heap goroutine allocs block cmdline goroutine heap mutex threadcreate; do
+for type in allocs block cmdline goroutine heap mutex threadcreate; do
 	curl -fsSLo "pprof.$type.pb.gz" "http://localhost:6060/debug/pprof/$type"
 done
 ```
