@@ -24,22 +24,23 @@ func main() {
 
 	bytes, err := json.MarshalIndent(payload, "", "\t")
 	if err != nil {
-		log.Println("error in json marshal indent:", err)
+		log.Println("error in json marshal indent single:", err)
 	}
 
-	_, err = single.Write(bytes)
-	if err != nil {
-		log.Println("error in write file:", err)
+	if _, err = single.Write(bytes); err != nil {
+		log.Println("error in write single file:", err)
 	}
 
 	// write multi times
-	multi.WriteString("[\n")
+	if _, err := multi.WriteString("[\n"); err != nil {
+		log.Println("error in wirte multi file:", err)
+	}
 	for index := 0; index < end; index++ {
 		payload := map[string]any{"foo": "bar", "index": index}
 
 		bytes, err := json.MarshalIndent(payload, "\t", "\t\t")
 		if err != nil {
-			log.Println("error in json marshal indent:", err)
+			log.Println("error in json marshal indent multi:", err)
 		}
 
 		var suffixes []byte
@@ -48,10 +49,11 @@ func main() {
 		}
 		suffixes = append(suffixes, '\n')
 
-		_, err = multi.Write(append(append([]byte{'\t'}, bytes...), suffixes...))
-		if err != nil {
-			log.Println("error in write file:", err)
+		if _, err = multi.Write(append(append([]byte{'\t'}, bytes...), suffixes...)); err != nil {
+			log.Println("error in write multi file:", err)
 		}
 	}
-	multi.WriteString("]")
+	if _, err := multi.WriteString("]\n"); err != nil {
+		log.Println("error in wirte multi file:", err)
+	}
 }
