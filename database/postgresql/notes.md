@@ -49,7 +49,7 @@ FROM (
 WHERE NOT EXISTS (SELECT 1 FROM upsert WHERE upsert.column_verify = v.column_verify);
 ```
 
-- Saber se há registros nulos ou vazios:
+- Saber se há registros nulos ou com "valores zero":
 ```sql
 DO $$
 DECLARE
