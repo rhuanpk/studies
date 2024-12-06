@@ -44,9 +44,10 @@ func BuildErrorLog(layer layer, funcName, message string, errors ...error) error
 	}
 
 	serviceWithRepository := layer == ServiceLayer && hasLayer(RepositoryLayer, errors...)
+	breakable := len(errors) <= 0 || (len(errors) == 1 && (hasLayer(ServiceLayer, errors...) || hasLayer(RepositoryLayer, errors...)))
 
 	separator := vertical
-	if message == "" && len(errors) <= 0 {
+	if message == "" && breakable {
 		separator = corner
 	}
 	text := fmt.Errorf(
@@ -55,7 +56,7 @@ func BuildErrorLog(layer layer, funcName, message string, errors ...error) error
 	)
 
 	separator = vertical
-	if len(errors) <= 0 || (len(errors) == 1 && (hasLayer(ServiceLayer, errors...) || hasLayer(RepositoryLayer, errors...))) {
+	if breakable {
 		separator = corner
 	}
 	if message != "" {
