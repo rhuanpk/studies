@@ -6,54 +6,62 @@ import (
 )
 
 var (
-	errAnyone = errors.New("anyone error")
-	errAnytwo = errors.New("anytwo error")
+	errAnyOne = errors.New("anyone error")
+	errAnyTwo = errors.New("anytwo error")
 )
 
-type errStructone struct {
+// --------------------------------------------------
+
+type errStructOne struct {
 	message string
 }
 
-func (so *errStructone) Error() string {
+func (so errStructOne) Error() string {
 	return "so.message: " + so.message
 }
 
-type errStructtwo struct {
+// --------------------------------------------------
+
+type errStructTwo struct {
 	message string
 }
 
-func (st *errStructtwo) Error() string {
+func (st errStructTwo) Error() string {
 	return "st.message: " + st.message
 }
 
-// type errStructthree struct {
-// 	message   string
-// 	errAnyone error
-// 	errAnytwo error
-// }
+// --------------------------------------------------
 
-// func (st *errStructthree) Error() string {
-// 	return "st.message: " + st.message
-// }
+type errStructThree struct {
+	message   string
+	errAnyOne error
+	errAnyTwo error
+}
 
-// func (st *errStructthree) Unwrap() error {
-// 	return errors.Join(st.errAnyone, st.errAnytwo)
-// }
+func (st errStructThree) Error() string {
+	return "st.message: " + st.message
+}
+
+func (st errStructThree) Unwrap() error {
+	return errors.Join(st.errAnyOne, st.errAnyTwo)
+}
+
+// --------------------------------------------------
 
 func returnError() error {
-	return errAnyone
+	return errAnyOne
 }
 
 func returnWrapedError() error {
-	return fmt.Errorf("error occurred: %w", errAnyone)
+	return fmt.Errorf("error occurred: %w", errAnyOne)
 }
 
 func returnStructError(message string) error {
-	return &errStructone{message}
+	return errStructOne{message}
 }
 
 func returnWrapedStructError(message string) error {
-	return fmt.Errorf("error ocurred: %w", &errStructone{message})
+	return fmt.Errorf("error ocurred: %w", errStructOne{message})
 }
 
 func checkError(err error, errType string) {
@@ -61,29 +69,28 @@ func checkError(err error, errType string) {
 	if err != nil {
 		println(true)
 
-		println("println("+errType+".Error()):", err.Error())
+		// println("println("+errType+".Error()):", err.Error())
 		fmt.Println("fmt.Println("+errType+"):", err)
 
-		print("errors.Is(" + errType + ", errAnyone): ")
-		if errors.Is(err, errAnyone) {
+		print("errors.Is(" + errType + ", errAnyOne): ")
+		if errors.Is(err, errAnyOne) {
 			println(true)
 		} else {
 			println(false)
 		}
 
-		print("errors.Is(" + errType + ", errAnytwo): ")
-		if errors.Is(err, errAnytwo) {
+		print("errors.Is(" + errType + ", errAnyTwo): ")
+		if errors.Is(err, errAnyTwo) {
 			println(true)
 		} else {
 			println(false)
 		}
 
-		var structoneErr *errStructone
-		print("errors.As(" + errType + ", &structoneErr): ")
-		if errors.As(err, &structoneErr) {
+		print("errors.As(" + errType + ", &errStructOne{}): ")
+		if errors.As(err, &errStructOne{}) {
 			println(true)
 			print("type assertion: ")
-			if _, ok := err.(*errStructone); ok {
+			if _, ok := err.(errStructOne); ok {
 				println(true)
 			} else {
 				println(false)
@@ -92,12 +99,11 @@ func checkError(err error, errType string) {
 			println(false)
 		}
 
-		var structtwoErr *errStructtwo
-		print("errors.As(" + errType + ", &structtwoErr): ")
-		if errors.As(err, &structtwoErr) {
+		print("errors.As(" + errType + ", &errStructTwo{}): ")
+		if errors.As(err, &errStructTwo{}) {
 			println(true)
 			print("type assertion: ")
-			if _, ok := err.(*errStructone); ok {
+			if _, ok := err.(errStructTwo); ok {
 				println(true)
 			} else {
 				println(false)
@@ -106,19 +112,18 @@ func checkError(err error, errType string) {
 			println(false)
 		}
 
-		// var structthreeErr *errStructthree
-		// print("errors.As(" + errType + ", &structthreeErr): ")
-		// if errors.As(err, &structthreeErr) {
-		// 	println(true)
-		// 	print("type assertion: ")
-		// 	if _, ok := err.(*errStructone); ok {
-		// 		println(true)
-		// 	} else {
-		// 		println(false)
-		// 	}
-		// } else {
-		// 	println(false)
-		// }
+		print("errors.As(" + errType + ", &errStructThree{}): ")
+		if errors.As(err, &errStructThree{}) {
+			println(true)
+			print("type assertion: ")
+			if _, ok := err.(errStructThree); ok {
+				println(true)
+			} else {
+				println(false)
+			}
+		} else {
+			println(false)
+		}
 	} else {
 		println(false)
 	}
@@ -134,7 +139,7 @@ func logError(err error) {
 	}
 }
 
-// go playground: https://go.dev/play/p/pcnZKWMsbkI
+// go playground: https://go.dev/play/p/69ohYBFVPw-
 func main() {
 	err := returnError()
 
@@ -147,8 +152,8 @@ func main() {
 		println(false)
 	}
 
-	print("errors.Is(err, errAnyone): ")
-	if errors.Is(err, errAnyone) {
+	print("errors.Is(err, errAnyOne): ")
+	if errors.Is(err, errAnyOne) {
 		println(true)
 	} else {
 		println(false)
@@ -170,8 +175,8 @@ func main() {
 		println(false)
 	}
 
-	print("errors.Is(err, errAnyone): ")
-	if errors.Is(err, errAnyone) {
+	print("errors.Is(err, errAnyOne): ")
+	if errors.Is(err, errAnyOne) {
 		println(true)
 	} else {
 		println(false)
@@ -189,8 +194,8 @@ func main() {
 		println(false)
 	}
 
-	print("errors.Is(unwrapedError, errAnyone): ")
-	if errors.Is(unwrapedError, errAnyone) {
+	print("errors.Is(unwrapedError, errAnyOne): ")
+	if errors.Is(unwrapedError, errAnyOne) {
 		println(true)
 	} else {
 		println(false)
@@ -201,8 +206,8 @@ func main() {
 
 	// --------------------------------------------------
 
-	var structoneError *errStructone
-	err = returnStructError("structone error")
+	var structOneError errStructOne
+	err = returnStructError("structOne error")
 
 	println("\n----- returnStructError() -----")
 
@@ -213,8 +218,8 @@ func main() {
 		println(false)
 	}
 
-	print("errors.As(err, &structoneError): ")
-	if errors.As(err, &structoneError) {
+	print("errors.As(err, &structOneError): ")
+	if errors.As(err, &structOneError) {
 		println(true)
 	} else {
 		println(false)
@@ -225,7 +230,7 @@ func main() {
 
 	// --------------------------------------------------
 
-	err = returnWrapedStructError("structone error")
+	err = returnWrapedStructError("structOne error")
 
 	println("\n----- returnWrapedStructError() -----")
 
@@ -236,8 +241,8 @@ func main() {
 		println(false)
 	}
 
-	print("errors.As(err, &structoneError): ")
-	if errors.As(err, &structoneError) {
+	print("errors.As(err, &structOneError): ")
+	if errors.As(err, &structOneError) {
 		println(true)
 	} else {
 		println(false)
@@ -256,7 +261,7 @@ func main() {
 	}
 
 	print("errors.As(unwrapedError, &structError): ")
-	if errors.As(unwrapedError, &structoneError) {
+	if errors.As(unwrapedError, &structOneError) {
 		println(true)
 	} else {
 		println(false)
@@ -267,8 +272,8 @@ func main() {
 
 	println("\n##################################################")
 
-	err = errors.Join(errAnyone, errAnytwo)
-	println("\n----- errors.Join(errAnyone, errAnytwo) -----")
+	err = errors.Join(errAnyOne, errAnyTwo)
+	println("\n----- errors.Join(errAnyOne, errAnyTwo) -----")
 	logError(err)
 
 	// --------------------------------------------------
@@ -279,43 +284,43 @@ func main() {
 
 	// --------------------------------------------------
 
-	err = errAnyone
-	println("\n----- errAnyone -----")
+	err = errAnyOne
+	println("\n----- errAnyOne -----")
 	logError(err)
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("error occured: %w", errAnyone)
-	println("\n----- fmt.Errorf(\"error occured: %w\", errAnyone) -----")
+	err = fmt.Errorf("error occured: %w", errAnyOne)
+	println("\n----- fmt.Errorf(\"error occured: %w\", errAnyOne) -----")
 	logError(err)
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("%w", &errStructone{"structone error"})
-	println("\n----- fmt.Errorf(\"%w\", &errStructone{}) -----")
+	err = fmt.Errorf("%w", errStructOne{"structOne error"})
+	println("\n----- fmt.Errorf(\"%w\", errStructOne{}) -----")
 	logError(err)
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("%w: %w", errAnytwo, errAnyone)
-	println("\n----- fmt.Errorf(\"%w: %w\", errAnytwo, errAnyone) -----")
+	err = fmt.Errorf("%w: %w", errAnyTwo, errAnyOne)
+	println("\n----- fmt.Errorf(\"%w: %w\", errAnyTwo, errAnyOne) -----")
 	logError(err)
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("%w: %w", &errStructtwo{"error structtwo"}, &errStructone{"error structone"})
-	println("\n----- fmt.Errorf(\"%w: %w\", &errStructone{}, &errStructone{}) -----")
+	err = fmt.Errorf("%w: %w", errStructTwo{"error structTwo"}, errStructOne{"structOne error"})
+	println("\n----- fmt.Errorf(\"%w: %w\", errStructTwo{}, errStructOne{}) -----")
 	logError(err)
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("%w: %w: %w: %w", errAnytwo, &errStructone{"structone error"}, errors.New("new error"), errAnyone)
-	println("\n----- fmt.Errorf(\"%w: %w: %w: %w\", errAnytwo, &errStructone{}, errors.New(), errAnyone) -----")
+	err = fmt.Errorf("%w: %w: %w: %w", errAnyTwo, errStructOne{"structOne error"}, errors.New("new error"), errAnyOne)
+	println("\n----- fmt.Errorf(\"%w: %w: %w: %w\", errAnyTwo, errStructOne{}, errors.New(), errAnyOne) -----")
 	logError(err)
 
 	// --------------------------------------------------
 
-	// err = fmt.Errorf("%w: %w: %w: %w", errAnytwo, &errStructthree{"structthree error", errAnyone, errAnytwo}, errors.New("new error"), errAnyone)
-	// println("\n----- fmt.Errorf(\"%w: %w: %w: %w\", errAnytwo, &errStructthree{}, errors.New(), errAnyone) -----")
-	// logError(err)
+	err = fmt.Errorf("%w: %w: %w: %w", errAnyTwo, errStructThree{"structthree error", errAnyOne, errAnyTwo}, errors.New("new error"), errAnyOne)
+	println("\n----- fmt.Errorf(\"%w: %w: %w: %w\", errAnyTwo, errStructThree{}, errors.New(), errAnyOne) -----")
+	logError(err)
 }
