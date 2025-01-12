@@ -41,7 +41,7 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 ```
 
 Comandos:
-- `kubectl get [-A] [-v9] [-owide] [--show-labels] {pod|node|svc|endpoints|deployment|replicaset} [label-name]`
+- `kubectl get [-A] [-v9] [-owide] [--show-labels] {all|nodes|namespaces|deployments|replicasets|pods|services|endpoints|hpa|secrets} [label-name]`
     - lista os _pods/nodes/services/endpoints_
     - `-A`: todos os _namespaces_
     - `-v9`: full verbose
