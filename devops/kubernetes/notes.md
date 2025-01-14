@@ -113,3 +113,20 @@ Comandos:
 Quando um pod é criado com `run`, além de todas as coisas, ele recebe também uma _label_, que é basicamente um grupo no qual está insirido. Quando criamos um _deployment_, basicamente criamos vários pods com as mesma _label_, ou seja, estarão dentro do mesmo grupo, dessa forma, o _load balancer_ do Kubernetes começa a atuar pois, dessa forma, por de baixo dos panos, teremos um único _endpoit_, que será a _label_, então, o próprio Kubernetes cuidará de fazer os redirecionamento para os pods dentro desse grupo. A um nível maior na hierarquia do Kubernetes, os _namespaces_ também atuam como agrupadores.
 
 Por conta do _DNS_ do Kubernetes, a _label_ dos pods também serviram com seus nomes de domínios, ou seja, possibilitando coisas como `curl -iL <label-name>`. Para sistema fora da rede dos pods, podemos encontra-los como `http://<label-name>.<namespace>.svc[.cluster.local]`.
+
+## Helm
+
+Helm é um "gerenciador de pacotes" Kubernetes, no caso, ele atuará como se fosse um receita para todo um _cluster_, como se fosse um Dockerfile, que no caso do Helm, é chamado de _Chart_, porém, diferentemente de um Dockerfile, o Chart não é apenas uma arquivo... seria mais correto afirmar que é um _bundle_, que na prática será uma pasta contentdo todos os arquivos de configurações e manifestos Kubernetes para que o Helm crie o pacote.
+
+Versionadores remotos para pacotes Helm:
+
+- [Artifact Hub](https://artifacthub.io)
+- [Helm Charts](https://bitnami.com/stacks/helm)
+
+Helm CLI:
+
+- `helm install <helm> <url>`: cria um novo Helm
+- `helm uninstall <helm>`: desinstala um pacote
+- `helm create <helm>`: cria um novo chart
+- `helm package <helm>`: empacota o Helm criado
+- `helm list`: lista os Helm's instalados
