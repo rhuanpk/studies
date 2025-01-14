@@ -8,7 +8,42 @@ Para gerenciar o _cluster_ usamos o `kubectl`, ou seja, poderemos ver informaç�
 
 O **pod** é a menor "partícula" do Kubernetes. Dentro de um _node_ do Kubernetes (que lembrando é uma máquina), rodará pelo menos um **pod** e dentro dele rodará pelo menos um container Docker.
 
-## Kind
+## Componentes
+
+Esses são alguns dos componentes do Kubernetes:
+
+- **cluster**: junção do nó _node master_ com os _nodes workers_
+    - **node**: máquina física ou virtual, _on-premises_ ou _cloud_ que comporta um _master_ ou um _worker_
+        - **control-plane**: _node master_ que gerência todo o cluster, mantendo o estado correto do _cluster_
+            - **kube-apiserver**: a interface de comunicação (CLI/UI) com o _cluster_ (_control-plane_ > _data-plane_)
+            - **scheduler**: gerencia em qual _node_ os pods serão alocados
+            - **controller-manager**: gerencia o estado do _cluster_ garantindo que tudo está de pé como o configurado
+                - **hpa**: gerencia o número de réplicas com base no uso de RAM e CPU especificados
+                - **pdb**: número mínimo de _pods_ para interrupções voluntárias (manutenção do _node_ ou atualizações da aplicação)
+                - **cronjobs**: executa _jobs_ de tempos em tempos
+            - **etcd**: banco de dados do Kubernetes, armazena configurações e informações do _cluster_ (todos os manifestos?)
+                - **configmap**: guarda informações NÃO sigilosas como variáveis de ambiente
+                - **secrets**: guarda informações sigilosas como senhas e _strings_ de conexão
+        - **data-plane**: _node worker_ que mantem os recursos das aplicações que são gerenciadas pelo _control-plane_
+            - **kubelet**: gerencia os _containers_ (e seu estado) dentro de cada _node_
+            - **kube-proxy**: gerencia a **rede** e o **balanceamento de carga** dentro de cada _node_
+            - **namespaces**: **divide logicamente** o _node_ possibilitando gestão separada de recursos em ambientes isolados
+                - **deployment**: gerencia versões e **replicasets** da aplicação sem _downtime_
+                    - **replicaset**: gerencia **réplicas** dos _pods_
+                        - **pods**: a menor unidade do Kubernetes, contém **um ou vários containers**
+                            - **container**: _Docker_ com aplicação
+            - **probes**: _healthchecker_ que verifica a saúdo dos _pods/containers_
+            - **service**: abstração para um conjunto lógico de _pods_ com regras de acesso (**portas**)
+- **volumes**: volumes temporários (em tempo de _container_) ou persistentes para dados
+    - **persistent-volume**: os PVs são recursos reais de armazenamento, seja um disco físico ou um dispositivo virtual de armazenamento, é anexado ao _cluster_ mas que não serve para ser utilizado diretamente e, quando criado, aloca um tamanho virtual dentro do dispositivo vinculado, seja esse tamanho o próprio tamanho do disco ou menor
+    - **persistent-volume-claim**: os PVCs são volumes de tamanho fixo ou dinâmicos (se vinculado a um _storage-class_), anexados a pods que utilizam o espaço disponibilizado pelos PVs
+    - **storage-class**: os StorageClasses são configurações para fazer o alocamento de espaço dinâmico dos PVCs criando novos PVs se necessário
+
+## Ferramentas
+
+Há ferramentas externas e do próprio Kubernetes para trabalharmos.
+
+### Kind
 
 Instalação:
 ```sh
@@ -31,7 +66,7 @@ _Cluster_:
 1. "Suba" o _cluster_:
     `kind create cluster --config ./config.yaml`
 
-## KubeCTL
+### KubeCTL
 
 O `kubectl` procura pelo o arquivo `~/.kube/config` que é o arquivo de conexão com o _cluster_. Arquivo esse que é gerado automáticamente pelo `kind` por exemplo quando o _cluster_ é criado.
 
