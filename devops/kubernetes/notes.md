@@ -76,29 +76,39 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 ```
 
 Comandos:
-- `kubectl get [-A] [-v9] [-owide] [--show-labels] {all|nodes|namespaces|deployments|replicasets|pods|services|endpoints|hpa|secrets} [label-name]`
+- `kubectl cluster-info [dump]`: verifica informações do _cluster_
+- `kubectl proxy`: lista os _endpoints_ do próprio _cluster_
+- `kubectl apply [-f] {config.yml|folder}`: sobe a configuração pelo manifesto (arquivo de configuração)
+- `kubectl scale deployment <deployment> --replicas <count>`: define a quantidade de replicas para determinado _pod_
+- `kubectl delete [--all] <resource> [<id>]`: daleta o recurso especificado (pode acabar sendo recursivo)
+- `kubectl describe <resource> [<id>]`: exibe informações/logs sobre algum recurso/tipo de recurso
+- `kubectl rollout history deployment <deployment>`: lista o histórico de mudanças do _deployment_
+- `kubectl rollout undo deployment <deployment> --to-revision=<id>`: faz o _rollback_ da aplicação
+- `kubectl logs <pod>`: retorna os logs do _pod_ especificado
+- `kubectl get [-A] [-v9] [-owide] [-ojson] [-ojsonpath='{.data}'] [--watch] [--show-labels] {all|nodes|namespaces|deployments|replicasets|pods|services|endpoints|hpa|secrets} [label-name]`
     - lista os _pods/nodes/services/endpoints_
     - `-A`: todos os _namespaces_
     - `-v9`: full verbose
-    - `-owide`: mais verbosidade na saída
+    - `-owide`: mais campos na saída
+    - `-ojson`: formata a saída em JSON
+    - `-ojsonpath`: extrai informaçãos como JSON
+    - `--watch`: fica monitorando o comando executado
     - `--show-labels`: mostra as _labels_ dos _pods_
-- `kubectl run --image <dockerhub-image> [-it] [--dry-run -oyaml] <pod-name> [<command>] [> ./pod.yaml]`
+- `kubectl run [-it] [--dry-run -oyaml] --image <image> <pod> [<command>] [> ./pod.yaml]`
     - cria um novo _pod_
     - `-i`: executa de forma interativa
-    - `-t`: aloca um tty
+    - `-t`: aloca um _tty_
     - `--dry-run`: apenas executa o comando sem de fato subir o _pod_
     - `-oyaml`: _printa_ a configuração do comando executado em YAML
-- `kubectl create deployment --image <dockerhub-image> [--dry-run -oyaml] <deployment-name> [> ./deployment.yaml]`
+- `kubectl create [--dry-run -oyaml] deployment --image <image> <deployment> [> ./deployment.yaml]`
     - cria um novo _deployment_ > _replicaset_ > _pod_
     - `--dry-run`: apenas executa o comando sem de fato subir o _deployment_
     - `-oyaml`: _printa_ a configuração do comando executado em YAML
-- `kubectl expose deployment <deployment-name> --port <incoming-request-port> --target-port <outgoing-pod-port>`
+- `kubectl expose deployment <deployment> --port <incoming-port> --target-port <outgoing-port>`
     - cria um _service_ na frente de um _deployment_
-    - expõe a porta do _deployment_ para redirecionar a requisição a algum _pod_ que está escutando nessa mesma porta
-- `kubectl apply -f ./{pod|deployment}.yaml`: sobe a configuração pelo manifesto (arquivo de configuração)
-- `kubectl delete pod <pod-{name|id}>`: daleta um _pod_
-- `kubectl scale deployment <deployment-name> --replicas <count>`: define a quantidade de replica para determinado _pod_
-- `kubectl delete deployment <deployment-name>`: delete todo um _deployment_, suas replicas e _pods_
+    - expõe a porta do _deployment_ para redirecionar as requisições a algum _pod_ que está escutando nessa mesma porta
+    - `--port`: porta de entrada da requisição
+    - `--target-port`: porta de saída do _pod_
 
 Quando um pod é criado com `run`, além de todas as coisas, ele recebe também uma _label_, que é basicamente um grupo no qual está insirido. Quando criamos um _deployment_, basicamente criamos vários pods com as mesma _label_, ou seja, estarão dentro do mesmo grupo, dessa forma, o _load balancer_ do Kubernetes começa a atuar pois, dessa forma, por de baixo dos panos, teremos um único _endpoit_, que será a _label_, então, o próprio Kubernetes cuidará de fazer os redirecionamento para os pods dentro desse grupo. A um nível maior na hierarquia do Kubernetes, os _namespaces_ também atuam como agrupadores.
 
