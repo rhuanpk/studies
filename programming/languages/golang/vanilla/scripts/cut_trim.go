@@ -7,6 +7,7 @@ import (
 
 const str = `#abcdef,ghijklm,nopqrs,tuvwxyx#`
 
+// go playground: https://go.dev/play/p/OYJ-rXFK-jM
 func main() {
 	println("str :=", str)
 
