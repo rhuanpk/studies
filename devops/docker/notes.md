@@ -91,7 +91,56 @@ _REFERENCELINKS_:
 
 ## Tips & Tricks
 
-- Você pode referenciar algum container pelos 3 primeiros caracteres do seu _id_.
+- Você pode referenciar algum container pelos 3 primeiros caracteres do seu _id_
+
+### System Prune
+
+Diferença entre os _system prunes_:
+```
+docker system prune, will remove:
+- all stopped containers
+- all unused networks
+- all dangling images
+- all unused build caches
+
+docker system prune --all, will remove:
+- all unassociated images
+- all build cache
+
+docker system prune --volumes, will remove:
+- all unused anonymous volumes
+
+docker system prune --all --volumes, will remove:
+```
+
+E como são suas formas completas:
+```
+docker system prune, will remove:
+- all stopped containers
+- all unused networks
+- all dangling images
+- all unused build caches
+
+docker system prune --all, will remove:
+- all stopped containers
+- all unused networks
+- all unassociated images
+- all build cache
+
+docker system prune --volumes, will remove:
+- all stopped containers
+- all unused networks
+- all unused anonymous volumes
+- all dangling images
+- all unused build caches
+
+docker system prune --all --volumes, will remove:
+- all stopped containers
+- all unused networks
+- all unused anonymous volumes
+- all unassociated images
+- all build cache
+```
 
 ## Warnings
 
@@ -120,8 +169,9 @@ docker rm -f `docker container ls -aq`
 
 ---
 
-## MySQL
+## Images
 
-### Env Vars
+### MySQL
 
+Variáveis de ambiente:
 - `MYSQL_DATABASE`: Define o nome de um _database_ para ser criado junto com a criação do container, ou seja, caso o banco seja _dropado_ é necessário remover e recriar o container. Caso esteja usando volumes isso não resolverá, terá que remover e recriar o volume também.
