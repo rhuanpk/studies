@@ -37,6 +37,7 @@
 Linguagem compilada:
 1. Código Fonte
 1. Compilador
+1. ~Linker~
 1. Executável
 1. Máquina
 
