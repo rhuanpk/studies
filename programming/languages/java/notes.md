@@ -34,6 +34,37 @@
 
 ## Funcionamento
 
+Linguagem compilada:
+1. Código Fonte
+
+    ↓
+1. Compilador
+
+    ↓
+1. Executável
+
+    ↓
+1. Máquina
+
+OBS: um compilador para cada sistema
+
+Linguagem Java:
+1. Código Fonte
+
+    ↓
+1. Compilador (JavaC)
+
+    ↓
+1. Bytecode
+
+    ↓
+1. "Interpretador" (JVM)
+
+    ↓
+1. Máquina
+
+OBS: uma JVM para cada sistema (respectivas versões)
+
 ---
 
 ## Links
