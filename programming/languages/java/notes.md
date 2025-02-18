@@ -1,7 +1,9 @@
-# java notes
+# Java
 
-## links
+---
 
-- [custom exceptions¹](https://www.scaler.com/topics/custom-exception-in-java/);
-- [custom exceptions²](https://alvinalexander.com/java/java-custom-exception-create-throw-exception/);
-- [super _keyword_](https://alvinalexander.com/java/java-custom-exception-create-throw-exception/);
+## Links
+
+- [Custom Exceptions¹](https://www.scaler.com/topics/custom-exception-in-java/)
+- [Custom Exceptions²](https://alvinalexander.com/java/java-custom-exception-create-throw-exception/)
+- [The `super` _keyword_](https://alvinalexander.com/java/java-custom-exception-create-throw-exception/)
