@@ -62,13 +62,13 @@ O JRE (Java Runtime Environment) sozinho é destinado apenas para **usuários** 
 
 O JRE é composta por:
 - JVM
-    - Loader: carrega o bytecode na memória
-    - Verifier: verificar se o programa pode ser executado
-    - Interpreter: transforma o bytecode em código p/ máquina host
-    - Manager: gerenciador de memória (da JVM)
-    - JIT Compiler: otimiza o programa indentificando padrões
+    - Loader: Carrega o bytecode na memória
+    - Verifier: Verificar se o programa pode ser executado
+    - Interpreter: Transforma o bytecode em código p/ máquina host
+    - Manager: Gerenciador de memória (da JVM)
+    - JIT Compiler: Otimiza o programa indentificando padrões
 - Bibliotecas
-    - Libs/APIs: que o programa usa
+    - Libs/APIs: Que o programa usa
 
 ### JDK
 
@@ -76,10 +76,16 @@ O JDK (Java Development Kit) é literalmente o _kit_ com todas as coisas necess�
 
 O JDK é composto por:
 - JRE
-- JavaLang: a própria linguagem Java
+- JavaLang: A própria linguagem Java
 - JavaTools
-    - JavaC: compilador Java
-    - Debugger: verificar o programa em tempo real
+    - JavaC: Compilador Java
+    - Debugger: Verificar o programa em tempo real
+
+### Versões
+
+- SE (Standard Edition): Aplicações Backend e Frontend end
+- EE (Enterprise Edition): Recursos para aplicações de larga escala
+- ME (Micro Edition): Aplicações para dispositivos portáteis
 
 ---
 
