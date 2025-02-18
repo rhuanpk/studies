@@ -51,6 +51,35 @@ Linguagem Java:
 
 OBS: uma JVM para cada sistema (respectivas versões)
 
+Conceito WORA (Write Once, Run Anywhere) é o princípio da linguagem Java.
+
+## Plataforma
+
+### JRE
+
+O JRE (Java Runtime Environment) sozinho é destinado apenas para **usuários** de qualquer sistema Java, pois, é nele que contem a JVM (sistema que executa o binário do Java (Bytecode)).
+
+O JRE é composta por:
+- JVM
+    - Loader: carrega o bytecode na memória
+    - Verifier: verificar se o programa pode ser executado
+    - Interpreter: transforma o bytecode em código p/ máquina host
+    - Manager: gerenciador de memória (da JVM)
+    - JIT Compiler: otimiza o programa indentificando padrões
+- Bibliotecas
+    - Libs/APIs: que o programa usa
+
+### JDK
+
+O JDK (Java Development Kit) é literalmente o _kit_ com todas as coisas necessárias para **desenvolvedores** criarem apliações em Java, pois, além de dentro dele contem a JRE, possúi a própria linguagem Java (JavaLang) e ferramente de desenvolvimento como compiladores e _debuggers_.
+
+O JDK é composto por:
+- JRE
+- JavaLang: a própria linguagem Java
+- JavaTools
+    - JavaC: compilador Java
+    - Debugger: verificar o programa em tempo real
+
 ---
 
 ## Links
