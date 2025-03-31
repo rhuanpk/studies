@@ -87,6 +87,31 @@ O JDK é composto por:
 - EE (Enterprise Edition): Recursos para aplicações de larga escala
 - ME (Micro Edition): Aplicações para dispositivos portáteis
 
+## Linguagem
+
+Anotações sobre a própria linguagem como convenções e código.
+
+### Nomenclatura
+
+1. Classes e Interfaces: `PascalCase`
+1. Atributos e Métodos: `camelCase`
+1. Pacotes: `flatcase`
+1. Constantes: `SCREAMING_SNAKE_CASE`
+
+### Code
+
+<details>
+<summary>Hello World!</summary>
+
+```java
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+}
+```
+</details>
+
 ---
 
 ## Links
