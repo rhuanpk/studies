@@ -170,6 +170,7 @@ Comandos:
 - `mvn deploy`: Empurra os pacotes/artefatos para o repositório remoto
 - `mvn validate`: Verifica a integridade do projeto
 - `mvn verify`: Executa os Testes Unitários e verifica a qualidade
+- `mvn clean compile assembly:single`: Gera o JAR executável (_runnable_)
 
 ---
 
