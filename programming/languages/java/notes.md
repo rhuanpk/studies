@@ -101,12 +101,12 @@ Anotações sobre a própria linguagem como convenções e código.
 ### Code
 
 <details>
-<summary>Hello World!</summary>
+<summary>Hello World</summary>
 
 ```java
 public class HelloWorld {
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
+		System.out.println("Hello World");
 	}
 }
 ```
@@ -118,7 +118,9 @@ Anotações sobre _Package Managers_.
 
 ### Maven
 
-Exemplo de `pom.xml`:
+<details>
+<summary>Exemplo de <code>pom.xml</code></summary>
+
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -131,6 +133,23 @@ Exemplo de `pom.xml`:
     <maven.compiler.target>21</maven.compiler.target>
     <maven.compiler.source>21</maven.compiler.source>
   </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>fully.qualified.Main</mainClass>
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <dependencies>
     <dependency>
       <groupId>id.group</groupId>
@@ -140,6 +159,17 @@ Exemplo de `pom.xml`:
   </dependencies>
 </project>
 ```
+</details>
+
+Comandos:
+- `mvn clean`: Limpa o projeto deletando a pasta _target_ (onde fica todo o _output_ de artefatos)
+- `mvn compile`: Baixa as dependências e compila o projeto (gera os _.class/bytecodes_ na pasta _target_)
+- `mvn test`: Executa o `compile` e depois os Testes Unitários com a ferramenta de testes configurada
+- `mvn package`: Executa o `test` e depois “builda” o projeto (gera os pacotes JAR, WAR)
+- `mvn install`: Executa o `package` e depois salva o pacote no repositório local
+- `mvn deploy`: Empurra os pacotes/artefatos para o repositório remoto
+- `mvn validate`: Verifica a integridade do projeto
+- `mvn verify`: Executa os Testes Unitários e verifica a qualidade
 
 ---
 
