@@ -112,6 +112,35 @@ public class HelloWorld {
 ```
 </details>
 
+## Pacotes
+
+Anotações sobre _Package Managers_.
+
+### Maven
+
+Exemplo de `pom.xml`:
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.rhuanpk</groupId>
+  <artifactId>test</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>id.group</groupId>
+      <artifactId>artifact</artifactId>
+      <version>0.0.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
 ---
 
 ## Links
