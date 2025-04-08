@@ -107,7 +107,7 @@ _Built-in's_:
 
 #### Swing
 
-Bibliotéca para criação de janelas gráficas. Foi derivada da AWT (Abstract Window Toolkit).
+Bibliotéca para criação de janelas gráficas (que contém as classes `J*`, como `JFrame`, `JPanel` e etc). Foi derivada da AWT (Abstract Window Toolkit).
 
 A bibliotéca original AWT tem como principal característica deixar com que o sistema operacional desenhe a interface gráfica, já Swing tem seus próprios componentes gráficos (o que padroniza a aparência das aplicações independente do Sistema Operacional).
 
