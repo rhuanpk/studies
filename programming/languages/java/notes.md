@@ -91,6 +91,26 @@ O JDK é composto por:
 
 Anotações sobre a própria linguagem como convenções e código.
 
+### Base
+
+_Built-in's_:
+- `java.lang`: Código base da linguagem Java
+- `java.applet`: Classes para criar aplicativos
+- `java.util`: Classes para utilitários básicos (como I/O)
+- `java.math`: Classes para operações matemáticas
+- `java.net`: Classes para recursos de redes
+- `java.awt`: Classes para gerar aplicações gráficas
+- `javax.sound`: Classes para recursos de som
+- `javax.media`: Classes para recursos de mídias
+- `javax.swing`: Classes para gerar aplicações gráficas
+- `javafx.fxml`: Classes para gerar aplicações gráficas
+
+#### Swing
+
+Bibliotéca para criação de janelas gráficas. Foi derivada da AWT (Abstract Window Toolkit).
+
+A bibliotéca original AWT tem como principal característica deixar com que o sistema operacional desenhe a interface gráfica, já Swing tem seus próprios componentes gráficos (o que padroniza a aparência das aplicações independente do Sistema Operacional).
+
 ### Nomenclatura
 
 1. Classes e Interfaces: `PascalCase`
