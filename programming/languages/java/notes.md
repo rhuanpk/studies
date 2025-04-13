@@ -111,6 +111,12 @@ Bibliotéca para criação de janelas gráficas (que contém as classes `J*`, co
 
 A bibliotéca original AWT tem como principal característica deixar com que o sistema operacional desenhe a interface gráfica, já Swing tem seus próprios componentes gráficos (o que padroniza a aparência das aplicações independente do Sistema Operacional).
 
+#### JavaFX
+
+Da mesma forma que o Swing foi uma evolução do AWT, o JavaFX é evolução do Swing.
+
+A principal diferença entre o JavaFX e sua base é que diferentemente da sua base, o JavaFX consegue renderizar janelas para qualquer tipo de plataforma (Desktop, Mobile, Browsers, Consoles, TV's e etc).
+
 ### Nomenclatura
 
 1. Classes e Interfaces: `PascalCase`
