@@ -103,6 +103,10 @@ Tidy:
 
 - `[GIT_PROMPT=1] go mod tidy`: Atualização automática das dependencias.
 
+Playground:
+
+-  `goplay -openbrowser=<bool> -run=<bool> -share=<bool> /path/to/file.go`
+
 ---
 
 _REFERENCELINKS_:
