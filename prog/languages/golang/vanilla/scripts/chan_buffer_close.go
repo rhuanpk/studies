@@ -155,6 +155,7 @@ func seventh() {
 	fmt.Println("chan returns:", value, ok)
 }
 
+// go playground: https://go.dev/play/p/lIBsgtxzsh2
 func main() {
 	first()
 	println()
