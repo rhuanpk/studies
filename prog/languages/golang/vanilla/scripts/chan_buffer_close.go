@@ -15,7 +15,7 @@ func init() {
 }
 
 func first() {
-	ch := make(chan int) // chan buffer = 0
+	ch := make(chan int) // chan buffer = 0 (unbuffered)
 	fmt.Println("chan memory address:", ch)
 
 	// // infinitily waiting because chan does not have scape in buffer to
@@ -145,7 +145,7 @@ func sixth() {
 }
 
 func seventh() {
-	ch := make(chan int) // chan buffer = 0
+	ch := make(chan int) // chan buffer = 0 (unbuffered)
 	fmt.Println("chan memory address:", ch)
 
 	close(ch)
@@ -155,7 +155,31 @@ func seventh() {
 	fmt.Println("chan returns:", value, ok)
 }
 
-// go playground: https://go.dev/play/p/lIBsgtxzsh2
+func eighth() {
+	ch := make(chan int) // chan buffer = 0 (unbuffered)
+	fmt.Println("chan memory address:", ch)
+
+	// unbuffered chans must link the sender and receiver before perform
+	go func() {
+		ch <- 1
+	}()
+	value, ok := <-ch
+	fmt.Println("chan returns:", value, ok)
+}
+
+func ninth() {
+	ch := make(chan int) // chan buffer = 0 (unbuffered)
+	fmt.Println("chan memory address:", ch)
+
+	// unbuffered chans must link the sender and receiver before perform
+	go func() {
+		value, ok := <-ch
+		fmt.Println("chan returns:", value, ok)
+	}()
+	ch <- 1
+}
+
+// go playground: https://go.dev/play/p/gxUCbGgx1jj
 func main() {
 	first()
 	println()
@@ -170,4 +194,8 @@ func main() {
 	sixth()
 	println()
 	seventh()
+	println()
+	eighth()
+	println()
+	ninth()
 }
