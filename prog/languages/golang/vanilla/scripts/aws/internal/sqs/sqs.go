@@ -1,35 +1,26 @@
-package main
+package sqs
 
 import (
 	"context"
 	"log"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
-	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/sqs"
 	"github.com/aws/aws-sdk-go-v2/service/sqs/types"
 )
 
-const queueName = "myqueue"
-
-var ctx = context.Background()
-
-func getClient() *sqs.Client {
-	// ~/.aws/config and ~/.aws/credentials
-	cfg, err := config.LoadDefaultConfig(ctx)
-	if err != nil {
-		log.Fatalln("error in load default configs:", err)
-	}
-
+// GetClient get a new sqs client.
+func GetClient(cfg aws.Config) *sqs.Client {
 	return sqs.NewFromConfig(cfg)
 }
 
-func listQueues(client sqs.ListQueuesAPIClient, params *sqs.ListQueuesInput) []string {
+// ListQueues list all sqs queues names.
+func ListQueues(client sqs.ListQueuesAPIClient, params *sqs.ListQueuesInput) []string {
 	var queueURLs []string
 	paginator := sqs.NewListQueuesPaginator(client, params)
 
 	for paginator.HasMorePages() {
-		page, err := paginator.NextPage(ctx)
+		page, err := paginator.NextPage(context.Background())
 		if err != nil {
 			log.Fatalln("error in get next sqs page")
 		}
@@ -41,8 +32,9 @@ func listQueues(client sqs.ListQueuesAPIClient, params *sqs.ListQueuesInput) []s
 	return queueURLs
 }
 
-func listMessages(client *sqs.Client, queueURL string) []types.Message {
-	out, err := client.ReceiveMessage(ctx, &sqs.ReceiveMessageInput{
+// ListMessages list all messages in a sqs queue.
+func ListMessages(client *sqs.Client, queueURL string) []types.Message {
+	out, err := client.ReceiveMessage(context.Background(), &sqs.ReceiveMessageInput{
 		QueueUrl:            aws.String(queueURL),
 		MaxNumberOfMessages: 10,
 	})
@@ -58,19 +50,12 @@ func listMessages(client *sqs.Client, queueURL string) []types.Message {
 	return out.Messages
 }
 
-func deleteMessage(client *sqs.Client, queueURL, receiptHandle string) {
-	if _, err := client.DeleteMessage(ctx, &sqs.DeleteMessageInput{
+// DeleteMessage deletes a message from sqs queue.
+func DeleteMessage(client *sqs.Client, queueURL, receiptHandle string) {
+	if _, err := client.DeleteMessage(context.Background(), &sqs.DeleteMessageInput{
 		QueueUrl:      aws.String(queueURL),
 		ReceiptHandle: aws.String(receiptHandle),
 	}); err != nil {
 		log.Fatalln("error in delete sqs message:", err)
 	}
-}
-
-func main() {
-	client := getClient()
-	// listQueues(client, &sqs.ListQueuesInput{QueueNamePrefix: aws.String(queueName)})
-	listQueues(client, nil)
-	listMessages(client, "queueURL")
-	deleteMessage(client, "queueURL", "receiptHandle")
 }
