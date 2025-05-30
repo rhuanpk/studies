@@ -26,15 +26,15 @@ func main() {
 	aux := "hello"
 	fmt.Printf("\n2 step -> aux := \"hello\"\n\t- &aux (ptr): %v; aux (val): %#v\n", &aux, aux)
 
-	// 3. atribuímos o ponteiro da variável `aux` para o ponteiro `foo`, ou seja
+	// 3. atribuímos o endereço da variável `aux` para o ponteiro `foo`, ou seja
 	// , agora o ponteiro `foo` aponta para o mesmo endereço de memória da
 	// variável `aux` (&aux)
 	foo = &aux
 	fmt.Printf("\n3 step -> foo = &aux\n\t- foo (val): %v; *foo (drf): %#v\n\t- &aux (ptr): %v; aux (val): %#v\n", foo, *foo, &aux, aux)
 
-	// 4. agora, independendo se alterarmos o espeço na memória de `*foo` quanto
-	// de `aux`, o valor se refletirá em ambos pois, ambos (`foo` e `&bar`)
-	// apontam para o mesmo endereço na memória
+	// 4. agora, independente se alterarmos o espeço na memória de `*foo` quanto
+	// de `aux`, o valor se refletirá em ambos pois, ambos apontam para o mesmo
+	// endereço na memória
 	aux = "world"
 	fmt.Printf("\n4 step -> aux = \"world\"\n\t- foo (val): %v; *foo (drf): %#v\n\t- &aux (ptr): %v; aux (val): %#v\n", foo, *foo, &aux, aux)
 	*foo = "xpto"
@@ -66,9 +66,9 @@ func main() {
 	// nil pointer dereference" (segfault) pois, se ainda não o inicializamos,
 	// o valor do ponteiro (que é um endereço de memória) está nil, ou seja,
 	// como não há valor algum, não está apontando para lugar nenhum na memória,
-	// então quando desreferênciamos o ponteiro (acessamos o espaço na memória
-	// no qual o ponteiro aponta) ele não existe, então como podemos atribuir
-	// valor num espaço na memória que não existe?
+	// então quando desreferênciamos o ponteiro (ou seja, acessamos o espaço na memória
+	// no qual o ponteiro aponta), ele não existe, então como podemos atribuir
+	// valor num espaço da memória que não existe?
 	var baz *any = new(any)
 	fmt.Printf("\n2 step -> var baz *any = new(any)\n\t- &baz (ptr): %v; baz (val): %#v; *baz (drf): %#v\n", &baz, baz, *baz)
 }
