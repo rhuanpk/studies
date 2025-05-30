@@ -11,7 +11,7 @@ import "fmt"
 // por exemplo, num _for-range_, Go consegue lidar tranquilamente com uma
 // _slice_ `nil` (basicamente não haverá nenhuma iteração).
 
-// go playground: https://go.dev/play/p/8eLOPap_D-S
+// go playground: https://go.dev/play/p/QeQ1fa-NGxQ
 func main() {
 	println("-----> first example <-----")
 	// 1. declaramos `foo` como um tipo ponteiro de string, ou seja, `foo`
@@ -71,4 +71,7 @@ func main() {
 	// valor num espaço da memória que não existe?
 	var baz *any = new(any)
 	fmt.Printf("\n2 step -> var baz *any = new(any)\n\t- &baz (ptr): %v; baz (val): %#v; *baz (drf): %#v\n", &baz, baz, *baz)
+
+	println("\n-----> observation <-----")
+	fmt.Println("\n- you can understand \"ptr\" as \"addr\"")
 }
