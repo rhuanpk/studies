@@ -6,6 +6,12 @@ import (
 	"strings"
 )
 
+type Response struct {
+	Success bool   `json:"success"`
+	Message string `json:"message,omitempty"`
+	Data    any    `json:"data,omitempty"`
+}
+
 type layer string
 
 var (
@@ -21,6 +27,15 @@ var (
 	ErrCheck      = errors.New("checking failed")
 )
 
+func HasAnyTheseErrors(err error, targets ...error) bool {
+	for _, target := range targets {
+		if errors.Is(err, target) {
+			return true
+		}
+	}
+	return false
+}
+
 func hasLayer(layer layer, errors ...error) bool {
 	var errStrings []string
 	for _, err := range errors {
@@ -30,8 +45,10 @@ func hasLayer(layer layer, errors ...error) bool {
 }
 
 func BuildErrorLog(layer layer, funcName, message string, errors ...error) error {
-	corner := "└─"
-	vertical := "├─"
+	const (
+		corner   = "└─"
+		vertical = "├─"
+	)
 
 	var tabs string
 	switch layer {
