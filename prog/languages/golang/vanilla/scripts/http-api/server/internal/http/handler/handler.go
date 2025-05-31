@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"dev/internal/controller/user"
+	"dev/internal/http/controller/user"
 )
 
 // Setup setups the api endpoints.
