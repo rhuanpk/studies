@@ -7,12 +7,7 @@ type obj struct {
 	field2 *int
 }
 
-// type jbo struct {
-// 	field3 float64
-// 	field4 *bool
-// }
-
-// go playground: https://go.dev/play/p/0DuphfW3a4A 
+// go playground: https://go.dev/play/p/CRvzB__jO-k
 func main() {
 	var foo obj
 	var bar *obj
@@ -31,17 +26,6 @@ func main() {
 
 	fmt.Printf(
 		"%#v\n---\n%#v\n---\n%#v\n---\n%#v\n**********\n%#v\n---\n%#v\n---\n%#v\n---\n%#v\n**********\n%#v\n---\n%#v\n---\n%#v\n---\n%#v\n",
-		foo,
-		bar,
-		boo,
-		baz,
-		xpto1,
-		xpto2,
-		xpto3,
-		xpto4,
-		array1,
-		array2,
-		array3,
-		array4,
+		foo, bar, boo, baz, xpto1, xpto2, xpto3, xpto4, array1, array2, array3, array4,
 	)
 }
