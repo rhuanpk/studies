@@ -49,6 +49,7 @@ func log(prefix string, err error) {
 	}
 }
 
+// go playground: https://go.dev/play/p/qtbDZBGtYiL
 func main() {
 	errOne := returnErrOne()
 	errTwo := returnErrTwo()

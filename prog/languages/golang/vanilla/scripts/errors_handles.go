@@ -139,7 +139,7 @@ func logError(err error) {
 	}
 }
 
-// go playground:
+// go playground: https://go.dev/play/p/76VYLovvO5V
 func main() {
 	err := returnError()
 
