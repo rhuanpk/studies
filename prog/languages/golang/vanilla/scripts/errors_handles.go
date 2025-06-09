@@ -139,11 +139,11 @@ func logError(err error) {
 	}
 }
 
-// go playground: https://go.dev/play/p/69ohYBFVPw-
+// go playground:
 func main() {
 	err := returnError()
 
-	println("----- returnError() -----")
+	println("----- err := returnError() -----")
 
 	print("err != nil: ")
 	if err != nil {
@@ -166,7 +166,7 @@ func main() {
 
 	err = returnWrapedError()
 
-	println("\n----- returnWrapedError() -----")
+	println("\n----- err = returnWrapedError() -----")
 
 	print("err != nil: ")
 	if err != nil {
@@ -207,9 +207,9 @@ func main() {
 	// --------------------------------------------------
 
 	var structOneError errStructOne
-	err = returnStructError("structOne error")
+	err = returnStructError("structone error")
 
-	println("\n----- returnStructError() -----")
+	println("\n----- err = returnStructError() -----")
 
 	print("err != nil: ")
 	if err != nil {
@@ -230,9 +230,9 @@ func main() {
 
 	// --------------------------------------------------
 
-	err = returnWrapedStructError("structOne error")
+	err = returnWrapedStructError("structone error")
 
-	println("\n----- returnWrapedStructError() -----")
+	println("\n----- err = returnWrapedStructError() -----")
 
 	print("err != nil: ")
 	if err != nil {
@@ -272,14 +272,8 @@ func main() {
 
 	println("\n##################################################")
 
-	err = errors.Join(errAnyOne, errAnyTwo)
-	println("\n----- errors.Join(errAnyOne, errAnyTwo) -----")
-	logError(err)
-
-	// --------------------------------------------------
-
 	err = errors.New("new error")
-	println("\n----- errors.New() -----")
+	println("\n----- errors.New(\"new error\") -----")
 	logError(err)
 
 	// --------------------------------------------------
@@ -290,13 +284,31 @@ func main() {
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("error occured: %w", errAnyOne)
-	println("\n----- fmt.Errorf(\"error occured: %w\", errAnyOne) -----")
+	err = errors.Join(errAnyOne, errAnyTwo)
+	println("\n----- errors.Join(errAnyOne, errAnyTwo) -----")
 	logError(err)
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("%w", errStructOne{"structOne error"})
+	err = errors.Join(errAnyOne, errStructOne{"structone error"})
+	println("\n----- errors.Join(errAnyOne, errStructOne{}) -----")
+	logError(err)
+
+	// --------------------------------------------------
+
+	err = errors.Join(errStructOne{"structone error"}, errStructThree{"structthree error", errAnyOne, errAnyTwo})
+	println("\n----- errors.Join(errStructOne{}, errStructThree{}) -----")
+	logError(err)
+
+	// --------------------------------------------------
+
+	err = fmt.Errorf("%w", errAnyOne)
+	println("\n----- fmt.Errorf(\"%w\", errAnyOne) -----")
+	logError(err)
+
+	// --------------------------------------------------
+
+	err = fmt.Errorf("%w", errStructOne{"structone error"})
 	println("\n----- fmt.Errorf(\"%w\", errStructOne{}) -----")
 	logError(err)
 
@@ -308,13 +320,13 @@ func main() {
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("%w: %w", errStructTwo{"error structTwo"}, errStructOne{"structOne error"})
+	err = fmt.Errorf("%w: %w", errStructTwo{"error structTwo"}, errStructOne{"structone error"})
 	println("\n----- fmt.Errorf(\"%w: %w\", errStructTwo{}, errStructOne{}) -----")
 	logError(err)
 
 	// --------------------------------------------------
 
-	err = fmt.Errorf("%w: %w: %w: %w", errAnyTwo, errStructOne{"structOne error"}, errors.New("new error"), errAnyOne)
+	err = fmt.Errorf("%w: %w: %w: %w", errAnyTwo, errStructOne{"structone error"}, errors.New("new error"), errAnyOne)
 	println("\n----- fmt.Errorf(\"%w: %w: %w: %w\", errAnyTwo, errStructOne{}, errors.New(), errAnyOne) -----")
 	logError(err)
 
