@@ -107,6 +107,10 @@ Playground:
 
 -  `goplay -openbrowser=<bool> -run=<bool> -share=<bool> /path/to/file.go`
 
+Build:
+
+- `GOOS={windows|darwin|linux} GOARCH={amd64|arm64} go build -ldflags '-s -w' -o ./app.{exe|app|bin} ./main.go`
+
 ---
 
 _REFERENCELINKS_:
