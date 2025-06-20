@@ -91,25 +91,31 @@ Quando a conexão é estabelecida com o `http.Handler` o *handler* fica aberto e
 
 Env:
 
-- `go env`: Lista todas as variáveis de ambiente Go;
-- `go env <ENV>`: Retorna o valor da variável de ambient especificada;
-- `go env -w <ENV>=<value>`: Atualiza o valor de uma variável de ambiente Go e caso não exista, será criada;
+- `go env`: Lista todas as variáveis de ambiente Go
+- `go env <ENV>`: Retorna o valor da variável de ambient especificada
+- `go env -w <ENV>=<value>`: Atualiza o valor de uma variável de ambiente Go e caso não exista, será criada
 
 Get:
 
-- `[GOPROXY=direct] go get -u [-t all]`: Atualiza todos os pacotes do módulo.
+- `[GOPROXY=direct] go get -u <url>`: Atualiza ou baixa algum módulo
+- `[GOPROXY=direct] go get -u -t all`: Atualiza todos os módulos
 
-Tidy:
+Mod:
 
-- `[GIT_PROMPT=1] go mod tidy`: Atualização automática das dependencias.
+- `[GIT_PROMPT=1] go mod tidy`: Baixa automáticamente módulos declarados nos imports, remove os não usados e organizado o `go.mod`
+- `go mod edit -module <path>`: Edita o caminho do módulo
 
-Playground:
+Clean:
 
--  `goplay -openbrowser=<bool> -run=<bool> -share=<bool> /path/to/file.go`
+- `go clean [-r] -cache -modcache -testcache -fuzzcache`: Limpa/Remove todos o cache de módulos
 
 Build:
 
 - `GOOS={windows|darwin|linux} GOARCH={amd64|arm64} go build -ldflags '-s -w' -o ./app.{exe|app|bin} ./main.go`
+
+Playground:
+
+-  `goplay -openbrowser=<bool> -run=<bool> -share=<bool> /path/to/file.go`
 
 ---
 
