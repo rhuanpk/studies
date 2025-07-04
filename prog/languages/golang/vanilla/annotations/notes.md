@@ -95,15 +95,20 @@ Env:
 - `go env <ENV>`: Retorna o valor da variável de ambient especificada
 - `go env -w <ENV>=<value>`: Atualiza o valor de uma variável de ambiente Go e caso não exista, será criada
 
+List:
+
+- `go list -u -m all`: Lista todas as dependências com atualizações disponíveis
+
 Get:
 
-- `[GOPROXY=direct] go get -u <url>`: Atualiza ou baixa algum módulo
-- `[GOPROXY=direct] go get -u -t all`: Atualiza todos os módulos
+- `[GOPROXY=direct] go get [-u] <url>`: Atualiza ou baixa algum módulo
+- `[GOPROXY=direct] go get [-u] [-t] all`: Atualiza todos os módulos
 
 Mod:
 
 - `[GIT_PROMPT=1] go mod tidy`: Baixa automáticamente módulos declarados nos imports, remove os não usados e organizado o `go.mod`
 - `go mod edit -module <path>`: Edita o caminho do módulo
+- `go mod edit -go <version>`: Edita a versão do módulo
 
 Clean:
 
@@ -115,7 +120,14 @@ Build:
 
 Playground:
 
--  `goplay -openbrowser=<bool> -run=<bool> -share=<bool> /path/to/file.go`
+- `goplay -openbrowser=<bool> -run=<bool> -share=<bool> /path/to/file.go`
+
+### Pipelines
+
+Atualiza todas as dependências do projeto:
+```
+go list -u -m all && go get -u -t ./... && go get -u -t all && go mod tidy
+```
 
 ---
 
