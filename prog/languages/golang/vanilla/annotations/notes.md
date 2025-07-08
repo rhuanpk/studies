@@ -126,8 +126,10 @@ Playground:
 
 Atualiza todas as dependências do projeto:
 ```
-go list -u -m all && go get -u -t ./... && go get -u -t all && go mod tidy
+[go clean -modcache &&] go list -u -m all && go get -u -t ./... && go get -u -t all && go mod tidy
 ```
+
+OBS: Pode ser que alguma dependência não seja atualizada no `go.mod` pois necessita de uma versão mais recento do Go.
 
 ---
 
