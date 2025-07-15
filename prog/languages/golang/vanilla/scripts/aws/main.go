@@ -1,7 +1,7 @@
 package main
 
 import (
-	"dev/internal/config"
+	"dev/internal/cfg"
 	s3Service "dev/internal/s3"
 	sqsService "dev/internal/sqs"
 
@@ -12,7 +12,7 @@ import (
 
 func s3Execs() {
 	const bucketName = "mybucket"
-	s3Client := s3Service.GetClient(config.GetConfig())
+	s3Client := s3Service.GetClient(cfg.GetConfig())
 
 	s3Service.ListObjects(s3Client, &s3.ListObjectsV2Input{
 		Bucket: aws.String(bucketName),
@@ -34,7 +34,7 @@ func s3Execs() {
 
 func sqsExecs() {
 	const queueName = "myqueue"
-	sqsClient := sqsService.GetClient(config.GetConfig())
+	sqsClient := sqsService.GetClient(cfg.GetConfig())
 
 	sqsService.ListQueues(sqsClient, &sqs.ListQueuesInput{
 		QueueNamePrefix: aws.String(queueName),
