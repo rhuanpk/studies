@@ -50,7 +50,7 @@ func ListObjectsPaginator(client *s3.Client, params *s3.ListObjectsV2Input) {
 }
 
 // GetObject get a single object from s3.
-func GetObject(fileName string, client *s3.Client, params *s3.GetObjectInput) {
+func GetObject(client *s3.Client, fileName string, params *s3.GetObjectInput) {
 	obj, err := client.GetObject(context.Background(), params)
 	if err != nil {
 		log.Fatalln("error in get s3 object:", err)
@@ -69,7 +69,7 @@ func GetObject(fileName string, client *s3.Client, params *s3.GetObjectInput) {
 }
 
 // DownloadObject downloads a s3 object to the local machine.
-func DownloadObject(fileName string, client manager.DownloadAPIClient, input *s3.GetObjectInput) {
+func DownloadObject(client manager.DownloadAPIClient, fileName string, input *s3.GetObjectInput) {
 	file, err := os.Create(fileName)
 	if err != nil {
 		log.Fatalln("error in os create file:", err)

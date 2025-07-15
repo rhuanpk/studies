@@ -22,11 +22,11 @@ func s3Execs() {
 		Bucket: aws.String(bucketName),
 		// Prefix: aws.String("path"),
 	})
-	s3Service.GetObject("file.any", s3Client, &s3.GetObjectInput{
+	s3Service.GetObject(s3Client, "file.any", &s3.GetObjectInput{
 		Bucket: aws.String(bucketName),
 		Key:    aws.String("path/file.any"),
 	})
-	s3Service.DownloadObject("file.any", s3Client, &s3.GetObjectInput{
+	s3Service.DownloadObject(s3Client, "file.any", &s3.GetObjectInput{
 		Bucket: aws.String(bucketName),
 		Key:    aws.String("path/file.any"),
 	})
