@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+	<title>Float</title>
+	<meta charset="utf-8">
+
+	<style>
+		#container {
+			background: #ccc;
+			width: 75%;
+			padding: 15px;
+			/* overflow: auto; */
+		}
+
+		#container div {
+			width: 150px;
+			height: 50px;
+			margin: 5px;
+			border: 2px solid red;
+		}
+
+		#div1 {
+			/* float: left; */
+			/* float: right; */
+			/* clear: left; */
+			/* clear: right; */
+			/* clear: both; */
+		}
+
+		#div2 {
+			/* float: left; */
+			float: right;
+			/* clear: left; */
+			/* clear: right; */
+			/* clear: both; */
+		}
+
+		#div3 {
+			/* float: left; */
+			/* float: right; */
+			/* clear: left; */
+			/* clear: right; */
+			clear: both;
+		}
+
+		header {
+			background: magenta;
+			height: 50px;
+		}
+
+		nav {
+			background: orange;
+			width: 25%;
+			height: 50px;
+			/* height: 150px; */
+			float: left;
+		}
+
+		main {
+			background: yellow;
+			width: 70%;
+			height: 100px;
+			float: right;
+		}
+
+		footer {
+			background: steelblue;
+			height: 50px;
+			/* clear: left; */
+			/* clear: right; */
+			clear: both;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Float</h1>
+
+	<div id="container">
+		<div id="div1">div1</div>
+		<div id="div2">div2</div>
+		<div id="div3">div3</div>
+	</div>
+
+	<hr>
+
+	<header>header</header>
+	<nav>nav</nav>
+	<main>main</main>
+	<footer>footer</footer>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+	<title>Display</title>
+	<meta charset="utf-8">
+
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		/* elementos de nível de bloco */
+		h1,
+		p,
+		div,
+		footer {
+			border: 3px solid red;
+		}
+
+		/* elementos de nível de bloco aceitam propriedades de box model */
+		p {
+			width: 75%;
+			padding: 25px;
+		}
+
+		div {
+			margin: 50px;
+		}
+
+		/* elementos de nível de linha */
+		b,
+		em,
+		a,
+		span {
+			background-color: yellow;
+		}
+
+		em {
+			/* transforma elemento de linha em de bloco */
+			/* display: block; */
+			/* mantem elemento como de linha aplica propriedades de elemento de bloco */
+			/* display: inline-block; */
+			height: 50px;
+			width: 200px;
+			margin: 25px;
+			padding: 50px;
+		}
+
+		img {
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Propriedade Display</h1>
+
+	<p>
+		<b>Texto em negrito</b>Lorem ipsum dolor, <em>texto com emfase</em> sit amet consectetur adipisicing elit.
+		Nostrum inventore facilis accusantium rem omnis, ea illum <a href="#">texto com link</a> ducimus. Odit, placeat
+		quis. Vitae fugit fugiat pariatur nulla numquam sunt ullam! Totam, neque.
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt itaque laboriosam numquam, optio ipsum
+		eligendi ipsa ullam fugiat voluptatum velit assumenda quae quasi ipsam molestiae, praesentium, dolor distinctio.
+		Id, eveniet.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit nam possimus optio? Nihil sapiente sequi
+		expedita voluptatibus iusto optio tempore nobis! Doloremque et maiores eveniet explicabo minus in alias dolorum?
+	</p>
+
+	<p>
+		<img src="images/css.png" alt="Logotipo CSS">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quibusdam necessitatibus doloribus recusandae
+		quae! Aspernatur tempore quo distinctio, officia qui eaque! Deleniti, cumque natus velit soluta unde voluptates
+		ratione? Quos!
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio fugiat eligendi nam incidunt culpa, expedita,
+		impedit debitis numquam odit corrupti temporibus eius ipsa non. Impedit necessitatibus eaque excepturi
+		doloremque ratione.
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta maxime temporibus voluptatibus nulla
+		facilis molestiae illum nesciunt eaque? Vel, at voluptates exercitationem quasi cum in quibusdam veritatis
+		distinctio error.
+	</p>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore modi laudantium sunt, possimus reprehenderit
+		soluta inventore! Repudiandae minus, at asperiores non numquam sunt voluptates maiores perferendis, quam
+		reiciendis accusamus quibusdam?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quae ullam ipsa autem voluptatibus in natus.
+		Aut, aliquid. Cupiditate alias voluptate magnam fuga saepe quos laudantium impedit, natus nihil sed!
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi adipisci laudantium blanditiis commodi, ut
+		reprehenderit deserunt dolor distinctio minima tempora cupiditate, modi molestias vitae optio, amet veritatis
+		accusamus iure consectetur!
+	</p>
+
+	<div>Uma div com uma tag <span>span</span> dentro!</div>
+
+	<footer>Rodapé.</footer>
+</body>
+
+</html>
