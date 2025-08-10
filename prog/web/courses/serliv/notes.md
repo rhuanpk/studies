@@ -22,9 +22,30 @@ Para que essa comunicação seja possível, é necessário protocolos como o HTT
 
 ## HTML
 
-Sobre o HTML: é uma Linguagem de Marcação, um arquivo de texto comum com marcações que dão significa ao conteúdo.
+HTML é uma Linguagem de Marcação, um arquivo de texto comum com marcações que dão significa ao conteúdo.
 
-_Tags_:
+### Tags
+
+_Tags_ são os elementos/marcações do HTML.
+
+Tipos de _tags_:
 - Com fechamento: `<tag>` & `</tag>`
 - Sem fechamento: `<tag>`
-- Aninhamento: A primeira _tag_ que abre é a última que fecha
+
+As _tags_ podem ser aninhadas, ou seja, a primeira _tag_ que abre é a última que fecha.
+
+### Atributos
+
+Atrivutos são informações (metadados) de _tags_.
+
+- `href`:
+	- `https://domain.com`
+	- `index.html`
+	- `#section`
+	- `mailto:user@domain.com`
+
+### Semântica
+
+Usamos _tags_ que dão importância ao conteúdo quando necessário.
+
+Algumas _tags_ apenas mudam o estilo, outras, agregão carga semântica ao conteúdo. Isso é importante tanto para SEO (_Search Engine Optimization_) quanto para acessibilidade.
