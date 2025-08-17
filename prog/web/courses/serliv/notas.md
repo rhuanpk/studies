@@ -63,3 +63,20 @@ Há algumas maneiras de incluir o CSS.
 - _Inline_: Atributo de uma tag HTML: `<tag style="...">` & `</tag>`
 - _Internal_: `<style>` & `</style>`
 - _External_: `<link href="*.css" rel="stylesheet">`
+
+### Box Model
+
+Cada elemento do HTML se comporta como uma caixa.
+
+_Display_: tipo (comportamento) do elemento:
+- `block`: _Width_ de 100% da área (container) e quebra de linha
+- `inline`: _Width_ do tamanho do conteúdo e NÃO quebra linha
+- `inlin-block`: Elemento continua como de linha, porém, com propriedades de elementos de bloco
+- `none`: O elemento é removido (não somente escondido)
+
+Posicionamento: cada propriedade se relaciona com o elemento pai ou vizinho:
+- `width`: Referente ao elemento **pai**
+
+_Sizing_: definição de dimensões do elemento:
+- `content-box`: As propriedades `padding` e `border` somam a largura (_width_) e altura (_height_) final do elemento (_default_)
+- `border-box`: As propriedades `padding` e `border` são imbutidas na largura (_width_) e altura (_height_) final do elemento (_default_)

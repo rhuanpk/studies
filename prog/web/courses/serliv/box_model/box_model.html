@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Box Model</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		h1 {
+			background-color: tomato;
+			padding: 16px;
+		}
+
+		h2 {
+			background-color: cadetblue;
+			/* width: 50%; */
+			/* height: 100px; */
+			/* margin: 56px; */
+			/* margin-top: 50px; */
+			/* margin-left: 100px; */
+			/* margin: 50px 0px 0px 100px; */
+			margin-top: 56px;
+			border-bottom: 2px solid green;
+		}
+
+		p {
+			background-color: #ccc;
+			margin-top: 0;
+			/* padding-top: 20px; */
+			/* padding-left: 20px; */
+			/* padding-bottom: 20px; */
+			/* padding-right: 36px; */
+			/* padding: 20px 36px 20px 20px; */
+			/* text-align: justify; */
+		}
+
+		.destaque {
+			background-color: orange;
+		}
+
+		.size {
+			width: 50%;
+			height: 100px;
+		}
+
+		.padding {
+			padding: 26px;
+		}
+
+		.margin {
+			margin: 50px 0px 20px 100px;
+		}
+
+		.borda {
+			border-top-width: 10px;
+			border-top-style: solid;
+			border-top-color: cornflowerblue;
+			/* border-top: 10px solid cornflowerblue; */
+			border-right: 10px dotted red;
+			border-bottom: 10px dashed blue;
+			border-left: 30px groove green;
+			/* border: 10px solid black; */
+			padding: 10px;
+		}
+
+		.border {
+			border: 5px dashed blue;
+		}
+
+		.outline {
+			outline: 5px dashed red;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Box Model</h1>
+
+	<h2>Width & Height</h2>
+
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima sit rem nesciunt consectetur tenetur
+		nihil, optio pariatur placeat tempore in labore cumque distinctio. Unde ad alias architecto nulla quod?
+	</p>
+	<p class="destaque size">Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+
+	<h2>Padding</h2>
+
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima sit rem nesciunt consectetur tenetur
+		nihil, optio pariatur placeat tempore in labore cumque distinctio. Unde ad alias architecto nulla quod?
+	</p>
+	<p class="destaque padding">Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+
+	<h2>Margin</h2>
+
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima sit rem nesciunt consectetur tenetur
+		nihil, optio pariatur placeat tempore in labore cumque distinctio. Unde ad alias architecto nulla quod?
+	</p>
+	<p class="destaque margin">Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+
+	<h2>Border</h2>
+
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima sit rem nesciunt consectetur tenetur
+		nihil, optio pariatur placeat tempore in labore cumque distinctio. Unde ad alias architecto nulla quod?
+	</p>
+	<p class="destaque borda">Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+
+	<h2>Outline</h2>
+
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi minima sit rem nesciunt consectetur tenetur
+		nihil, optio pariatur placeat tempore in labore cumque distinctio. Unde ad alias architecto nulla quod?
+	</p>
+	<p class="destaque outline">Lorem ipsum dolor sit amet.</p>
+	<p class="destaque border">Lorem ipsum dolor sit amet.</p>
+	<p class="destaque outline border">Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+</body>
+
+</html>

@@ -46,3 +46,12 @@ a {
 	text-decoration: none;
 	font-variant: normal;
 }
+
+#titulo {
+	color: orange;
+}
+
+.destaque {
+	color: blue;
+	font-weight: bold;
+}
