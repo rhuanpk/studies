@@ -68,15 +68,24 @@ Há algumas maneiras de incluir o CSS.
 
 Cada elemento do HTML se comporta como uma caixa.
 
-_Display_: tipo (comportamento) do elemento:
+_Sizing_: propriedade que define dimensões do elemento:
+- `content-box`: As propriedades `padding` e `border` somam a largura (_width_) e altura (_height_) final do elemento (_default_)
+- `border-box`: As propriedades `padding` e `border` são imbutidas na largura (_width_) e altura (_height_) final do elemento (_default_)
+
+_Display_: propriedade que define o tipo (comportamento) do elemento:
 - `block`: _Width_ de 100% da área (container) e quebra de linha
 - `inline`: _Width_ do tamanho do conteúdo e NÃO quebra linha
 - `inlin-block`: Elemento continua como de linha, porém, com propriedades de elementos de bloco
 - `none`: O elemento é removido (não somente escondido)
 
-Posicionamento: cada propriedade se relaciona com o elemento pai ou vizinho:
+Posicionamento: conceito de que cada propriedade se relaciona com o elemento pai ou vizinho:
 - `width`: Referente ao elemento **pai**
+- `height`: Referente ao elemento **pai**
 
-_Sizing_: definição de dimensões do elemento:
-- `content-box`: As propriedades `padding` e `border` somam a largura (_width_) e altura (_height_) final do elemento (_default_)
-- `border-box`: As propriedades `padding` e `border` são imbutidas na largura (_width_) e altura (_height_) final do elemento (_default_)
+- `margin`: Referente ao elemento **vizinho**
+- `border`: Referente ao próprio **elemento**
+- `padding`: Referente ao próprio **elemento**
+
+- `block`: Referente ao elemento **pai**
+- `inline`: Referente ao **conteúdo**
+- `inlin-block`: Referente ao **conteúdo**

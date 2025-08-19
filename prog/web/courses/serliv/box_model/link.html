@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Link</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			color: red;
+		}
+
+		/* all sub-states */
+		a {
+			/* color: red; */
+			display: inline-block;
+			padding: 5px;
+		}
+
+		/* original state (unvisited) */
+		a:link {
+			color: orange;
+		}
+
+		a:visited {
+			color: green;
+		}
+
+		a:hover {
+			background-color: #ccc;
+		}
+
+		a:active {
+			background-color: yellow;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Link</h1>
+	<a href="display.html">display.html</a>
+	| <a href="box_model.html">box_model.html</a>
+	| <a href="unvisited.html">unvisited.html</a>
+	<p>Veja exemplos de: <a href="box_sizing.html">box_sizing.html</a></p>
+</body>
+
+</html>
