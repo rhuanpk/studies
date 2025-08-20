@@ -1,0 +1,41 @@
+body {
+	background-color: #eee;
+	font-family: sans-serif;
+	width: 80%;
+	margin: auto;
+}
+
+h1 {
+	background-color: lightblue;
+	color: darkblue;
+	padding: 5px;
+}
+
+h2 {
+	background-color: #ccc;
+	color: darkblue;
+	margin-top: 50px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border-bottom: 2px solid;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style-position: inside;
+}
+
+.center {
+	text-align: center;
+}
