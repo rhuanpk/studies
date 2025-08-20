@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 func main() {
@@ -17,7 +18,7 @@ func main() {
 		url      string
 		data     map[string]any
 		payload  []byte
-		body     *bytes.Buffer
+		body     io.Reader
 		err      error
 	)
 
@@ -26,10 +27,10 @@ func main() {
 	url = `url`        // raw
 
 	// set body variable
-	data = map[string]any{"field": "value"}           // mapped
-	payload, err = json.Marshal(data)                 // mapped
-	body = bytes.NewBuffer(payload)                   // mapped
-	body = bytes.NewBufferString(`{"field":"value"}`) // raw
+	data = map[string]any{"field": "value"}       // mapped
+	payload, err = json.Marshal(data)             // mapped
+	body = bytes.NewReader(payload)               // mapped
+	body = strings.NewReader(`{"field":"value"}`) // raw
 
 	// requst direct function
 	response, err = http.Get(url)                        // get
