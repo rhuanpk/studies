@@ -10,6 +10,13 @@ import (
 	"strings"
 )
 
+// Response is the default struct to response http request.
+type Response struct {
+	Success bool   `json:"success"`
+	Message string `json:"message,omitempty"`
+	Data    any    `json:"data,omitempty"`
+}
+
 func main() {
 	var (
 		request  *http.Request
