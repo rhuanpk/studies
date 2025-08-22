@@ -1,0 +1,96 @@
+body {
+	background-color: #ccc;
+	font-family: sans-serif;
+	margin: 0;
+}
+
+/* header */
+
+.header {
+	background-image: url(imagens/bg_3.jpg);
+	background-size: cover;
+	background-position: right center;
+	color: white;
+	height: 500px;
+}
+
+nav {
+	padding: 20px 40px;
+}
+
+nav ul {
+	text-align: right;
+	margin-top: 0;
+	padding-left: 0;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+nav ul li a {
+	background-color: rgba(0, 0, 0, .25);
+	color: white;
+	font-size: 12px;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	display: inline-block;
+	padding: 15px;
+	border: 2px solid;
+}
+
+nav ul li a:hover {
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.header div {
+	text-align: center;
+	margin-top: 120px;
+}
+
+.header h1 {
+	font-size: 42px;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px black;
+}
+
+.header div p {
+	background-color: rgba(0, 0, 0, .5);
+	display: inline-block;
+	padding: 15px;
+	border-bottom: 2px solid;
+}
+
+/* main */
+main section {
+	background-color: white;
+	width: 75%;
+	margin: 15px auto 25px;
+	padding: 10px;
+}
+
+main section header h2 {
+	background-color: #eee;
+	margin: 0;
+	padding: 5px;
+	border-bottom: 2px solid rgba(0, 0, 0, .1);
+}
+
+main section a {
+	background-color: #ccc;
+	display: inline-block;
+	padding: 10px;
+	border-radius: 10%;
+}
+
+/* footer */
+footer {
+	background-color: #777;
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px 2px black;
+	padding: 25px;
+}

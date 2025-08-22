@@ -85,9 +85,11 @@ _Display_: propriedade que define o tipo (comportamento) do elemento:
 ### Imagens
 
 - `background-attachment`
-	- `fixed`: A imagem não é "scrollada" junto com a página
+	- `scroll`: A imagem é "scrollada" junto com a página (_default_)
+	- `fixed`: A imagem NÃO é "scrollada" junto com a página
 - `background-repeat`
-	- `no-repeat`: A imagem não se repete
+	- `no-repeat`: A imagem NÃO se repete
+	- `repeat`: A imagem se repete sempre
 - `background-size`
 	- `contain`: Size 100% mantendo a proporção da imagem (não corta a imagem e a repete)
 	- `cover`: Size 100% NÃO mantendo a proporção da imagem (corta a imagem e NÃO a repete)
@@ -111,6 +113,10 @@ Posicionamento: conceito de que cada propriedade se relaciona com o elemento pai
 Alinhamento:
 - `margin: auto;`: Centralizamos o próprios **elemento** (_container_)
 - `text-align: center;` Centralizamos o **conteúdo** dentro do elemento (_container_)
+
+Eixos:
+- `x`: Eixo **x** significa a **horizontal**
+- `y`: Eixo **y** significa a **vertical**
 
 ---
 
