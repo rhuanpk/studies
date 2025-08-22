@@ -39,7 +39,9 @@ func HasAnyTheseErrors(err error, targets ...error) bool {
 func hasLayer(layer layer, errors ...error) bool {
 	var errStrings []string
 	for _, err := range errors {
-		errStrings = append(errStrings, err.Error())
+		if err != nil {
+			errStrings = append(errStrings, err.Error())
+		}
 	}
 	return strings.Contains(strings.Join(errStrings, "\n"), string("layer: "+layer))
 }
@@ -82,6 +84,9 @@ func BuildErrorLog(layer layer, funcName, message string, errors ...error) error
 
 	separator = vertical
 	for index, err := range errors {
+		if err == nil {
+			continue
+		}
 		prefix := "sentinel"
 		if index >= len(errors)-1 {
 			if (layer == ControllerLayer && hasLayer(ServiceLayer, errors...)) || serviceWithRepository {
