@@ -82,8 +82,13 @@ main section header h2 {
 main section a {
 	background-color: #ccc;
 	display: inline-block;
-	padding: 10px;
-	border-radius: 10%;
+	padding: 10px 14px;
+	border-radius: 6px;
+
+	/* right alignment */
+	/* display: block; */
+	/* margin-left: auto;  */
+	/* width: fit-content; */
 }
 
 /* footer */
@@ -93,4 +98,5 @@ footer {
 	text-align: center;
 	text-shadow: 2px 2px 2px black;
 	padding: 25px;
+	/* letter-spacing: 1px; */
 }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Z Index</title>
+
+	<style>
+		div {
+			background-color: rgba(0, 0, 0, .25);
+			font-family: sans-serif;
+			font-size: 18px;
+			width: 75%;
+			margin-bottom: 12px;
+			padding: 12px;
+			border: 4px solid black;
+		}
+
+		.div2.grupo2 {
+			background-color: white;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 2;
+		}
+
+		/* although these two elements came out of the natural flow of the document and have gained overlap over others their z-index remain 0 */
+		/* if we do not change the z-index of the elements the group 2 will overlap group 1 because in html the 2 came after 1 */
+		.div2.grupo1 {
+			background-color: white;
+			/* position: absolute; */
+			top: 100px;
+			left: 0;
+			/* z-index: 1; */
+		}
+
+		.div3.grupo1 {
+			background-color: tomato;
+			position: relative;
+			z-index: 1;
+		}
+
+		.div4.grupo1 {
+			background-color: yellow;
+			position: relative;
+			bottom: 35px;
+			left: 15px;
+			/* z-index: 2; */
+		}
+	</style>
+</head>
+
+<body>
+	<div class="div1 grupo1">div1 grupo1
+		<div class="div2 grupo1">div2 grupo1
+			<div class="div3 grupo1">div3 grupo1</div>
+			<div class="div4 grupo1">div4 grupo1</div>
+		</div>
+	</div>
+
+	<div class="div1 grupo2">div1 grupo2
+		<div class="div2 grupo2">div2 grupo2
+			<div class="div3 grupo2">div3 grupo2</div>
+			<div class="div4 grupo2">div4 grupo2</div>
+		</div>
+	</div>
+</body>
+
+</html>

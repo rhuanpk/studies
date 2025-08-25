@@ -82,6 +82,45 @@ _Display_: propriedade que define o tipo (comportamento) do elemento:
 - `inlin-block`: Elemento continua como de linha, porém, com propriedades de elementos de bloco
 - `none`: O elemento é removido (não somente escondido)
 
+_Margin_: propriedade que define o espaço externo de um elemento referente ao seu vizinho:
+- `auto`: Empurra todo o espaço disponível de forma proporcional. Caso esteja esteja espaçando somente de um lado, empurrará todo o espaço disponível, porém, caso esteja empurrado dois lados opostos, distribuirá igual entre ambos.
+
+_Width_: propriedade que define a largura do elemento:
+- `fit-content`: A largura do elemento se ajustará automáticamente referente ao tamanho/quantidade do conteúdo dentro do elemento
+- `min-content`: A largura do elemento será equivalente ao **menor** conteúdo dentro do elemento
+- `max-content`: A largura do elemento será equivalente ao **maior** conteúdo dentro do elemento
+
+_Position_:
+- `static`: A posição que os elementos são renderizados é a ordem que está no HTML (_default_)
+- `relative`: A posição é relativa ao próprio elemento, a posição original do elemento é preservada e apenas sua visualização será afetada
+- `absolute`: A posição do elemento é relacionada ao primeiro elemento pai posicionado
+	- Uma propriedade posicionada é aquela que seu valor `position` não é `static`
+	- Caso precisemos de um `position` "_fake_" no nosso elemento para que o seu filho com se apoie nele, podemos defini-lo apenas com `relative` sem passar nenhum dos valores `top`, `right`, `bottom` ou `left`
+- `fixed`: A posição do elemento é relacionado a _viewport_
+- `sticky`: É um híbrido entre `relative` e `fixed`, seu pai direto precisa ter algum mecanismo de _scroll_
+
+### Float
+
+Criado originalmente para colocar imagens ao lado de conteúdos, não sessões inteiras ao lado de outras, para isso, temos _CSS Grid_ ou _Flex Box_.
+
+A propriedade `float` faz com que o elemento saia do fluxo natural do programa e os elementos posteriores tentam agora ocupar o espaço que foi vago pelo elemento que "saiu".
+
+A propriedade `clear` limpa o `float` no elemento anterior, no caso, não a posição em que o elmento anterior com `float` se encontra, mas é como apesar dele ter flutado para a direita ou esquerda, o elemento pai continua enxergando o elemento com `float` e o próprio elemento com `clear` (o elemento posterior ao `float`) não tenta se encaixar pois ainda continua enxergando o elemento aterior.
+
+A propriedade `overflow` paesar de não ter sido criado para esse fim, é usada no elemento pai quando os filhos tem `float` para que passem a serem enxergados novamente pelo pai para que ele possa determinar sua própria altura "corretamente".
+
+### Overflow
+
+A propriedade `overflow` foi originalmente pensada para trabalhar com _containers_ que possuam altura (_height_) definidas.
+
+Essa propriedade serve para que possamos tratar o conteúdo que excede o tamanho do nosso elemento pois, caso o tamanho do conteúdo seja maior que o tamanho estipulado do próprio elemento, o conteúdo vazará.
+
+### Z Index
+
+A propriedade `z-index` serve para definir a sobreposição dos elementos do ponto de vista do usuário. O valor _default_ é **0** e quanto maior o seu valor, maior a sua prioridade na sobreposição. Valores negativos também são aceitos.
+
+Dentro dessa propriedade também temos os contextos de empilhamentos, que são resetadas a cada novo _container_ (pai). Ou seja, caso tenhamos dois elementos pais posicionados que possuem filhos e um desses pais tem `z-index` superior ao outro pai, ele e todos os seus filhos se sobreporão, e mesmo que um elemento filho do pai que está sobreposto ter seu `z-index` maior ainda do que o próprio elemento pai que está se sobreponto ou qualquer um dos seus filhos, nada mudará, este filho se sobreporá apenas sobre os seus irmãos.
+
 ### Imagens
 
 - `background-attachment`
@@ -117,6 +156,8 @@ Alinhamento:
 Eixos:
 - `x`: Eixo **x** significa a **horizontal**
 - `y`: Eixo **y** significa a **vertical**
+
+Margin: quando uma "conflita" com a outra, elas se sobrepõem. Digamos que temos um elemento e seu irmão em baixo, caso o irmão de cima tenha uma `margin-bottom` de `25px` e o irmão de baixo uma `margin-top` de também `25px`, a distância entre os dois elementos será de `25px`, não de `50px` pois, a maior margin que sempre irá se sobrepor/empurrar.
 
 ---
 
