@@ -81,6 +81,7 @@ _Display_: propriedade que define o tipo (comportamento) do elemento:
 - `inline`: _Width_ do tamanho do conteúdo e NÃO quebra linha
 - `inlin-block`: Elemento continua como de linha, porém, com propriedades de elementos de bloco
 - `none`: O elemento é removido (não somente escondido)
+- `flex`: O elemento pai se torna o _flex container_ e seu filhos diretos _flex items_
 
 _Margin_: propriedade que define o espaço externo de um elemento referente ao seu vizinho:
 - `auto`: Empurra todo o espaço disponível de forma proporcional. Caso esteja esteja espaçando somente de um lado, empurrará todo o espaço disponível, porém, caso esteja empurrado dois lados opostos, distribuirá igual entre ambos.
@@ -94,8 +95,8 @@ _Position_:
 - `static`: A posição que os elementos são renderizados é a ordem que está no HTML (_default_)
 - `relative`: A posição é relativa ao próprio elemento, a posição original do elemento é preservada e apenas sua visualização será afetada
 - `absolute`: A posição do elemento é relacionada ao primeiro elemento pai posicionado
-	- Uma propriedade posicionada é aquela que seu valor `position` não é `static`
-	- Caso precisemos de um `position` "_fake_" no nosso elemento para que o seu filho com se apoie nele, podemos defini-lo apenas com `relative` sem passar nenhum dos valores `top`, `right`, `bottom` ou `left`
+	- Um elemento posicionado é aquele que seu valor `position` é diferente `static`
+	- Caso precisemos de um `position` "_fake_" no nosso elemento para que o seu filho se apoie nele, podemos defini-lo apenas com `relative` sem passar nenhum dos valores `top`, `right`, `bottom` ou `left`
 - `fixed`: A posição do elemento é relacionado a _viewport_
 - `sticky`: É um híbrido entre `relative` e `fixed`, seu pai direto precisa ter algum mecanismo de _scroll_
 
@@ -120,6 +121,22 @@ Essa propriedade serve para que possamos tratar o conteúdo que excede o tamanho
 A propriedade `z-index` serve para definir a sobreposição dos elementos do ponto de vista do usuário. O valor _default_ é **0** e quanto maior o seu valor, maior a sua prioridade na sobreposição. Valores negativos também são aceitos.
 
 Dentro dessa propriedade também temos os contextos de empilhamentos, que são resetadas a cada novo _container_ (pai). Ou seja, caso tenhamos dois elementos pais posicionados que possuem filhos e um desses pais tem `z-index` superior ao outro pai, ele e todos os seus filhos se sobreporão, e mesmo que um elemento filho do pai que está sobreposto ter seu `z-index` maior ainda do que o próprio elemento pai que está se sobreponto ou qualquer um dos seus filhos, nada mudará, este filho se sobreporá apenas sobre os seus irmãos.
+
+### Flexbox
+
+O valor `flex` da propriedade `display` faz com que o elemento pai se torna um _flex container_ e seus filhos diretos _flex items_, ou seja, o que é afetado é apenas os elementos filhos.
+
+Quando essa propriedade é aplicada, os elementos filhos dentro do _container_ passam a **não quebrar linha** e ficam **alinhados na horizontal**. Suas **alturas ocupam 100% do _container_** e suas **larguras são distribuídas igualmente** pela quantidade de filhos.
+
+- `flex-wrap`
+	- `nowrap`: Todos os _flex items_ são alinhados na horizontal (_default_)
+	- `wrap`: Caso a soma da largura dos _flex items_ na linha seja maior que a largura do _flex container_, quebra a linha e os _flex items_ excedentes vão para a linha de baixo e assim sucessivamente
+
+Os eixos do Flexbox (_Flexbox Axes_) são determinados pela propriedade `flex-direction` que impactará em todas as outras propriedades (pois usam os exios para seguiar).
+
+A propriedade `flex-grow` e `flex-shrink` distribuem `width` ou `height` (com base no _main axis_) para os _flex items_. A distribuição é feita por partes/unidades de `flex-grow`: cada valor de `flex-grow` definido nos _flex items_ são somados para saber a proporção total que irá para cada.
+
+A propriedade `order` altera a ordem dos _flex items_ dentro do _flex container_, parecido com o princípio da propriedade `z-index`. Valores negativos tem prioridade sobre positivos.
 
 ### Imagens
 
