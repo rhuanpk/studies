@@ -1,0 +1,158 @@
+body {
+	background-color: #111;
+	color: white;
+	font-family: sans-serif;
+	width: 70%;
+	min-width: fit-content;
+	margin: auto;
+}
+
+/* header */
+.main-header {
+	background-color: black;
+	padding: 5px 20px;
+
+	display: flex;
+	align-items: center;
+}
+
+.main-header__title {
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+.main-header__nav {
+	text-align: right;
+
+	/* can space beetwen on flex container instead */
+	flex-grow: 1;
+}
+
+.main-header__nav__menu {
+	list-style-type: none;
+
+	/* can displey flex instead */
+	margin: 0;
+	padding: 0;
+}
+
+.main-header__nav__menu__item {
+	display: inline-block;
+}
+
+/* can work with less a pseudo-classes */
+.main-header__nav__menu__item a {
+	color: white;
+	padding: 15px;
+	display: inline-block;
+}
+
+.main-header__nav__menu__item a:link {
+	text-decoration: none;
+}
+
+.main-header__nav__menu__item a:hover {
+	text-decoration: underline;
+}
+
+/* can set a modifier class instead */
+.main-header__nav__menu__item:nth-child(2) a {
+	background-color: yellow;
+	color: black;
+	border-radius: 5px;
+
+	/* the cursor is the default but yet clickable */
+	/* cursor: default; */
+	/* here works as expected */
+	pointer-events: none;
+}
+
+.main-header__nav__menu__item:nth-child(2) a:hover {
+	text-decoration: none;
+}
+
+/* content */
+.main-content__plans {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-content__plans__title {
+	text-transform: uppercase;
+	font-size: 56px;
+}
+
+.main-content__plans__cards {
+	display: flex;
+	gap: 15px;
+}
+
+.main-content__plans__cards__plan {
+	background-color: #333;
+	padding: 25px;
+	border-radius: 5px;
+	box-shadow: 0 5px 15px -4px black;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.main-content__plans__cards__plan__title {
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	margin: 0;
+}
+
+.main-content__plans__cards__plan__separator {
+	width: 100%;
+	border-color: yellow;
+}
+
+.main-content__plans__cards__plan__price {
+	font-size: smaller;
+}
+
+.main-content__plans__cards__plan__price__value {
+	font-size: x-large;
+}
+
+.main-content__plans__cards__plan__specs {
+	margin: 0;
+	padding: 0;
+	list-style-position: inside;
+
+	/* can margin-block-start auto on cta instaed */
+	flex-grow: 1;
+}
+
+.main-content__plans__cards__plan__specs__item {
+	color: #ccc;
+	font-size: smaller;
+	/* can line height instead */
+	margin-bottom: 10px;
+}
+
+.main-content__plans__cards__plan__specs__item::marker {
+	color: yellow;
+}
+
+.main-content__plans__cards__plan__cta {
+	background-color: yellow;
+	color: black;
+	font-weight: bold;
+	font-size: smaller;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	width: 190px;
+	margin-top: 25px;
+	padding: 12px;
+	border-radius: 5px;
+}
+
+.main-content__plans__cards__plan__cta:hover {
+	background-color: transparent;
+	color: white;
+	outline: 2px solid yellow;
+}

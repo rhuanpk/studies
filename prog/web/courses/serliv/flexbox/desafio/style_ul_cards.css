@@ -7,7 +7,6 @@ body {
 body {
 	background-color: cadetblue;
 	font-family: sans-serif;
-	min-width: fit-content;
 	min-height: fit-content;
 
 	display: flex;
@@ -28,7 +27,7 @@ h1 {
 	/* three cards + two gap */
 	max-width: 920px;
 
-	margin-bottom: 25px;
+	margin-bottom: 35px;
 }
 
 .container ul {
@@ -70,10 +69,14 @@ h1 {
 }
 
 .subtitle h2 {
+	letter-spacing: .5px;
+	font-weight: normal;
+	color: darkslategray;
 	margin: 10px 0 20px;
 }
 
 .subtitle p {
+	color: #333;
 	margin: 15px 0;
 }
 
@@ -81,6 +84,7 @@ h1 {
 	background-color: #ddd;
 	width: 100%;
 	padding: 15px;
+	opacity: .75;
 
 	display: flex;
 	justify-content: space-evenly;
