@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Font Face</title>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+		/* this syntax is a directive */
+		@font-face {
+			font-family: 'Nadia';
+			src:
+				/* search in OS first */
+				local('Nadia Serif'),
+				local('Nadia-Serif'),
+
+				/* .eot used in IE oldests (deprecated) */
+				url(fonts/nadia/nadia_serif.eot) format('embedded-opentype'),
+
+				/* .svg unsed in iOS oldests */
+				url(fonts/nadia/nadia_serif.svg) format('svg'),
+
+				/* can set to "ttf" instead */
+				url(fonts/nadia/nadia_serif.ttf) format('truetype'),
+
+				/* more modern format */
+				url(fonts/nadia/nadia_serif.woff) format('woff');
+		}
+
+		@font-face {
+			font-family: 'Secular One';
+			/* more mordern format than "woff" */
+			src: url(fonts/secular_one.woff2) format('woff2');
+		}
+
+		@font-face {
+			font-family: 'Sinkin Sans';
+			/* can set to "otf" intead */
+			src: url(fonts/sinkin_sans.otf) format('opentype');
+		}
+
+		h1 {
+			font-family: 'Nadia';
+			font-family: 'Secular One';
+			font-family: 'Sinkin Sans';
+		}
+
+		p {
+			font-family: 'Roboto';
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Font Face</h1>
+	<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, adipisci.</p>
+</body>
+
+</html>

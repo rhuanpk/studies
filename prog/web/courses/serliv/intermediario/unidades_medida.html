@@ -4,10 +4,126 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Unidades de Medida</title>
+
+	<style>
+		html {
+			/* equal 10px because the default font-size at all is 16px */
+			font-size: 62.5%;
+		}
+
+		h1 {
+			/* equal 34px because your parent (html > body) sets font-size */
+			font-size: 3.4em;
+		}
+
+		b {
+			color: darkred;
+
+			/* equal 30px because your parent (p) sets font-size */
+			font-size: 1em;
+
+			/* equal 10px because the root (html) sets font-size */
+			font-size: 1rem;
+
+			/* percertage relative the parent font-size */
+			font-size: 50%;
+		}
+
+		p {
+			background-color: #ccc;
+
+			/* equal 30px because your parent (html > body) sets font-size */
+			font-size: 3em;
+
+			/* equal 30 x 10 = 300px and the box resizes relative the font-size */
+			width: 10em;
+		}
+
+		.porcento {
+			background-color: yellow;
+			width: 60%;
+			height: 500px;
+		}
+
+		.porcento p {
+			background-color: orange;
+			width: 50%;
+			padding-top: 50%;
+			font-size: 1rem;
+		}
+
+		.padding-em {
+			background-color: red;
+		}
+
+		.padding-em p {
+			background-color: transparent;
+			margin: 0;
+
+			/* override the parent font-size */
+			font-size: 30px;
+			/* relative to font-size of yourself element */
+			padding: 1em;
+		}
+
+		.viewport-container {
+			font-size: 3rem;
+			height: auto;
+		}
+
+		.viewport {
+			background-color: rgba(0, 0, 255, .5);
+			width: 90vw;
+			height: 90vh;
+		}
+
+		.em {
+			background-color: orange;
+			font-size: 2em;
+			width: 20em;
+			margin: 1em;
+			padding: 1em;
+		}
+
+		.ch {
+			background-color: orange;
+			font-size: 2em;
+			width: 20ch;
+			margin: 1em;
+			padding: 1em;
+		}
+	</style>
 </head>
 
 <body>
 	<h1>Unidades de Medida</h1>
+
+	<p id="em">
+		Lorem ipsum dolor sit <b>texto em negrito</b>, amet consectetur adipisicing elit. Nostrum optio odio facere id,
+		dolor in iusto ut qui quisquam a autem aliquam alias nihil fugit error, ipsa quaerat earum sequi?
+	</p>
+
+	<div class="porcento">
+		<p>%</p>
+	</div>
+
+	<div class="padding-em">
+		<p>Padding com EM.</p>
+	</div>
+
+	<div class="porcento viewport-container">
+		<div class="viewport">viewport</div>
+	</div>
+
+	<div class="em">
+		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus est, doloribus iusto similique qui eum
+		quae asperiores repellat aperiam mollitia.
+	</div>
+
+	<div class="ch">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore blanditiis nostrum harum dolor tempora, totam
+		quidem necessitatibus doloremque quasi sed?
+	</div>
 </body>
 
 </html>

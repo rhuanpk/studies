@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Box Shadow</title>
+
+	<style>
+		div {
+			background-color: orange;
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			border-radius: 50px 20px 0 80px / 100px 50px 0 20px;
+
+			/* x-axis y-axis blur spread color */
+			box-shadow: 10px 10px 0 black;
+			box-shadow: -10px -10px 0 black;
+			box-shadow: 10px 0 0 10px black;
+			box-shadow: 0 0 0 10px black;
+			box-shadow: 20px 0 15px -10px black;
+			box-shadow: 250px 0 0 -15px black;
+
+			/* the precedence of the shadows is due to the order that are defined */
+			box-shadow:
+				20px 0 0 0 black,
+				10px 20px 10px red,
+				-10px 5px 5px blue,
+				0 -10px 10px 5px green;
+		}
+	</style>
+</head>
+
+<body>
+	<div></div>
+</body>
+
+</html>

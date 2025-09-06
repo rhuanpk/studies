@@ -96,7 +96,7 @@ _Position_:
 - `relative`: A posição é relativa ao próprio elemento, a posição original do elemento é preservada e apenas sua visualização será afetada
 - `absolute`: A posição do elemento é relacionada ao primeiro elemento pai posicionado
 	- Um elemento posicionado é aquele que seu valor `position` é diferente `static`
-	- Caso precisemos de um `position` "_fake_" no nosso elemento para que o seu filho se apoie nele, podemos defini-lo apenas com `relative` sem passar nenhum dos valores `top`, `right`, `bottom` ou `left`
+	- Caso precisemos de um `position` "_fake_" no elemento pai do elemento que queremos manipular, podemos defini-lo apenas com `relative` sem passar nenhum dos valores `top`, `right`, `bottom` ou `left`
 - `fixed`: A posição do elemento é relacionado a _viewport_
 - `sticky`: É um híbrido entre `relative` e `fixed`, seu pai direto precisa ter algum mecanismo de _scroll_
 
@@ -152,6 +152,43 @@ A propriedade `order` altera a ordem dos _flex items_ dentro do _flex container_
 - `background-position`
 	- `right bottom`: Fixa a imagem repectivamente: horizontal, vertical
 
+### Unidades
+
+Unidades de medidas utilizadas pelas propriedades.
+
+#### `px`
+
+Unidade de medida em _pixels_. Não é interessante que seja utilizada em fontes pois pode sobrescrever preferências do SO, por exemplo.
+
+Normalmente não é utilizado para:
+- `width`
+- `height`
+- `font-size`
+
+Normalmente poderia ser utilizado para:
+- `margin`
+- `padding`
+- `text-shadow`
+- `box-shadow`
+
+**1 px** é igual a **1 pixel** da resolução da tela.
+
+#### `em`
+
+Unidade de medida **relativa** ao `font-size` (_default_) do próprio elemento, ou seja, se uma _tag_ `p` tem seu `font-size` padrão de `16px`, se definimo-os para `2em`, agora seu `font-size` será de `32px`.
+
+Caso o **elemento pai** tenha um `font-size` definido, então a unidade de medida `em` será relativa a este valor, e não a do próprio elemento.
+
+#### `rem`
+
+Unidade de medida **relativa** ao `font-size` do elemento _root_. Seu funcionamento é igual ao da unidade de medida `em`.
+
+#### `ch`
+
+Unidade de medida **relativa** a largura do caractere "0" (zero). Se dizemos que a largura de um _container_ é de `100ch`, a largura desse _container_ será equivalente a de 100 zeros em sequência.
+
+É como dizer que a largura é de "100 caracteres" (no caso do "0" porque é o maior caractere possível em largura?).
+
 ### Tips
 
 Posicionamento: conceito de que cada propriedade se relaciona com o elemento pai ou vizinho:
@@ -175,6 +212,11 @@ Eixos:
 - `y`: Eixo **y** significa a **vertical**
 
 Margin: quando uma "conflita" com a outra, elas se sobrepõem. Digamos que temos um elemento e seu irmão em baixo, caso o irmão de cima tenha uma `margin-bottom` de `25px` e o irmão de baixo uma `margin-top` de também `25px`, a distância entre os dois elementos será de `25px`, não de `50px` pois, a maior margin que sempre irá se sobrepor/empurrar.
+
+Unidades: unidades de medidas usadas pelas propriedades:
+- `px`: sempre use **números pares**, **múltiplos de 4**
+- `%`: para `height` só funcionará (como o esperado) caso o elemento pai tenha um `height` definido
+- `%`: para `margin` e `padding`, a porcentagem será sempre referente ao `width` do **elemento pai**
 
 ---
 

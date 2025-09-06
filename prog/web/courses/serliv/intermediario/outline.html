@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Outline</title>
+
+	<style>
+		div {
+			background-color: yellow;
+			width: 200px;
+			height: 100px;
+			margin: 100px auto;
+
+			/* border changes the final element size */
+			/* border: 4px solid red; */
+			/* but with this property this its not true */
+			/* box-sizing: border-box; */
+
+			outline: 4px dashed red;
+			outline-offset: 12px;
+			outline-offset: -16px;
+		}
+
+		div:hover {
+			outline-width: 8px;
+		}
+	</style>
+</head>
+
+<body>
+	<div>Outline</div>
+</body>
+
+</html>

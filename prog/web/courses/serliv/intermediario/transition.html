@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Transition</title>
+
+	<style>
+		/* only numeric values can be transitioned */
+		div {
+			--cubic: cubic-bezier(.44, .46, .22, -0.41);
+
+			background-color: orange;
+			width: 200px;
+			height: 150px;
+			margin: 100px auto;
+
+			/* for all properties */
+			/* transition-property: all; */
+
+			/* for a specifc property */
+			/* transition-property: width; */
+			/* transition-duration: .5s; */
+			/* transition-duration: 500ms; */
+			/* transition-delay: .5s; */
+			/* transition-delay: 500ms; */
+			/* transition-timing-function: linear; */
+			/* transition-timing-function: ease; */
+			/* transition-timing-function: ease-in; */
+			/* transition-timing-function: ease-out; */
+			/* transition-timing-function: ease-in-out; */
+			/* transition-timing-function: cubic-bezier(.44, .46, .22, -0.41); */
+
+			/* for multiple properties at once */
+			/* transition-property: width, height; */
+			/* transition-duration: .5s, 1s; */
+			/* transition-duration: 500ms, 1500ms; */
+			/* transition-delay: .5s, 1s; */
+			/* transition-delay: 500ms, 1500ms; */
+
+			/* for multiple properties at once */
+			/* transition-property: width, height, background-color; */
+			/* equal margin distribution: */
+			/* - the first value replicates to third */
+			/* - the second is only to the itself */
+			/* transition-duration: .5s, 1000ms; */
+			/* equal margin distribution: */
+			/* - the unique value replicates to all properties */
+			/* transition-delay: 0s; */
+
+			/* property(all) duration(0s) function(ease) delay(0s) */
+			transition:
+				width .5s,
+				height 1000ms var(--cubic) .5s,
+				background-color .5s var(--cubic);
+		}
+
+		div:hover {
+			background-color: red;
+			width: 800px;
+			height: 500px;
+		}
+	</style>
+</head>
+
+<body>
+	<div></div>
+</body>
+
+</html>

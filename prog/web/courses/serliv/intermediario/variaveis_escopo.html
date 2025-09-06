@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Escopo de Variáveis</title>
+
+	<style>
+		:root {
+			--color: red;
+		}
+
+		html {
+			font-size: 200%;
+		}
+
+		p {
+			color: var(--color);
+		}
+
+		.container {
+			--color: orange;
+		}
+
+		.div1 {
+			--color: green;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="div1">
+			<p>Lorem, ipsum dolor.</p>
+		</div>
+		<div class="div2">
+			<p>Lorem, ipsum dolor.</p>
+		</div>
+	</div>
+	<p>Lorem, ipsum dolor.</p>
+</body>
+
+</html>
