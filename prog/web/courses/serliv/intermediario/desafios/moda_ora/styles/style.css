@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Viaoda+Libre&display=swap');
+
+:root {
+	--color-fg-all: #555555;
+	--color-bg-hero: #162028;
+	--color-fg-hero: #425564;
+	--color-bg-details: #003d52;
+	--color-bg-footer: #0b171f;
+	--color-fg-footer: #6f8597;
+}
+
+html,
+body {
+	min-height: 100%;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: var(--color-fg-all);
+	width: 90%;
+	margin: 2rem auto;
+}
+
+/* hero */
+.hero__content {
+	background-color: var(--color-bg-hero);
+	padding: 1.6rem 2.8rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hero__title {
+	color: white;
+	font-family: 'Viaoda Libre';
+	font-weight: normal;
+	font-size: xx-large;
+	margin: 0 0 0 24rem;
+}
+
+.hero__menu {
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	gap: 5.2rem;
+}
+
+.hero__item {
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+.hero__item a {
+	color: var(--color-fg-hero);
+	text-decoration: none;
+	letter-spacing: .2rem;
+
+	transition: color;
+	transition-duration: 500ms;
+}
+
+.hero__item a:hover {
+	color: white;
+}
+
+.hero__banner {
+	width: 100%;
+	display: block;
+}
+
+/* main */
+main {
+	text-align: center;
+	width: 90%;
+	margin: auto;
+}
+
+.main__section {
+	margin: 8rem 0;
+}
+
+.main__title {
+	color: black;
+	font-family: 'Viaoda Libre';
+	font-size: 3.6em;
+	font-weight: normal;
+}
+
+.main__content {
+	font-size: medium;
+	line-height: 2em;
+	width: 86%;
+	margin: auto;
+}
+
+.main__cards {
+	display: flex;
+	gap: 3.2em;
+	justify-content: center;
+}
+
+.main__card h3 {
+	font-size: large;
+	text-transform: uppercase;
+	letter-spacing: .12em;
+}
+
+.main__card p {
+	font-size: medium;
+}
+
+/* details */
+.details {
+	background-image: url(../images/bg_details.png);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-color: var(--color-bg-details);
+
+	color: white;
+	margin-top: 8rem;
+	padding: 10rem;
+}
+
+.details__title {
+	font-family: 'Viaoda Libre';
+	font-size: 4.8em;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.details__content {
+	font-size: medium;
+	line-height: 1.6em;
+	width: 70%;
+}
+
+/* villain  */
+.villain {
+	background-color: var(--color-bg-footer);
+	padding: .8rem;
+}
+
+.villain__copy {
+	color: var(--color-fg-footer);
+	font-size: larger;
+	text-align: center;
+	letter-spacing: .34em;
+}
