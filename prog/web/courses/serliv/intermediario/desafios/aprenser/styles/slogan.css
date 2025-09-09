@@ -1,0 +1,19 @@
+.slogan {
+	background: linear-gradient(white, yellow);
+	padding: 0 5.2em;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.slogan__title {
+	font-size: 4.8em;
+	letter-spacing: var(--letter-titles);
+	line-height: var(--line-content);
+	width: 14ch;
+}
+
+.slogan__highlight {
+	text-transform: uppercase;
+}

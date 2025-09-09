@@ -1,0 +1,38 @@
+.hero * {
+	margin: 0;
+	padding: 0;
+}
+
+.hero {
+	background-color: var(--color-grey);
+	padding: 2.4rem 5.6rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hero__logo {
+	width: 10em;
+}
+
+.hero__menu {
+	list-style-type: none;
+
+	display: flex;
+	gap: 1.6rem;
+}
+
+.hero__item {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.hero__item>a {
+	color: var(--color-yellow);
+	text-decoration: none;
+	border: .14rem solid;
+
+	display: inline-block;
+	padding: 1.2em;
+}

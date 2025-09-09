@@ -1,0 +1,49 @@
+.courses__section {
+	text-align: center;
+	width: var(--width-inside);
+	margin: auto;
+}
+
+.courses__title {
+	margin: var(--margin-subtitle);
+}
+
+.courses__cards {
+	display: flex;
+	gap: 2.4rem;
+}
+
+.courses__card {
+	text-align: left;
+}
+
+.courses__card>img {
+	width: 100%;
+	height: 16em;
+	display: block;
+}
+
+.courses__card__content {
+	background-color: white;
+	padding: 2.4em;
+	border-bottom-right-radius: var(--border-radius);
+	border-bottom-left-radius: var(--border-radius);
+}
+
+.courses__card__content>h3 {
+	font-size: var(--size-susubtitle);
+	text-shadow: 0 0 .08em;
+	letter-spacing: .08em;
+	margin-top: 0;
+}
+
+.courses__card__content>p {
+	color: var(--color-lightgrey);
+	font-size: var(--size-content);
+	line-height: var(--line-content);
+}
+
+.courses__cta {
+	display: inline-block;
+	margin: 4em 0;
+}

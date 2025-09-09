@@ -1,0 +1,11 @@
+.villain {
+	background-color: var(--color-grey);
+	color: var(--color-lightwhite);
+	font-size: var(--size-content);
+	margin-top: 4.8rem;
+	padding: 2em;
+}
+
+.villain__content {
+	text-align: center;
+}
