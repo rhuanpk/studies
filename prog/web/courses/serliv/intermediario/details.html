@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Details & Summary</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		details {
+			background-color: #ddd;
+			color: darkviolet;
+			margin-bottom: 1em;
+			padding: .4em;
+		}
+
+		details>summary {
+			cursor: pointer;
+		}
+
+		/* selector by attribute */
+		details[open] {
+			background-color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Curso Web Design</h1>
+
+	<details open>
+		<summary>Pré-requisitos</summary>
+		<p>Para fazer este curso é necessário conhecimento de OS.</p>
+	</details>
+
+	<details>
+		<summary>Cargas horárias</summary>
+		<ul>
+			<li>180h</li>
+			<li>60h</li>
+			<li>240h</li>
+		</ul>
+	</details>
+</body>
+
+</html>

@@ -1,5 +1,8 @@
+.wrapper__slogan {
+	background-image: linear-gradient(white, yellow);
+}
+
 .slogan {
-	background: linear-gradient(white, yellow);
 	padding: 0 5.2em;
 
 	display: flex;

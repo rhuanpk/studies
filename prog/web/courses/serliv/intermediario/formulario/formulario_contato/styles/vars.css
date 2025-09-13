@@ -1,0 +1,18 @@
+:root {
+	--color-bg-body-dark: #171717;
+	--color-bg-form-dark: #0d100f;
+	--color-bg-input-dark: #0a0a0a;
+	--color-bg-input-active-dark: #292728;
+	--color-bg-button-attention-dark: #743c3c;
+	--color-bg-button-default-dark: #292728;
+
+	--color-fg-text-dark: #fffbec;
+	--color-fg-title-dark: #8d989a;
+
+	--color-border-focus-dark: #bdbdbd;
+	--color-border-valid-dark: #39a548;
+	--color-border-invalid-dark: #ac161e;
+
+	--margin-bottom-elements: 2.4rem;
+	--border-radius-all: .2rem;
+}

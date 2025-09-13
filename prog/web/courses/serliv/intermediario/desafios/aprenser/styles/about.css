@@ -1,19 +1,21 @@
-.about {
+.wrapper__about {
 	background-color: var(--color-ocean);
+}
+
+.about {
 	background-image: url(../images/nossa_escola.png);
 	background-position: left bottom;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 44em;
 
-	min-width: fit-content;
 	color: white;
 	margin-top: 4rem;
-	padding: 8em;
+	padding: 5.6em 0;
 }
 
 .about__container {
 	width: 40%;
-	margin-left: 60%;
+	margin-left: 50%;
 }
 
 .about__title {

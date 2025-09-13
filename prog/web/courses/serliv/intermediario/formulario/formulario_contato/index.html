@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Contato</title>
+
+	<link rel="stylesheet" href="styles/reset.css">
+	<link rel="stylesheet" href="styles/vars.css">
+	<link rel="stylesheet" href="styles/global.css">
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+	<form action="#" method="get" class="form-contact form" autocomplete="off">
+		<fieldset class="form-contact__fieldset">
+			<legend class="form-contact__title">Formulário de Contato</legend>
+
+			<label for="name" class="form-contact__label">Nome</label>
+			<input type="text" id="name" placeholder="Digite seu nome completo" required
+				class="form-contact__input input">
+
+			<label for="email" class="form-contact__label">Email</label>
+			<input type="email" id="email" placeholder="Digite um email válido" required
+				class="form-contact__input input">
+
+			<label for="subject" class="form-contact__label">Assunto</label>
+			<input type="text" id="subject" class="form-contact__input input">
+
+			<label for="message" class="form-contact__label">Mensagem</label>
+			<!-- can remove cols property to auto resize width to 100% -->
+			<textarea id="message" cols="30" rows="10" minlength="20" maxlength="200" required
+				class="form-contact__input input"></textarea>
+		</fieldset>
+
+		<div class="actions-container">
+			<button type="reset" class="button-reset button button--attention">Limpar</button>
+			<button type="submit" class="button-submit button button--default">Enviar</button>
+		</div>
+	</form>
+</body>
+
+</html>

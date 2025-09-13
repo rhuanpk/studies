@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Accent Color</title>
+
+	<style>
+		input,
+		progress {
+			accent-color: red;
+			accent-color: yellow;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Accent Color</h1>
+
+	<h2>Range</h2>
+	<label for="range">Range:</label>
+	<input type="range" name="range" id="range" min="0" max="10">
+
+	<h2>Progress</h2>
+	<label>Progress:<progress></progress></label><br>
+	<label>Progress:<progress max="100" value="70">70%</progress></label>
+
+	<h2>Checkbox</h2>
+	<label><input type="checkbox" name="checkbox">HTML</label>
+	<label><input type="checkbox" name="checkbox">CSS</label>
+	<label><input type="checkbox" name="checkbox">Javascript</label>
+
+	<h2>Radio</h2>
+	<label><input type="radio" name="radio" value="yes">Yes</label>
+	<label><input type="radio" name="radio" value="no">No</label>
+</body>
+
+</html>

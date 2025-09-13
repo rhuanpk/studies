@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Meter & Progress</title>
+</head>
+
+<body>
+	<h1>Meter & Progress</h1>
+
+	<!-- meter -->
+	<h2>Meter</h2>
+	<p>Representa um régua/intervalo.</p>
+
+	<p><i>min="0" max="100" low="30" high="80" optimum="90"</i></p>
+
+	<label>value="10":</label>
+	<meter min="0" max="100" low="30" high="80" optimum="90" value="10"></meter> (bellow low)<br>
+
+	<label>value="30":</label>
+	<meter min="0" max="100" low="30" high="80" optimum="90" value="30"></meter> (on low)<br>
+
+	<label>value="50":</label>
+	<meter min="0" max="100" low="30" high="80" optimum="90" value="50"></meter> (above low and bellow high)<br>
+
+	<label>value="80":</label>
+	<meter min="0" max="100" low="30" high="80" optimum="90" value="80"></meter> (on high)<br>
+
+	<label>value="85":</label>
+	<meter min="0" max="100" low="30" high="80" optimum="90" value="85"></meter> (above high and bellow optimum)<br>
+
+	<label>value="90":</label>
+	<meter min="0" max="100" low="30" high="80" optimum="90" value="90"></meter> (on optimum)<br>
+
+	<label>value="95":</label>
+	<meter min="0" max="100" low="30" high="80" optimum="90" value="95"></meter> (aobve optimum)<br>
+
+	<!-- progress -->
+	<h2>Progress</h2>
+	<p>Representa uma porcentagem de uma tarefa.</p>
+
+	<label>
+		Tarefa em progresso:
+		<progress></progress>
+	</label><br>
+	<label>
+		Porcentagem da tarefa:
+		<!-- the text inside the tag is a fallback if the user agent can't understand this tag -->
+		<progress max="100" value="70">70%</progress>
+	</label>
+
+	<!-- output -->
+	<h2>Output</h2>
+	<p>Mostra o resultado de algum retorno de script ou interação com usuário.</p>
+
+	<form oninput="r.value = a.value * b.value">
+		<input type="number" name="a" id="a"> x
+		<input type="number" name="b" id="b"> =
+		<output name="r" for="a b"></output>
+	</form>
+</body>
+
+</html>

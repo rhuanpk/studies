@@ -5,6 +5,9 @@
 	<meta charset="UTF-8">
 	<title>Aprenser</title>
 
+	<link rel="stylesheet" href="styles/fonts.css">
+	<link rel="stylesheet" href="styles/variables.css">
+	<link rel="stylesheet" href="styles/normalize.css">
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/hero.css">
 	<link rel="stylesheet" href="styles/slogan.css">
@@ -16,38 +19,43 @@
 
 <body>
 	<!-- hero -->
-	<header class="hero">
-		<img src="images/logo.png" alt="Aprenser logo" class="hero__logo">
-		<nav>
-			<ul class="hero__menu">
-				<li class="hero__item"><a href="#">Cursos</a></li>
-				<li class="hero__item"><a href="#">Nossa Escola</a></li>
-				<li class="hero__item"><a href="#">Contatos</a></li>
-			</ul>
-		</nav>
-	</header>
+	<div class="wrapper__hero">
+		<header class="hero container-outside">
+			<a href="#slogan"><img src="images/logo.png" alt="Aprenser logo" class="hero__logo"></a>
+			<nav>
+				<ul class="hero__menu">
+					<li class="hero__item"><a href="#courses">Cursos</a></li>
+					<li class="hero__item"><a href="#about">Nossa Escola</a></li>
+					<li class="hero__item"><a href="#contacts">Contatos</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
 
 	<!-- slogan -->
-	<section class="slogan">
-		<div class="slogan__content">
-			<h1 class="slogan__title">O saber é o que transforma nosso <span class="slogan__highlight">ser</span></h1>
-			<a href="#" class="slogan__cta button-cta">Saiba mais</a>
-		</div>
-		<img src="images/banner.png" alt="Mulher cheirando um girassol e sorrindo" class="slogan__img">
-	</section>
+	<div id="slogan" class="wrapper__slogan">
+		<section class="slogan container-outside">
+			<div class="slogan__content">
+				<h1 class="slogan__title">O saber é o que transforma nosso <span class="slogan__highlight">ser</span>
+				</h1>
+				<a href="#" class="slogan__cta button-cta">Saiba mais</a>
+			</div>
+			<img src="images/banner.png" alt="Mulher segurando um girassol e sorrindo" class="slogan__img">
+		</section>
+	</div>
 
 	<!-- courses -->
-	<main class="courses">
+	<main class="courses container-inside">
 		<section class="courses__section">
-			<h2 class="courses__title subtitle">Principais Cursos</h2>
+			<h2 id="courses" class="courses__title subtitle">Principais Cursos</h2>
 			<div class="courses__cards">
 				<article class="courses__card">
 					<img src="images/curso_design.png" alt="">
 					<div class="courses__card__content">
 						<h3>Web Designer</h3>
 						<p>
-							O curso Web Designer é perfeito para aqueles que desejam aprender a criar designs atraentes
-							e funcionais para sites e aplicativos móveis.
+							O curso Web Designer é perfeito para aqueles que desejam aprender a criar designs
+							atraentes e funcionais para sites e aplicativos móveis.
 						</p>
 					</div>
 				</article>
@@ -66,8 +74,8 @@
 					<div class="courses__card__content">
 						<h3>Backend Developer</h3>
 						<p>
-							Com este curso você vai dominar uma linguagem backend a sua escolha, um sistema de banco de
-							dados e aprenderá como funciona o protocolo HTTP na prática.
+							Com este curso você vai dominar uma linguagem backend a sua escolha, um sistema de banco
+							de dados e aprenderá como funciona o protocolo HTTP na prática.
 						</p>
 					</div>
 				</article>
@@ -77,39 +85,52 @@
 	</main>
 
 	<!-- about -->
-	<section class="about">
-		<div class="about__container">
-			<h2 class="about__title subtitle">Nossa Escola</h2>
-			<p class="about__content">
-				Aprenda habilidades tecnológicas em demanda e alcance seus objetivos de carreira com a nossa escola de
-				tecnologia online. Oferecemos uma ampla gama de cursos online, desde programação e desenvolvimento de
-				software até design gráfico e análise de dados. Nossos instrutores experientes fornecerão a você um
-				ambiente
-				de aprendizado interativo e de suporte para ajudá-lo a adquirir as habilidades necessárias para ter
-				sucesso
-				em sua carreira. Inscreva-se agora e comece sua jornada para se tornar um profissional de tecnologia
-				bem-sucedido.
-			</p>
-		</div>
-	</section>
+	<div class="wrapper__about">
+		<section class="about container-outside">
+			<div class="about__container">
+				<h2 id="about" class="about__title subtitle">Nossa Escola</h2>
+				<p class="about__content">
+					Aprenda habilidades tecnológicas em demanda e alcance seus objetivos de carreira com a nossa escola
+					de tecnologia online. Oferecemos uma ampla gama de cursos online, desde programação e
+					desenvolvimento de software até design gráfico e análise de dados. Nossos instrutores experientes
+					fornecerão a você um ambiente de aprendizado interativo e de suporte para ajudá-lo a adquirir as
+					habilidades necessárias para ter sucesso em sua carreira. Inscreva-se agora e comece sua jornada
+					para se tornar um profissional de tecnologia bem-sucedido.
+				</p>
+			</div>
+		</section>
+	</div>
 
 	<!-- contacts -->
-	<section class="contacts">
-		<h2 class="contacts__title subtitle">Contatos</h2>
-		<img src="images/map.png" alt="" class="contacts__map">
+	<section class="contacts container-inside">
+		<h2 id="contacts" class="contacts__title subtitle">Contatos</h2>
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57292.370808313935!2d27.99882501818588!3d-26.17151563655165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c68f0406a51%3A0x238ac9d9b1d34041!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2sbr!4v1757531838314!5m2!1sen!2sbr"
+			width="100%" height="525" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
 		<ul class="contacts__list">
-			<li class="contacts__item">Endereço: Av. da Liberdade, 1001</li>
-			<li class="contacts__item">Telefone: +351 21 123 456</li>
-			<li class="contacts__item">E-mail: contato@aprenser.com</li>
+			<li class="contacts__item">
+				<address>Endereço: Av. da Liberdade, 1001</address>
+			</li>
+			<li class="contacts__item">
+				<address>Endereço: <a href="tel:+35121123456">+351 21 123 456</a></address>
+			</li>
+			<li class="contacts__item">
+				<address>E-mail: <a href="mailto:contato@aprenser.com">contato@aprenser.com</a></address>
+			</li>
 		</ul>
 	</section>
 
 	<!-- villain -->
-	<footer class="villain">
-		<p class="villain__content">
-			Desenvolvido por Serliv
-		</p>
-	</footer>
+	<div class="wrapper__villain">
+		<footer class="villain container-outside">
+			<p class="villain__content">
+				Desenvolvido por Serliv
+			</p>
+		</footer>
+	</div>
+
+	<address></address>
 </body>
 
 </html>

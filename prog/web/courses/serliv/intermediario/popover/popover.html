@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Popover</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		:popover-open {
+			/* width: 300px; */
+			padding: 12px;
+			border-radius: 12px;
+		}
+
+		::backdrop {
+			background-color: rgba(0, 0, 0, .25);
+		}
+
+		.popover-container :popover-open {
+			inset: unset;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Curso Web Design - Popover</h1>
+
+	<button popovertarget="popover">Popover</button>
+	<div id="popover" popover>Texto de <i>popover</i>.</div>
+	<hr>
+
+	<!-- auto closes the popover when clicked outsied (default) -->
+	<button popovertarget="popover-auto">Popover Auto</button>
+	<div id="popover-auto" popover="auto">Texto de <i>popover="auto"</i></div>
+	<hr>
+
+	<!-- only closes if click in the same button or in another specific button with the correct property -->
+	<button popovertarget="popover-manual">Popover Manual</button>
+	<div id="popover-manual" popover="manual">Texto de <i>popover="manual"</i></div>
+	<hr>
+
+	<button popovertarget="popover-manual-action" popovertargetaction="show">Popover Manual Show</button>
+	<br><br>
+	<button popovertarget="popover-manual-action" popovertargetaction="hide">Popover Manual Hide</button>
+	<div id="popover-manual-action" popover="manual">Texto de <i>popovertargetaction="show"</i></div>
+	<hr>
+
+	<!-- cleanup the popover user agent styles -->
+	<div class="popover-container">
+		<button popovertarget="popover-unset">Popover Unset</button>
+		<div id="popover-unset" popover>Texto de <i>inset: unset;</i></div>
+	</div>
+	<!-- <hr> -->
+
+	<!-- ??? -->
+	<!-- <button popovertarget="popover-hint">Popover Hint</button> -->
+	<!-- <div id="popover-hint" popover="hint">Texto de <i>popover="hint"</i></div> -->
+</body>
+
+</html>

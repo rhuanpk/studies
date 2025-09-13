@@ -1,6 +1,5 @@
 .courses__section {
 	text-align: center;
-	width: var(--width-inside);
 	margin: auto;
 }
 
@@ -15,6 +14,7 @@
 
 .courses__card {
 	text-align: left;
+	flex-grow: 1;
 }
 
 .courses__card>img {
@@ -26,8 +26,10 @@
 .courses__card__content {
 	background-color: white;
 	padding: 2.4em;
-	border-bottom-right-radius: var(--border-radius);
-	border-bottom-left-radius: var(--border-radius);
+	/* border-bottom-right-radius: var(--border-radius); */
+	/* border-bottom-left-radius: var(--border-radius); */
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+	border-top: transparent;
 }
 
 .courses__card__content>h3 {

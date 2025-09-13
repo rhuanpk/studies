@@ -1,5 +1,8 @@
-.villain {
+.wrapper__villain {
 	background-color: var(--color-grey);
+}
+
+.villain {
 	color: var(--color-lightwhite);
 	font-size: var(--size-content);
 	margin-top: 4.8rem;

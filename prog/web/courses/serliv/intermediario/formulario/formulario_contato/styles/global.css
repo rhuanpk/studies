@@ -1,0 +1,37 @@
+html {
+	font-family: sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	min-height: 100vh;
+}
+
+.form {
+	border-radius: var(--border-radius-all);
+}
+
+.input {
+	border: none;
+}
+
+.actions-container {
+	width: fit-content;
+	margin-left: auto;
+}
+
+.button {
+	cursor: pointer;
+	color: var(--color-fg-text-dark);
+	padding: 1.2em;
+	border: none;
+	border-radius: var(--border-radius-all);
+}
+
+.button--attention {
+	background-color: var(--color-bg-button-attention-dark);
+}
+
+.button--default {
+	background-color: var(--color-bg-button-default-dark);
+}

@@ -1,0 +1,22 @@
+:root {
+	--color-grey: #2a2a2a;
+	--color-yellow: #f3cc06;
+	--color-ocean: #003464;
+	--color-lightgrey: #646464;
+	--color-lightwhite: #d8d8d8;
+	--color-darkgrey: #161616;
+	--color-darkwhite: #eeeeee;
+
+	--size-subtitle: xx-large;
+	--size-susubtitle: medium;
+	--size-content: small;
+	--letter-titles: .04em;
+	--line-content: 1.6em;
+	--border-radius: .4rem;
+
+	--margin-subtitle: 2em 0;
+	--width-outside: 90%;
+	--width-max-outside: 104rem;
+	--width-inside: 85%;
+	--width-max-inside: 100rem;
+}

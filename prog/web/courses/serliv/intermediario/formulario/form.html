@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Formulário</title>
+
+	<style>
+		textarea {
+			resize: none;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Formulário</h1>
+
+	<form action="#" method="get">
+		<fieldset>
+			<legend>Introdução</legend>
+
+			<label for="email">Email:</label><br>
+			<input type="email" name="email" id="email" placeholder="user@email.com">
+
+			<br><br>
+
+			<label for="number">Number:</label><br>
+			<input type="number" name="number" id="number" min="0" max="100">
+
+			<br><br>
+
+			<label for="date">Date:</label><br>
+			<input type="date" name="date" id="date" min="1970-01-01" max="1970-12-31">
+
+			<br><br>
+
+			<label>Radio:</label><br>
+			<!-- value: value of variable (only here and checkbox) -->
+			<!-- id: is unnecessary because radio is wrapped by label -->
+			<label><input type="radio" name="radio" value="yes">Yes</label>
+			<label><input type="radio" name="radio" value="no">No</label>
+		</fieldset>
+
+		<fieldset>
+			<legend>Continuação</legend>
+
+			<label>Checkbox:</label><br>
+			<!-- value: value of variable (only here and checkbox) -->
+			<!-- id: is unnecessary because radio is wrapped by label -->
+			<label><input type="checkbox" name="checkbox" value="css">CSS</label>
+			<label><input type="checkbox" name="checkbox" value="html">HTML</label>
+			<label><input type="checkbox" name="checkbox" value="javascript">Javascript</label>
+			<label><input type="checkbox" name="checkbox" value="python" checked>Python</label>
+			<label><input type="checkbox" name="checkbox" value="java">Java</label>
+
+			<br><br>
+
+			<label>Select:</label><br>
+			<!-- <select name="select" required multiple size="10"> -->
+			<select name="select" required>
+				<!-- fake option to no pre select anyone (with select required too) -->
+				<option value=""></option>
+
+				<option value="learning">Learning</option>
+				<option value="programming">Programming</option>
+
+				<optgroup label="Frontend">
+					<option value="css">CSS</option>
+					<option value="html">HTML</option>
+					<option value="javascript">Javascript</option>
+				</optgroup>
+
+				<optgroup label="Backend">
+					<option value="python">Python</option>
+					<option value="java">Java</option>
+				</optgroup>
+			</select>
+
+			<br><br>
+
+			<label for="Datalist">Datalist:</label><br>
+			<input type="text" list="datalist">
+			<datalist id="datalist">
+				<option value="CSS">
+				<option value="HTML">
+				<option value="Javascript">
+				<option value="Python">
+				<option value="Java">
+			</datalist>
+		</fieldset>
+
+		<fieldset>
+			<legend>Outros</legend>
+
+			<label>Textarea:</label><br>
+			<textarea name="textarea" cols="30" rows="5" maxlength="50"></textarea>
+
+			<br><br>
+
+			<label>Textarea:</label><br>
+			<!-- <textarea cols="30" rows="5" readonly>CONTRATO</textarea> -->
+			<textarea cols="30" rows="5" disabled>CONTRATO</textarea>
+
+			<br><br>
+
+			<!-- has a builtin button to clean the text -->
+			<label for="search">Search:</label><br>
+			<input type="search" value="Preseted text" name="search" id="search">
+
+			<br><br>
+
+			<label for="file">File:</label><br>
+			<input type="file" name="file" id="file">
+
+			<br><br>
+
+			<label for="range">Range:</label><br>
+			<input type="range" name="range" id="range" min="0" max="10" step=".5">
+
+			<br><br>
+
+			<label for="time">Time:</label><br>
+			<input type="time" name="time" id="time">
+
+			<br><br>
+
+			<label for="color">Color:</label><br>
+			<input type="color" name="color" id="color">
+		</fieldset><br>
+
+		<!-- preset default values that are now showed for the user? -->
+		<input type="hidden" name="hidden" value="xpto">
+
+		<!-- reset all the form -->
+		<input type="reset" value="Input Reset">
+		<!-- submit/send the form -->
+		<input type="submit" value="Input Submit">
+		<!-- only for javascript calls -->
+		<input type="button" value="Input Button">
+
+		<br><br>
+
+		<!-- when using buttons directly can use other tags inside itself -->
+
+		<!-- reset all the form -->
+		<button type="reset">Button Reset</button>
+		<!-- submit/send the form -->
+		<button type="submit">Button Submit</button>
+		<!-- only for javascript calls -->
+		<button type="button"><b>Button Button</b></button>
+	</form>
+</body>
+
+</html>

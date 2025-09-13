@@ -1,8 +1,3 @@
-.contacts {
-	width: var(--width-inside);
-	margin: auto;
-}
-
 .contacts__title {
 	text-align: center;
 	margin: var(--margin-subtitle);

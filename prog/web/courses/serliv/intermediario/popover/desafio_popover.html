@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cauã Victor</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		main {
+			width: 50%;
+			max-width: 30rem;
+			margin: 2rem auto;
+			padding: 1.6em;
+			border-radius: .4rem;
+			box-shadow: 0 0 .8em rgba(0, 0, 0, .1);
+		}
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		h1 {
+			margin-top: 0;
+		}
+
+		.highlight {
+			font-weight: bold;
+		}
+
+		button {
+			border: none;
+			cursor: pointer;
+
+			align-self: flex-start;
+		}
+
+		.blue-white {
+			background-color: dodgerblue;
+			color: white;
+			padding: .8em 1.2em;
+			border-color: white;
+			border-width: .2rem;
+			border-radius: .4em;
+		}
+
+		::backdrop {
+			background-color: rgba(0, 0, 0, .5);
+		}
+
+		/* #help :popover-open */
+		:popover-open {
+			inset: unset;
+			position: absolute;
+			top: 8rem;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<header>
+			<div class="header__content">
+				<h1>Perfil de Cauã Victor</h1>
+				<p><span class="highlight">Nome:</span> Cauã Victor</p>
+			</div>
+			<!-- <div class="help-container"> -->
+			<button popovertarget="help" class="blue-white">Ajuda</button>
+			<div popover id="help" class="blue-white">Alterações devem ser feitas nas configurações.</div>
+			<!-- </div> -->
+		</header>
+		<hr>
+		<section>
+			<h2>Informações de Contato</h2>
+			<p><span class="highlight">Email:</span> caua.victor@example.com</p>
+		</section>
+	</main>
+</body>
+
+</html>

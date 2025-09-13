@@ -1,0 +1,64 @@
+body {
+	background-color: var(--color-bg-body-dark);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-contact {
+	background-color: var(--color-bg-form-dark);
+	width: 80%;
+	min-width: 40rem;
+	max-width: 52rem;
+	padding: 1.6rem;
+}
+
+.form-contact__fieldset {
+	border: none;
+}
+
+.form-contact__title {
+	color: var(--color-fg-title-dark);
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: var(--margin-bottom-elements);
+}
+
+.form-contact__label {
+	color: var(--color-fg-text-dark);
+	font-size: 1.6em;
+	margin-bottom: .4rem;
+	display: block;
+}
+
+.form-contact__input {
+	background-color: var(--color-bg-input-dark);
+	color: var(--color-fg-text-dark);
+	width: 100%;
+	padding: .8em;
+	margin-bottom: var(--margin-bottom-elements);
+	border-bottom: .2rem solid var(--color-border-focus-dark);
+	outline: none;
+}
+
+.form-contact__input:invalid:focus {
+	border-bottom-color: var(--color-border-invalid-dark);
+}
+
+.form-contact__input:valid:focus {
+	border-bottom-color: var(--color-border-valid-dark);
+}
+
+.form-contact__input:focus {
+	background-color: var(--color-bg-input-active-dark);
+}
+
+#message {
+	resize: none;
+}
+
+.button-submit {
+	margin-left: .8rem;
+}
