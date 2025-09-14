@@ -1,0 +1,63 @@
+button {
+	background-color: #555;
+	color: white;
+	margin-bottom: .4em;
+	padding: 1em;
+	border: none;
+}
+
+button:disabled {
+	opacity: .5;
+}
+
+p:empty::before {
+	content: 'Parágrafo vazio...';
+	font-style: italic;
+	opacity: .5;
+}
+
+a:hover,
+a:focus {
+	background-color: yellow;
+}
+
+input[type="text"]:read-write {
+	background-color: #ccc;
+	padding: .4em;
+	border: none;
+}
+
+input[type="text"]:read-only {
+	background-color: yellow;
+	padding: .4em;
+	border: none;
+}
+
+input[type="text"]:disabled {
+	background-color: #eee;
+	padding: .4em;
+	border: none;
+}
+
+input[type="text"]::placeholder {
+	color: white;
+}
+
+input[type="text"]:placeholder-shown {
+	background-color: blueviolet;
+}
+
+/* when the only child is a "p" */
+p:only-child {
+	background-color: orange;
+}
+
+p:read-write {
+	font-style: italic;
+	border-bottom: 2px solid red;
+}
+
+/* target is the element sectioned in url with "#id" */
+div:target {
+	border: 2px dashed red;
+}

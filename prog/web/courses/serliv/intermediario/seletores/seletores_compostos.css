@@ -1,0 +1,27 @@
+article {
+	outline: 2px solid black;
+}
+
+article a {
+	color: red;
+}
+
+article a>b {
+	color: green;
+}
+
+h3+p {
+	background-color: yellow;
+}
+
+h3~p {
+	border: 2px dashed orange;
+}
+
+.destaque {
+	padding-left: 2rem;
+}
+
+article p:not(.destaque) {
+	color: #777;
+}

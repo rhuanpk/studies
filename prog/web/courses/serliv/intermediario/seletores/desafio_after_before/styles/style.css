@@ -1,0 +1,32 @@
+a[target="_blank"]::after {
+	/* content: ' ' url(../images/new_window_icon.png); */
+	content: url(../images/new_window_icon.png);
+	margin-left: .4em;
+}
+
+a[href$=".pdf"]::before {
+	/* content: url(../images/pdf_icon.gif) ' '; */
+	content: url(../images/pdf_icon.gif);
+	margin-right: .4em;
+}
+
+input[type="checkbox"]:checked+label {
+	color: green;
+}
+
+/* :not(input[type="checkbox"]:checked)+label */
+input[type="checkbox"]:not(:checked)+label {
+	color: red;
+}
+
+input[type="checkbox"]:disabled+label {
+	color: blue;
+}
+
+/* ul ul>li:nth-of-type(3),
+ul ol>li:nth-of-type(3),
+ol ul>li:nth-of-type(3),
+ol ol>li:nth-of-type(3) */
+li li:nth-of-type(3) {
+	background-color: yellow;
+}

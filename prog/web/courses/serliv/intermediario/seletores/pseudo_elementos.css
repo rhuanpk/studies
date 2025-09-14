@@ -1,0 +1,14 @@
+p::first-letter {
+	font-size: 2.8em;
+	line-height: 1;
+	margin-right: .2em;
+	float: left;
+}
+
+p::first-line {
+	color: darkred;
+}
+
+::selection {
+	background-color: orange;
+}

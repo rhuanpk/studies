@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pseudo-classes</title>
+
+	<link rel="stylesheet" href="pseudo_classes.css">
+</head>
+
+<body>
+	<div id="top">
+		<a href="#title">Vai para o título.</a><br>
+
+		<button>Go</button><br>
+		<button disabled>Go disabled</button>
+	</div>
+
+	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, magnam!</p>
+	<!-- this is not empty -->
+	<p> </p>
+	<p></p>
+
+	<ul>
+		<li><a href="#">Link falso</a></li>
+		<li><a href="#">Link falso</a></li>
+		<li><a href="#">Link falso</a></li>
+		<li><a href="#">Link falso</a></li>
+	</ul>
+
+	<!-- the tabindex enables the element can be focusable -->
+	<!-- 0 is the default -->
+	<p tabindex="0">Lorem ipsum dolor sit amet.</p>
+	<p tabindex="0">Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p tabindex="1">Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+
+	<form>
+		<input type="text" value="Texto inicial"><br><br>
+		<input type="text" value="Texto inicial" disabled><br><br>
+		<input type="text" value="Texto inicial" readonly><br><br>
+		<input type="text" placeholder="Texto inicial"><br><br>
+		<input type="text"><br><br>
+	</form>
+
+	<div>
+		<p>Lorem ipsum dolor sit amet.</p>
+	</div>
+	<hr>
+	<div>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<em>Lorem ipsum dolor sit amet.</em>
+	</div>
+	<hr>
+	<div>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<p contenteditable>Parágrafo editável.</p>
+	</div>
+
+	<div id="title">
+		<h1>Título</h1>
+		<p>
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi cumque doloribus distinctio quos sint vero
+			sed possimus exercitationem, dignissimos quidem labore quasi? Reiciendis magni asperiores debitis quo fuga,
+			fugit perferendis.
+		</p>
+		<a href="#top">Vai para cima.</a>
+	</div>
+</body>
+
+</html>

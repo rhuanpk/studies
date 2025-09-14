@@ -1,0 +1,39 @@
+/* this selector is more specific the the bellow */
+.container .div1 {
+	background-color: red;
+}
+
+.container {
+	/* color: blue; */
+
+	.div1 {
+		background-color: red;
+	}
+
+	.paragraph {
+		font-style: italic;
+
+		/* the "&" operator repeats the parent selector (?) */
+		&.highlight {
+			color: orange;
+		}
+	}
+}
+
+/* this is like the "&" operator */
+.paragraph.highlight {
+	color: orange;
+}
+
+a {
+	color: red;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+/* although this selector comes after the above this is less specif then not overwrite this previous case */
+.div1 {
+	background-color: yellow;
+}

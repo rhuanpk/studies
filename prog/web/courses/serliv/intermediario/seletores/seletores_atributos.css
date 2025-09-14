@@ -1,0 +1,20 @@
+a[href="#"]:not(.falseable) {
+	opacity: .2;
+}
+
+a[href="#"].falseable {
+	color: black;
+}
+
+a[href^="http"] {
+	color: red;
+}
+
+a[href$=".pdf"] {
+	color: green;
+}
+
+/* can change to a[target]? */
+a[target="_blank"] {
+	text-decoration: none;
+}
