@@ -1,0 +1,12 @@
+:root {
+	--color-bg-light: white;
+	--color-bg-dark: #ccc;
+	--color-fg-light: white;
+
+	--size-img-gallery: 25rem;
+	--size-gap-gallery: 1.2rem;
+	--size-padding-gallery: 1.6rem;
+
+	--size-min-width-gallery: calc((var(--size-img-gallery) * 3) + (var(--size-gap-gallery) * 2) + (var(--size-padding-gallery) * 2));
+	--size-max-width-gallery: calc((var(--size-img-gallery) * 4) + (var(--size-gap-gallery) * 3) + (var(--size-padding-gallery) * 2));
+}

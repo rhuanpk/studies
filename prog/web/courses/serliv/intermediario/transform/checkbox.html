@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Checkbox</title>
+
+	<style>
+		/* is this examples wee can use opacity to use transition when checkbox is marked */
+
+		/* checkbox 1 */
+		.check1 {
+			display: none;
+		}
+
+		.check1+label {
+			cursor: pointer;
+		}
+
+		.check1+label>span {
+			cursor: pointer;
+			display: inline-block;
+			font-size: 8px;
+			width: 1.6em;
+			height: 1.6em;
+			border: .1em solid #bbb;
+			border-radius: .4em;
+		}
+
+		.check1:checked+label>span {
+			background-color: black;
+			border-color: black;
+			position: relative;
+
+			&::before {
+				content: '';
+				display: block;
+				border: .28em solid cyan;
+				border-left: none;
+				border-top: none;
+				position: absolute;
+				top: .2em;
+				left: .5em;
+				right: .5em;
+				bottom: .3em;
+				transform: rotate(40deg);
+			}
+		}
+
+		/* label 2 */
+		.label2>input[type="checkbox"] {
+			/* display: none; */
+		}
+
+		.label2 {
+			cursor: pointer;
+			position: relative;
+		}
+
+		.label2>span {
+			cursor: pointer;
+			display: inline-block;
+			font-size: 8px;
+			width: 1.6em;
+			height: 1.6em;
+			border: .1em solid #bbb;
+			border-radius: .4em;
+		}
+
+		/* .label2:has(input[type="checkbox"]:checked)>span */
+		.label2>input[type="checkbox"]:checked+span {
+			background-color: black;
+			border-color: black;
+			position: relative;
+
+			&::before {
+				content: '';
+				display: block;
+				border: .28em solid cyan;
+				border-left: none;
+				border-top: none;
+				position: absolute;
+				top: .2em;
+				left: .5em;
+				right: .5em;
+				bottom: .3em;
+				transform: rotate(40deg);
+			}
+		}
+
+		.label2>input[type="checkbox"] {
+			width: 1px;
+			height: 1px;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			outline: none;
+			position: absolute;
+		}
+
+		.label2>input[type="checkbox"]:focus+span {
+			outline: .28em solid cyan;
+		}
+
+		/* switch 3 */
+		.switch3 {
+			--color-switch-light: white;
+			--color-switch-dark: #ddd;
+
+			cursor: pointer;
+		}
+
+		.switch3>span {
+			font-size: 8px;
+			display: inline-block;
+			width: 4em;
+			height: 2em;
+			outline: .3em solid var(--color-switch-dark);
+			/* border-radius: 25% / 50%; */
+			border-radius: 2em;
+			cursor: pointer;
+
+
+			&::before {
+				content: '';
+				display: block;
+				background-color: var(--color-switch-dark);
+				width: 50%;
+				height: 99%;
+				border-radius: 50%;
+				/* transform: translateX(0); */
+				transition-property: transform background-color;
+				transition-duration: 250ms;
+			}
+		}
+
+		.switch3>input[type="checkbox"]:checked+span {
+			background-color: var(--color-switch-dark);
+
+			&::before {
+				background-color: var(--color-switch-light);
+				transform: translateX(99%);
+			}
+		}
+
+		.switch3>input[type="checkbox"] {
+			width: 1px;
+			height: 1px;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			outline: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+
+		.switch3>input[type="checkbox"]:focus+span {
+			outline-color: #333;
+			outline-offset: 2px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Checkbox</h1>
+
+	<input type="checkbox" id="html" class="check1" checked>
+	<label for="html"><span></span> HTML</label>
+
+	<input type="checkbox" id="css" class="check1">
+	<label for="css"><span></span> CSS</label>
+
+	<input type="checkbox" id="js" class="check1">
+	<label for="js"><span></span> Javascript</label>
+
+	<hr>
+
+	<label class="label2">
+		<input type="checkbox" checked><span></span> HTML
+	</label>
+
+	<label class="label2">
+		<input type="checkbox"><span></span> CSS
+	</label>
+
+	<label class="label2">
+		<input type="checkbox"><span></span> Javascript
+	</label>
+
+	<hr>
+
+	<label class="switch3">
+		<input type="checkbox" checked><span></span> HTML
+	</label>
+
+	<label class="switch3">
+		<input type="checkbox"><span></span> CSS
+	</label>
+
+	<label class="switch3">
+		<input type="checkbox"><span></span> Javascript
+	</label>
+</body>
+
+</html>

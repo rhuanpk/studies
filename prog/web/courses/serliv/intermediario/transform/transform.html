@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Transform</title>
+
+	<style>
+		div {
+			outline: 1px solid #8888;
+			width: 80%;
+			height: 200px;
+			margin: .4em auto;
+		}
+
+		p {
+			width: 100%;
+		}
+
+		.highlight {
+			background-color: yellow;
+		}
+
+		/* div.div1>p.highlight */
+		.div1 .highlight {
+			/* transform: translateX(50px); */
+			/* transform: translateY(50px); */
+
+			/* x-axis[, y-axis] */
+			/* transform: translate(50px, -50px); */
+
+			/* transform with % in x-axis is relative to the width of their own element */
+			transform: translateX(50%);
+			/* transform with % in y-axis is relative to the height of their own element */
+			transform: translateY(50%);
+
+			transform: translate(50%, 50%);
+		}
+
+		.div2 .highlight {
+			position: relative;
+
+			/* left: 50px; */
+			/* bottom: 50px; */
+
+			/* position with % in x-axis is relative to the width of their parent element */
+			left: 25%;
+			/* position with % in y-axis is relative to the height of their parent element, so if the parent no has a height seted this property doesn't take effect */
+			top: 50%;
+		}
+
+		.div3 .highlight {
+			/* the element will be rotates at yourself axis */
+			/* positive values rotates the element to clockwise and negative values counterclockwise */
+			transform: rotate(30deg);
+		}
+
+		.div4 .highlight {
+			/* your values works like in "translate()" */
+			/* each unit is a multiplier of own element size (width and height respectively) */
+			transform: scale(.5, 2);
+		}
+
+		.div5 .highlight {
+			/* your values works like in "rotate()" */
+			transform: skew(45deg);
+		}
+
+		.div6 .highlight {
+			transform-origin: left bottom;
+			transform: translate(0) rotate(15deg);
+		}
+
+		.div7 .highlight {
+			transform-origin: 0 100%;
+
+			/* the order of the values are important */
+			/* because first rotates the x-axis, the translate referring to this new axis */
+			/* transform: rotate(30deg) translate(50px); */
+			/* transform: rotate(30deg) translate(100px); */
+			/* transform: rotate(30deg) translate(150px); */
+			transform: rotate(30deg) translate(200px);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="div1">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p class="highlight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+	</div>
+
+	<div class="div2">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p class="highlight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+	</div>
+
+	<div class="div3">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p class="highlight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+	</div>
+
+	<div class="div4">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p class="highlight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+	</div>
+
+	<div class="div5">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p class="highlight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+	</div>
+
+	<div class="div6">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p class="highlight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+	</div>
+
+	<div class="div7">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p class="highlight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus.</p>
+	</div>
+</body>
+
+</html>
