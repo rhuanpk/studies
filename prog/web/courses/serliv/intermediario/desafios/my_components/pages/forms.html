@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Projeto MyComponents | Formulários</title>
+
+	<link rel="stylesheet" href="../styles/normalize.css">
+	<link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+	<header class="main-header">
+		<nav class="main-header__navigation">
+			<a href="#"><img src="../images/profile.png" alt="Rhuan Patriky" class="main-header__img-profile"></a>
+
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="typography.html">Tipografia</a></li>
+				<li><a href="cards.html">Cards</a></li>
+				<li><a href="lists.html">Listas</a></li>
+				<li><a href="forms.html">Formulários</a></li>
+				<li><a href="buttons.html">Botões</a></li>
+				<li><a href="tables.html">Tabelas</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="main-content">
+		<h1>My Components</h1>
+
+		<section>
+			<h2>Contato</h2>
+
+			<div class="row">
+				<form>
+					<div class="row">
+						<label>
+							Nome
+							<input type="text" name="name" placeholder="Nome completo">
+						</label>
+						<label>
+							Email
+							<input type="email" name="email" autocomplete="off">
+						</label>
+					</div>
+					<label for="message">Mensagem</label>
+					<textarea name="message" id="message" rows="6"></textarea>
+					<input type="submit" value="Enviar" class="btn">
+				</form>
+
+				<address>
+					<p><b>Endereço</b> 1234 Somewhere Rd. Nashville, TN 00000 United States</p>
+					<p><b>Telefone</b> 000-000-000</p>
+					<p><b>Email</b> email@server.com</p>
+				</address>
+			</div>
+		</section>
+
+		<section>
+			<h2>Quiz</h2>
+
+			<form class="form-quiz">
+				<label for="tech">Qual é sua linguagem preferida?</label>
+				<select name="tech" id="tech">
+					<option value="">Selecione</option>
+					<option value="html">HTML</option>
+					<option value="css">CSS</option>
+					<option value="js">Javascript</option>
+				</select>
+
+				<label>Baixa Prioridade <input type="radio" name="prior" value="baixa"></label>
+				<label>Média Prioridade <input type="radio" name="prior" value="media"></label>
+				<label>Alta Prioridade <input type="radio" name="prior" value="alta"></label>
+
+				<label><input type="checkbox" name="copy" value="true"> Envie-me uma cópia</label>
+				<label><input type="checkbox" name="human" value="true"> Sou um humano</label>
+
+				<div class="row">
+					<input type="reset" value="Limpar">
+					<input type="submit" value="Enviar" class="btn btn--stroke">
+				</div>
+			</form>
+		</section>
+</body>
+
+</html>
