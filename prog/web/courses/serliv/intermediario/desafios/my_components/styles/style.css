@@ -103,6 +103,27 @@ select {
 	border-radius: 5px;
 }
 
+address ul {
+	list-style-type: none;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		margin-right: 2em;
+		transition: color 250ms;
+
+		&:hover {
+			color: var(--color-primary);
+		}
+
+		a {
+			text-decoration: none;
+			font-style: normal;
+			display: inline-block;
+		}
+	}
+}
+
 /* classes */
 .main-header,
 .main-content {
@@ -155,6 +176,14 @@ select {
 	padding: 6.4rem 6rem 7.6rem;
 	flex: 1 0;
 }
+
+.icon {
+	font-size: 2.4em;
+	margin-right: .8rem;
+	/* transform: translateY(25%); */
+	vertical-align: middle;
+}
+
 
 .highlight {
 	font-size: 1.2em;
