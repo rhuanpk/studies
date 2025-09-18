@@ -1,0 +1,95 @@
+:root {
+	--width-div: 31.2em;
+	--gap-div: 3.2rem;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: #7b3d3e;
+	font-family: sans-serif;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1,
+h2 {
+	font-weight: lighter;
+}
+
+h1 {
+	color: #ddd;
+	font-size: xx-large;
+	margin: 1em 0;
+}
+
+h2 {
+	font-size: large;
+	margin-bottom: .8em;
+}
+
+p {
+	font-size: small;
+}
+
+div {
+	/* background-color: #eee; */
+	color: #333;
+	line-height: 1.4;
+	padding: 4em;
+	filter: drop-shadow(0 0 .8rem rgb(0 0 0 / .25));
+}
+
+.flex {
+	max-width: calc((var(--width-div) * 3) + (var(--gap-div) * 2));
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--gap-div);
+}
+
+.flex>* {
+	/* chan chage to clamp(<min>, <ideal>, <max>) */
+	flex-basis: var(--width-div);
+}
+
+.cutted {
+	background-image: linear-gradient(135deg, transparent 5%, #eee 5%);
+}
+
+.shadowed {
+	/* its better works with pixels in this case */
+	background-image:
+		linear-gradient(135deg, transparent 52%, #ccc 52%),
+		linear-gradient(135deg, transparent 5%, #eee 5%);
+	background-size: 8% 12%, 100%;
+	background-repeat: no-repeat;
+}
+
+.folded {
+	background-image: linear-gradient(135deg, transparent 5%, #eee 5%);
+	position: relative;
+}
+
+.folded::before {
+	content: '';
+	background-image: linear-gradient(135deg, transparent 52%, #ddd 52%);
+	display: block;
+	width: 2.5rem;
+	height: 2.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	filter: drop-shadow(.2rem .2rem .2rem rgb(0 0 0 / .25));
+}

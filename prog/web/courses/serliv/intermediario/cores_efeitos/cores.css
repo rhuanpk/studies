@@ -1,0 +1,213 @@
+:root {
+    --primary-color: red;
+}
+
+body {
+    /* background-image: linear-gradient(to top left, transparent 50%, red 60%, blue 70%), url(images/tile.png); */
+    /* background-image: linear-gradient(90deg, transparent 50%, red 60%, blue 70%), url(images/tile.png); */
+    /* background-attachment: fixed, scroll; */
+
+    /* background-image: linear-gradient(to top, rgb(0 0 255 / .5) 50%, transparent), url(images/tile.png); */
+    /* background-attachment: fixed, scroll; */
+
+    background-image: linear-gradient(to top, rgb(0 0 255 / .9) 50%, red), url(images/tile.png);
+    background-attachment: fixed, scroll;
+    /* background-blend-mode: difference; */
+    /* background-blend-mode: color-burn; */
+    /* background-blend-mode: color-dodge; */
+    background-blend-mode: color;
+
+    font-family: sans-serif;
+}
+
+section {
+    counter-reset: contador;
+}
+
+.cores {
+    width: 80%;
+    margin: 20px auto;
+    padding: 26px;
+    border: 8px dashed color-mix(in srgb, var(--primary-color), transparent 40%);
+
+    counter-increment: contador;
+}
+
+.cores p {
+    margin: 0;
+}
+
+.cores::before {
+    content: '[ ' counter(contador) ' ]';
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.cores:nth-child(2) {
+    background-color: red;
+    background-clip: border-box;
+    background-clip: padding-box;
+    background-clip: content-box;
+}
+
+.cores:nth-child(2) {
+    background-color: red;
+    /* background-clip: border-box; */
+    /* background-clip: padding-box; */
+    background-clip: content-box;
+}
+
+.cores:nth-child(3) {
+    background-color: hsl(100deg 100% 80% / .5);
+    box-shadow: 10px 10px 6px hsl(100deg 100% 50%) inset;
+}
+
+.cores:nth-child(3):hover {
+    background-color: hsl(100deg 100% 40%);
+}
+
+.cores:nth-child(4) {
+    background-image:
+        linear-gradient(70deg, blue, transparent),
+        linear-gradient(to top, red, transparent);
+    background-clip: content-box, padding-box;
+}
+
+.cores:nth-child(5) {
+    /* background-image: radial-gradient(blue 30%, color-mix(in srgb, red, transparent), green 50%, yellow); */
+    /* background-image: radial-gradient(blue 30%, #f007, green 50%, yellow); */
+    background-image: radial-gradient(ellipse, blue 30%, #f007, green 50%, yellow);
+}
+
+.cores:nth-child(6) {
+    background-image: radial-gradient(circle, blue 30%, #f007, green 50%, yellow);
+}
+
+.cores:nth-child(7) {
+    background-image: radial-gradient(circle, blue, #f007, green, yellow);
+}
+
+.cores:nth-child(8) {
+    /* background-image: radial-gradient(circle, blue, #f007); */
+    /* background-image: radial-gradient(circle at center, blue, #f007); */
+    /* background-image: radial-gradient(circle at top, blue, #f007); */
+    /* background-image: radial-gradient(circle at bottom, blue, #f007); */
+    /* background-image: radial-gradient(circle at right, blue, #f007); */
+    /* background-image: radial-gradient(circle at left, blue, #f007); */
+    /* background-image: radial-gradient(circle at left top, blue, #f007); */
+    /* background-image: radial-gradient(circle at right top, blue, #f007); */
+    /* background-image: radial-gradient(circle at 10% 50%, blue, #f007 20%); */
+    background-image: radial-gradient(circle at 50px 20px, blue, #f007 20%);
+}
+
+.cores:nth-child(9) {
+    background-image: radial-gradient(at 50px 20px, blue, #f007 20%);
+}
+
+.cores:nth-child(10) {
+    background-image: radial-gradient(closest-corner at 50px 20px, blue, #f007);
+}
+
+.cores:nth-child(11) {
+    background-image: radial-gradient(farthest-corner at 50px 20px, blue, #f007);
+}
+
+.cores:nth-child(12) {
+    background-image: radial-gradient(closest-side at 50px 20px, blue, #f007);
+}
+
+.cores:nth-child(13) {
+    background-image: radial-gradient(farthest-side at 50px 20px, blue, #f007);
+}
+
+.cores:nth-child(14) {
+    background-image: radial-gradient(circle farthest-side at 50px 20px, blue, #f007);
+}
+
+.cores:nth-child(15) {
+    background-image:
+        radial-gradient(circle farthest-side at 50px 20px, #00f7, #f007),
+        radial-gradient(circle farthest-corner at bottom right, yellow, transparent);
+}
+
+.cores:nth-child(16) {
+    background-image:
+        radial-gradient(at top, #00f7, #f007),
+        radial-gradient(at bottom, yellow, transparent);
+}
+
+.cores:nth-child(17) {
+    /* background-image: conic-gradient(red, blue); */
+    /* background-image: conic-gradient(red, blue, green); */
+    /* background-image: conic-gradient(red, blue, green, red); */
+    /* background-image: conic-gradient(from 45deg, red, blue, green); */
+    background-image: conic-gradient(from 45deg, red 50%, blue, green);
+}
+
+.cores:nth-child(18) {
+    background-image: conic-gradient(#f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+    /* filter: blur(5px); */
+    /* filter: grayscale(100%); */
+    /* filter: grayscale(80%); */
+    /* filter: invert(100%); */
+    /* filter: sepia(100%); */
+    /* filter: hue-rotate(30deg); */
+
+    transition: filter 5s linear;
+    aspect-ratio: 16/9;
+    aspect-ratio: 1;
+}
+
+.cores:nth-child(18):hover {
+    /* filter: hue-rotate(360deg); */
+    /* filter: hue-rotate(1turn); */
+    /* filter: hue-rotate(3600deg); */
+    filter: hue-rotate(10turn);
+}
+
+.cores:nth-child(19) {
+    /* background-image: repeating-linear-gradient(to top right, white 0%, black 5%); */
+    background-image: repeating-linear-gradient(to top right, white 0, white 5px, black 5px, black 10px);
+}
+
+.cores:nth-child(20) {
+    background-image: repeating-radial-gradient(white 0, white 10px, black 10px, black 20px);
+}
+
+.cores:nth-child(21) {
+    background-image: repeating-conic-gradient(white 0, white 10deg, black 10deg, black 20deg);
+}
+
+.cores:nth-child(22) {
+    background-image:
+        repeating-conic-gradient(transparent 0, transparent 10deg, black 10deg, black 20deg),
+        repeating-radial-gradient(red 0%, transparent, blue 20%);
+    background-attachment: fixed, scroll;
+}
+
+.cores:nth-child(23) {
+    background-image:
+        repeating-radial-gradient(red 0%, transparent, blue 20%),
+        repeating-linear-gradient(red, blue);
+    background-attachment: scroll, fixed;
+}
+
+.cores:nth-child(24) {
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, .8);
+}
+
+.cores:nth-child(25) {
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .8));
+}
+
+
+.cores:nth-child(26) {
+    background-image: linear-gradient(to top right, transparent 50%, red 50%);
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, .8);
+}
+
+.cores:nth-child(27) {
+    background-image: linear-gradient(to top right, transparent 50%, red 50%);
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .8));
+}

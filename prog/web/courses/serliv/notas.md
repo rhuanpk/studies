@@ -189,6 +189,14 @@ Unidade de medida **relativa** a largura do caractere "0" (zero). Se dizemos que
 
 É como dizer que a largura é de "100 caracteres" (no caso do "0" porque é o maior caractere possível em largura?).
 
+### _Responsive Web Design_
+
+O conceito RWD (Responsive Web Design), diz respeito sobre termos uma naveção fluida independente do tamanho de tela que temos.
+
+1. Grid Fluída: O _layout_ da página é feito em cima de uma grade que se adapta
+1. Recrusos Flexíveis: Os conteúdos inseridos nas páginas devem ser manipuladas de forma responsiva (`%`, `em`)
+1. Consultas de Mídias: Regras de responsividade com base no tamanho da tela
+
 ### Tips
 
 Posicionamento: conceito de que cada propriedade se relaciona com o elemento pai ou vizinho:

@@ -1,0 +1,97 @@
+:root {
+	--width-div: 31.2em;
+	--gap-div: 3.2rem;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: #7b3d3e;
+	font-family: sans-serif;
+}
+
+h1,
+h2 {
+	font-weight: lighter;
+}
+
+h1 {
+	color: #ddd;
+	font-size: xx-large;
+	margin: 1em 0;
+}
+
+h2 {
+	font-size: large;
+	margin-bottom: .8em;
+}
+
+p {
+	font-size: small;
+}
+
+.card {
+	background-color: white;
+	width: 30rem;
+	padding: 3em 4em;
+	position: relative;
+}
+
+.card::before {
+	content: '';
+	display: block;
+	width: 3.4rem;
+	height: 3.4rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.xpto {
+	width: 0;
+	height: 0;
+	margin: 3rem;
+
+	border-top: 1rem solid black;
+	border-left: 2.5rem solid transparent;
+	border-bottom: 4.5rem solid blueviolet;
+	border-right: 2.5rem solid transparent;
+}
+
+.clippath>div {
+	width: 30rem;
+	height: 30rem;
+	background-image: repeating-linear-gradient(45deg, yellow 10%, orange 20%);
+}
+
+#div1 {
+	clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 20% 50%);
+}
+
+#div2 {
+	clip-path: circle(50% at center);
+}
+
+#div3 {
+	clip-path: ellipse(50% 25% at center);
+}
+
+#div4 {
+	clip-path: inset(2rem 5rem);
+}
+
+#div5 {
+	clip-path: inset(3rem round 5rem 2rem 1rem 25% / 2rem 5rem);
+}
+
+#div6 {
+	clip-path: circle(50% at 100% 50%);
+}
