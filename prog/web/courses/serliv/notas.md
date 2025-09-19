@@ -197,6 +197,9 @@ O conceito RWD (Responsive Web Design), diz respeito sobre termos uma naveção 
 1. Recrusos Flexíveis: Os conteúdos inseridos nas páginas devem ser manipuladas de forma responsiva (`%`, `em`)
 1. Consultas de Mídias: Regras de responsividade com base no tamanho da tela
 
+- _Media Type_: Verífica o tipo de mídia, **tela** ou **impressão**
+- _Media Query_: Consulta características de mídia, **tamanho** e etc
+
 ### Tips
 
 Posicionamento: conceito de que cada propriedade se relaciona com o elemento pai ou vizinho:

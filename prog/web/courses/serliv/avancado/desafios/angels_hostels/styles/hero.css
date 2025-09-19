@@ -1,0 +1,101 @@
+.main-hero {
+	--color-contrast: #f6f6f6;
+	--color-contrast-hero: var(--color-contrast);
+	--color-primary-hero: var(--color-primary);
+	--width-icon: 8rem;
+	--margin-elements: .4rem;
+
+	background-color: var(--color-contrast-hero);
+	text-align: center;
+	padding: 1em;
+
+	/* to resolve background-image when media query 56.25em >= and 74em >= */
+	max-height: 80vh;
+	width: 100%;
+}
+
+.main-hero__icon {
+	width: var(--width-icon);
+	display: none;
+}
+
+.main-hero__title {
+	color: var(--color-primary-hero);
+	font-size: x-large;
+	margin: 1.2em 0;
+}
+
+.main-hero__text {
+	color: color-mix(in srgb, var(--color-primary-hero), white 45%);
+	font-size: medium;
+	line-height: 1.5;
+	margin-bottom: .8em;
+}
+
+.main-hero__cta {
+	background-color: #58c4c4;
+	color: white;
+	font-size: medium;
+	text-decoration: none;
+
+	display: inline-block;
+	margin-bottom: var(--margin-elements);
+	padding: .8em 2.4em;
+	border-radius: .4rem;
+}
+
+@media screen and (min-width: 48.75em) {
+	.main-hero {
+		--color-contrast-hero: var(--color-primary);
+		--color-primary-hero: var(--color-contrast);
+	}
+
+	.main-hero__icon {
+		display: initial;
+		margin-top: var(--margin-elements);
+	}
+
+	.main-hero__text {
+		font-weight: bold;
+	}
+}
+
+@media screen and (min-width: 56.25em) {
+	.main-hero {
+		background-image: url(../images/bg_top_1198x670.jpg);
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		aspect-ratio: 1198 / 670;
+
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	.main-hero>.max-width {
+		width: 75%;
+		margin: initial;
+		margin-bottom: 4rem;
+	}
+}
+
+@media screen and (min-width: 74em) {
+	.main-hero {
+		/* background-image: url(../images/bg_top_1600x1374.jpg); */
+		background-image: linear-gradient(transparent 50%, var(--color-primary)), url(../images/bg_top_1600x1374.jpg);
+	}
+
+	.main-hero>.max-width {
+		width: 60%;
+	}
+
+	.main-hero__icon {
+		width: calc(var(--width-icon) * 1.5);
+	}
+
+	.main-hero__title,
+	.main-hero__text {
+		text-shadow: 0 0 .4rem rgb(0, 0, 0, .25);
+	}
+}

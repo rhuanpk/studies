@@ -1,0 +1,36 @@
+/* 
+	min-width: 0       -> col-sm
+	min-width: 48.75em -> col-md
+	min-width: 56.25em -> col-lg
+	min-width: 76em    -> col-xl
+*/
+
+:root {
+	--color-primary: #612674;
+	--font-text: medium;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	min-height: 100vh;
+}
+
+h1,
+h2 {
+	font-family: 'Oxygen', sans-serif;
+}
+
+.max-width {
+	max-width: 120rem;
+	margin: auto;
+}

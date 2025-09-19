@@ -1,0 +1,10 @@
+body {
+	color: black;
+	font-family: serif;
+}
+
+a::after {
+	content: '(' attr(href) ') - (' attr(title) ')';
+	display: inline-block;
+	margin-left: .4em;
+}

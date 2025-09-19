@@ -1,0 +1,11 @@
+.main-middle {}
+
+.main-middle__card {}
+
+.main-middle__title {}
+
+.main-middle__text {}
+
+@media screen and (min-width: 48.75em) {}
+
+@media screen and (min-width: 74em) {}
