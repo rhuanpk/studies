@@ -1,13 +1,12 @@
-/* 
-	min-width: 0       -> col-sm
-	min-width: 48.75em -> col-md
-	min-width: 56.25em -> col-lg
-	min-width: 76em    -> col-xl
-*/
-
 :root {
 	--color-primary: #612674;
-	--font-text: medium;
+	--color-contrast: #f6f6f6;
+	--color-dark: #26303d;
+	--font-size-title: xx-large;
+	--font-size-subtitle: x-large;
+	--font-size-text: medium;
+	--padding-default: 2em;
+	--gap-row-default: 8em;
 }
 
 * {

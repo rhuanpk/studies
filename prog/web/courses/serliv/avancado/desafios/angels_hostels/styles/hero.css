@@ -1,5 +1,4 @@
 .main-hero {
-	--color-contrast: #f6f6f6;
 	--color-contrast-hero: var(--color-contrast);
 	--color-primary-hero: var(--color-primary);
 	--width-icon: 8rem;
@@ -21,13 +20,13 @@
 
 .main-hero__title {
 	color: var(--color-primary-hero);
-	font-size: x-large;
+	font-size: var(--font-size-title);
 	margin: 1.2em 0;
 }
 
 .main-hero__text {
 	color: color-mix(in srgb, var(--color-primary-hero), white 45%);
-	font-size: medium;
+	font-size: var(--font-size-text);
 	line-height: 1.5;
 	margin-bottom: .8em;
 }
@@ -35,7 +34,7 @@
 .main-hero__cta {
 	background-color: #58c4c4;
 	color: white;
-	font-size: medium;
+	font-size: var(--font-size-text);
 	text-decoration: none;
 
 	display: inline-block;

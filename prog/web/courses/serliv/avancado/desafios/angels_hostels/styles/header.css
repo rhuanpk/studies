@@ -20,7 +20,7 @@
 
 .main-header__menu-item>a {
 	color: white;
-	font-size: var(--font-text);
+	font-size: var(--font-size-text);
 	text-decoration: none;
 
 	display: block;

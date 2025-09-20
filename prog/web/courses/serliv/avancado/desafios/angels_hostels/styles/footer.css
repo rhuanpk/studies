@@ -1,0 +1,11 @@
+.main-footer {
+	background-color: var(--color-dark);
+	color: color-mix(in srgb, var(--color-contrast), transparent 50%);
+	font-size: var(--font-size-text);
+	padding: var(--padding-default);
+	text-align: center;
+}
+
+.main-footer__copy {
+	margin-bottom: 1.6em;
+}

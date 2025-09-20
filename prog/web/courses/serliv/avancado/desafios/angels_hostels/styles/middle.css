@@ -1,11 +1,29 @@
-.main-middle {}
+.main-middle {
+	background-color: var(--color-contrast);
+	text-align: center;
+	padding: var(--padding-default);
+}
 
-.main-middle__card {}
+.main-middle__card>a {
+	color: inherit;
+	text-decoration: none;
+}
 
-.main-middle__title {}
+/* .main-middle span[class^="icon-"] */
+.main-middle__icon {
+	color: var(--color-primary);
+	font-size: 6em;
+}
 
-.main-middle__text {}
+.main-middle__title {
+	color: var(--color-primary);
+	font-size: var(--font-size-subtitle);
+	text-transform: uppercase;
+	margin: 1em 0;
+}
 
-@media screen and (min-width: 48.75em) {}
-
-@media screen and (min-width: 74em) {}
+.main-middle__text {
+	font-size: var(--font-size-text);
+	line-height: 1.5;
+	margin-bottom: 1em;
+}
