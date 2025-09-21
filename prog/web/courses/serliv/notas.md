@@ -189,6 +189,18 @@ Unidade de medida **relativa** a largura do caractere "0" (zero). Se dizemos que
 
 É como dizer que a largura é de "100 caracteres" (no caso do "0" porque é o maior caractere possível em largura?).
 
+#### `sv{w|h}`
+
+Unidade de medida relativa a _viewport_. É levado em consideração o "menor tamanho possível", ou seja, no 100% da _viewport_ é descontado tamanho de elementos como barra de ferramentas. Mais efetivo em _mobile_.
+
+#### `lv{w|h}`
+
+Unidade de medida relativa a _viewport_. É equivalente a `v{w|h}` tradicional. Pode ser que possa parecer um tamanho incorreto devido a elementos como barra de ferramentas em _mobile_.
+
+#### `dv{w|h}`
+
+Unidade de medida relativa a _viewport_. É uma unidade dinâmica que muda em tempo real pois é recalculada toda vez que o tamanho final da _viewport_ muda. Isso se dá para tentar resolver o problema com dispositivos diferentes pois podem possuir elementos diferentes dentro da própria UI do sistema que poderiam intefererir na altura final e esses próprios elementos são dinâmicos também.
+
 ### _Responsive Web Design_
 
 O conceito RWD (Responsive Web Design), diz respeito sobre termos uma naveção fluida independente do tamanho de tela que temos.
@@ -199,6 +211,28 @@ O conceito RWD (Responsive Web Design), diz respeito sobre termos uma naveção 
 
 - _Media Type_: Verífica o tipo de mídia, **tela** ou **impressão**
 - _Media Query_: Consulta características de mídia, **tamanho** e etc
+
+### Replaced Elements
+
+Tags usadas para serem substituída por conteúdo.
+
+#### `<video>`
+
+O atributo `kind` se omitido, o tipo padrão é `subtitles`. Se o atributo contiver um valor inválido, será usado `metadata`. As seguintes palavras-chave são permitidas:
+- `subtitles`
+	- As legendas fornecem a tradução do conteúdo que não pode ser compreendido pelo espectador. Por exemplo, fala ou texto que não seja inglês em um filme em inglês.
+	- As legendas podem conter conteúdo adicional, geralmente informações extras de fundo. Por exemplo, o texto no início dos filmes Star Wars ou a data, hora e local de uma cena.
+- `captions`
+	- As legendas ocultas fornecem uma transcrição e possivelmente uma tradução do áudio.
+	- Pode incluir informações não verbais importantes, como pistas musicais ou efeitos sonoros. Pode indicar a fonte da sugestão (por exemplo, música, texto, personagem).
+	- Adequado para usuários surdos ou quando o som está mudo.
+- `descriptions`
+	- Descrição textual do conteúdo do vídeo.
+	- Adequado para usuários cegos ou onde o vídeo não pode ser visto.
+- `chapters`
+	- Os títulos dos capítulos devem ser usados ​​quando o usuário estiver navegando no recurso de mídia.
+- `metadata`
+	- Faixas usadas por scripts. Não visível para o usuário.
 
 ### Tips
 

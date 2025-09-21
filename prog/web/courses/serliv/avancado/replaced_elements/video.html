@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vídeo</title>
+
+	<style>
+		::cue {
+			/* some properties are blockeds by default */
+			display: inline-block;
+			padding: 16px;
+
+			background-color: rgb(0 0 0 / .5);
+			color: yellow;
+			font-size: 1.5em;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- use "loop" attribute when we has video as background -->
+	<video controls muted>
+		<!-- mimetypes -->
+		<source src="media/video.mp4" type="video/mp4">
+		<source src="media/video.ogv" type="video/ogg">
+		<source src="media/video.webm" type="video/webm">
+		<track src="media/track.pt.vtt" kind="captions" srclang="pt" label="Português" default>
+		<track src="media/track.en.vtt" kind="captions" srclang="pt" label="English">
+		<p>O seu browser não suporta vídeo.</p>
+	</video>
+</body>
+
+</html>
