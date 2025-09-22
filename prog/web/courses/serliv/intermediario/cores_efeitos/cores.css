@@ -46,13 +46,6 @@ section {
 
 .cores:nth-child(2) {
     background-color: red;
-    background-clip: border-box;
-    background-clip: padding-box;
-    background-clip: content-box;
-}
-
-.cores:nth-child(2) {
-    background-color: red;
     /* background-clip: border-box; */
     /* background-clip: padding-box; */
     background-clip: content-box;
