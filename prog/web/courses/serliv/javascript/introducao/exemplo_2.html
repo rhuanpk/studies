@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Segundo Exemplo</title>
+</head>
+
+<body>
+	<h1>Segundo Exemplo</h1>
+
+	<script>
+		// Number() parseInt() parseFloat()
+
+		// Number() even returns NaN if has any string with
+		// parseInt() and parseFloat() can parse any number inside a string if the number are in string start, otherwise returns a NaN
+
+		let numero1 = prompt('Digite um número:')
+		numero1 = Number(numero1)
+
+		let numero2 = prompt('Digite outro número:')
+		numero2 = Number(numero2)
+
+		alert(numero1 + numero2)
+
+		// when find a string inside all values, all the rest will be a string
+		alert('A some é: ' + numero1 + numero2)
+
+		// we can use precede the sum
+		alert('A some é: ' + (numero1 + numero2))
+
+		// or use a auxiliar variable
+		let soma = numero1 + numero2
+		alert('A some é: ' + soma)
+
+		// otherwise if the sum comes before, it works as expected
+		alert(numero1 + numero2 + ' é a soma.')
+	</script>
+</body>
+
+</html>
