@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Desafio 3</title>
+</head>
+
+<body>
+	<h1>Desafio 3</h1>
+
+	<script>
+		const numeros = [1, '', 2, 3, , 4, true, [], 5]
+		let soma = 0
+
+		for (let index = 0; index < numeros.length; index++) {
+			const numero = parseFloat(numeros[index])
+
+			if (isNaN(numero)) {
+				continue
+			}
+
+			soma += numero
+		}
+
+		alert('A soma dos números é: ' + soma)
+	</script>
+</body>
+
+</html>

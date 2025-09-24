@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loops - Desafio 4</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Loops - Desafio 4</h1>
+
+	<script>
+		for (let i = 1; i <= 100; i++) {
+			if (i % 10 == 0) {
+				continue
+			}
+
+			console.log(i)
+			let sorteio = parseInt(Math.random() * 100) + 1
+			console.log('sorteio', sorteio)
+
+			if (i % sorteio == 0) {
+				break
+			}
+		}
+	</script>
+</body>
+
+</html>

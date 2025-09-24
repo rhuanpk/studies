@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loops - Dados</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Loops - Dados</h1>
+
+	<script>
+		let d1 = parseInt(Math.random() * 6 + 1)
+		let d2 = parseInt(Math.random() * 6 + 1)
+		let c = 1
+
+		do {
+			console.log('Tentativa ' + c + ': ' + d1 + ' & ' + d2)
+			d1 = parseInt(Math.random() * 6 + 1)
+			d2 = parseInt(Math.random() * 6 + 1)
+			c++
+		} while (d1 != d2)
+		console.log('Tentativa ' + c + ': ' + d1 + ' & ' + d2)
+
+		console.log('Foram necessárias ' + c + ' tentativas para a igualdade ' + d1 + ' & ' + d2 + '.')
+	</script>
+</body>
+
+</html>

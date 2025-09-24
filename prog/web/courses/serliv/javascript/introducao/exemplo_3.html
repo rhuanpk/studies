@@ -4,13 +4,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Terceiro Exemplo</title>
+	<title>Primeiro Desafio</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
 </head>
 
 <body>
-	<h1>Terceiro Exemplo</h1>
+	<h1>Primeiro Desafio</h1>
 
 	<script>
+		// for not sum operations, if we has a string and a number
+		// the javascript will do a implict conversion
+
+		let numero1 = prompt('Digite um número:')
+		numero1 = parseInt(numero1)
+
+		let numero2 = prompt('Digite outro número:')
+		numero2 = parseInt(numero2)
+
+		alert('A divisão é: ' + (numero1 / numero2))
+		alert('A multiplicação é: ' + (numero1 * numero2))
+		alert('A subtração é: ' + (numero1 - numero2))
+		alert('A adilçai é: ' + (numero1 + numero2))
 	</script>
 </body>
 

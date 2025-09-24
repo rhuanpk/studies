@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loops - Desafio 5</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Loops - Desafio 5</h1>
+
+	<script>
+		for (let ano = 1004; ano <= 2024; ano += 4) {
+			let anoBissexto = ano % 100 != 0 || ano % 400 == 0
+			console.log(anoBissexto, ano)
+		}
+	</script>
+</body>
+
+</html>

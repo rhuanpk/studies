@@ -263,6 +263,16 @@ Unidades: unidades de medidas usadas pelas propriedades:
 - `%`: para `height` só funcionará (como o esperado) caso o elemento pai tenha um `height` definido
 - `%`: para `margin` e `padding`, a porcentagem será sempre referente ao `width` do **elemento pai**
 
+## Javascript
+
+### DOM
+
+- `document.getElementById()`: Retorna uma variável (do tipo `object`) que aponta para um objeto do DOM
+
+- `document.getElementById().textContent`: Retorna o conteúdo do objeto (também pode ser usado para atribuição)
+
+- `document.getElementById().value`: Mesmo que o atributo `textContent`, porém, para elementos `<input>`
+
 ---
 
 ## Misc

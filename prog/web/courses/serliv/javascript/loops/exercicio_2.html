@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loops - Tabuada</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Loops - Tabuada</h1>
+
+	<script>
+		let n = parseFloat(prompt('Digite um número:'))
+
+		if (!isNaN(n)) {
+			for (let i = 0; i <= 1000; i++) {
+				document.write(n + ' x ' + i + ' = ' + n * i + '<br>')
+			}
+			document.write('Saiu do loop.')
+		} else {
+			alert('Digite apenas número.')
+		}
+	</script>
+</body>
+
+</html>

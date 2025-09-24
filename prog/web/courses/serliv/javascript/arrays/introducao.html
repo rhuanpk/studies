@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arrays</title>
+</head>
+
+<body>
+	<h1>Arrays</h1>
+
+	<script>
+		// let nomes = new Array('João', 'Maria', 'Daniel', 'Beatriz')
+		let nomes = ['João', 'Maria', 'Daniel', 'Beatriz', 'Clyde', 'Tux']
+
+		nomes[6] = 'Gabriel'
+		nomes[7] = 'Amanda'
+
+		let nomeDigitado = prompt('Digite seu nome:')
+		nomes[nomes.length] = nomeDigitado
+
+		for (let index = 0; index < nomes.length; index++) {
+			document.write('Nome: ' + nomes[index] + '<br>')
+		}
+
+		document.write('A lista de nomes possui ' + nomes.length + ' elementos.')
+	</script>
+</body>
+
+</html>

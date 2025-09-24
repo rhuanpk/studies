@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Loops - Desafio 3</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Loops - Desafio 3</h1>
+
+	<!-- <script>
+		let count = 0
+		let evensCount = 0
+
+		do {
+			let dice1 = parseInt(Math.random() * 6 + 1)
+			let dice2 = parseInt(Math.random() * 6 + 1)
+			let sum = dice1 + dice2
+			let isEven = sum % 2 == 0
+			count++
+
+			document.write('Tentativa ' + count + ': ' + dice1 + ' & ' + dice2 + '<br>')
+			document.write(dice1 + ' + ' + dice2 + ' = ' + sum)
+
+			if (isEven) {
+				document.write(' (par)<br>')
+				evensCount++
+			} else {
+				document.write(' (impar)<br>')
+			}
+
+			document.write('<br>')
+		} while (evensCount < 10)
+
+		document.write('Foram necessárias ' + count + ' tentativas para que fossem iguais ' + evensCount + ' vezes.')
+	</script> -->
+	<script>
+		let count = 0
+		let evensCount = 0
+
+		while (true) {
+			let dice1 = parseInt(Math.random() * 6 + 1)
+			let dice2 = parseInt(Math.random() * 6 + 1)
+
+			console.log(dice1, dice2, count, evensCount)
+
+			if (dice1 == dice2) {
+				continue
+			}
+
+			count++
+
+			if ((dice1 + dice2) % 2 == 0) {
+				evensCount++
+			}
+
+			if (evensCount >= 10) {
+				break
+			}
+		}
+
+		console.log('Foram necessárias ' + count + ' tentativas.')
+	</script>
+</body>
+
+</html>
