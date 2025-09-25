@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Informações Aluno</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Informações Aluno</h1>
+
+	<div id="output"></div>
+
+	<script>
+		const aluno = {
+			nome: 'Daniel Morales',
+			notas: [10, 3, 9, 8]
+		}
+
+		const output = document.getElementById('output')
+
+		output.innerHTML += `<h2>Aluno: ${aluno.nome}</h2>`
+		output.innerHTML += '<p>Notas:</p>'
+		// output.innerHTML += '<ul>'
+		let sum = 0
+		let lista = ''
+		for (let index = 0; index < aluno.notas.length; index++) {
+			const nota = aluno.notas[index]
+			sum += nota
+			// output.innerHTML += `<li>${nota}</li>`
+			lista += `<li>${nota}</li>`
+		}
+		const media = sum / aluno.notas.length
+		// output.innerHTML += '</ul>'
+		output.innerHTML += `<ul>${lista}</ul>`
+		output.innerHTML += `<p>Média: ${media}</p>`
+		output.innerHTML += `<p>Aprovado? ${(media >= 7) ? 'Sim' : 'Não'}</p>`
+	</script>
+</body>
+
+</html>

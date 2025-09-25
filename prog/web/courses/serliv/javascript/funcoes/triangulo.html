@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Área do Triangulo</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Área do Triangulo</h1>
+
+	<label>
+		Base
+		<input type="number" id="base">
+	</label>
+
+	<label>
+		Altura
+		<input type="number" id="altura">
+	</label>
+
+	<button onclick="calcularArea()">Calcular Área</button>
+
+	<br>
+
+	<output id="output"></output>
+
+	<script>
+		const base = document.getElementById('base')
+		const altura = document.getElementById('altura')
+		const output = document.getElementById('output')
+
+		function calcularArea() {
+			const baseValue = parseFloat(base.value)
+			const alturaValue = parseFloat(altura.value)
+			const area = baseValue * alturaValue / 2
+
+			output.textContent = `Área: ${area}`
+		}
+	</script>
+</body>
+
+</html>

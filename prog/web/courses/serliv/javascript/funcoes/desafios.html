@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Desafios</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Desafios</h1>
+
+	<script>
+		function somar(n1, n2) {
+			return n1 + n2
+		}
+		console.log(somar(2, 4))
+
+		function calcular(n1, n2, simbolo) {
+			switch (simbolo) {
+				case '+':
+					return n1 + n2
+				case '-':
+					return n1 - n2
+				case '*':
+					return n1 * n2
+				case '/':
+					return n1 / n2
+				default:
+					return null
+			}
+		}
+		console.log(calcular(2, 4, '+'))
+		console.log(calcular(5, 2, '-'))
+		console.log(calcular(5, 2, '*'))
+		console.log(calcular(5, 2, '/'))
+		console.log(calcular(5, 2, 'a'))
+
+		function ehPar(n) {
+			return n % 2 == 0
+		}
+		console.log(ehPar(5))
+		console.log(ehPar(4))
+
+		function ehBissexto(ano) {
+			return ano % 4 == 0 && (!(ano % 100 == 0) || ano % 400 == 0)
+		}
+		console.log(ehBissexto(2000))
+		console.log(ehBissexto(1800))
+	</script>
+</body>
+
+</html>

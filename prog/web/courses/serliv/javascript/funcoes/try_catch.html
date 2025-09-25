@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Try Catch</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Try Catch</h1>
+	<div id="output"></div>
+
+	<script>
+		let obj = { nome: 'Daniel', email: 'daniel@server.com' }
+		// obj = null
+
+		try {
+			document.getElementById('output').innerHTML = `Nome: ${obj.nome} - Email: ${obj.email}<br>`
+		} catch (error) {
+			console.error(error)
+			console.error(error.message)
+		} finally {
+			// alert('Fim do programa.')
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Informações Alunos</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Informações Alunos</h1>
+	<ul id="lista">
+		<!-- <li>Nome, média 10</li>
+		<li>Nome, média 10</li> -->
+	</ul>
+
+	<script>
+		const alunos = [
+			{ nome: 'Daniel', notas: [1, 3, 3, 8] },
+			{ nome: 'Maria', notas: [10, 7, 8, 9] },
+			{ nome: 'João', notas: [10, 6, 3, 0] }
+		]
+
+		const lista = document.getElementById('lista')
+		let listaHTML = ''
+
+		for (let i = 0; i < alunos.length; i++) {
+			const aluno = alunos[i]
+
+			listaHTML += `<li>${aluno.nome}, média `
+
+			let media = 0
+			for (let j = 0; j < aluno.notas.length; j++) {
+				media += aluno.notas[j]
+			}
+			media /= aluno.notas.length
+
+			listaHTML += `${media}</li>`
+		}
+
+		lista.innerHTML = listaHTML
+	</script>
+</body>
+
+</html>

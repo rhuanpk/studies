@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Área do Círculo</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Área do Círculo</h1>
+
+	<label>
+		Raio
+		<input type="number" id="raio">
+	</label>
+
+	<br>
+
+	<button onclick="calcularAreaInputAlert()">Calcular Área (Input:Alert)</button>
+	<button onclick="calcularAreaPromptAlert()">Calcular Área (Prompt:Alert)</button>
+
+	<br>
+
+	<button onclick="calcularAreaInputOutput()">Calcular Área (Input:Output)</button>
+	<button onclick="calcularAreaPromptOutput()">Calcular Área (Prompt:Output)</button>
+
+	<br>
+
+	<output id="output"></output>
+
+	<script>
+		const raio = document.getElementById('raio')
+		const output = document.getElementById('output')
+
+		function calcularAreaInputAlert() {
+			const raioValue = parseFloat(raio.value)
+			const mensagem = calcularArea(raioValue)
+			alert(mensagem)
+		}
+
+		function calcularAreaInputOutput() {
+			const raioValue = parseFloat(raio.value)
+			const mensagem = calcularArea(raioValue)
+			output.innerHTML = mensagem
+		}
+
+		function calcularAreaPromptAlert() {
+			const raioValue = parseFloat(prompt('Digite o raio:'))
+			const mensagem = calcularArea(raioValue)
+			alert(mensagem)
+		}
+
+		function calcularAreaPromptOutput() {
+			const raioValue = parseFloat(prompt('Digite o raio:'))
+			const mensagem = calcularArea(raioValue)
+			output.innerHTML = mensagem
+		}
+
+		function calcularArea(raio) {
+			const area = Math.PI * raio ** 2
+			return `A área do raio ${raio} é: ${area}`
+		}
+	</script>
+</body>
+
+</html>

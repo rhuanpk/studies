@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Função</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Função</h1>
+
+	<input type="number" id="number">
+	<button onclick="table()">Tabuada</button>
+	<button onclick="clean()">Limpar</button>
+
+	<div id="output"></div>
+
+	<script>
+		const number = document.getElementById('number')
+		const output = document.getElementById('output')
+
+		function table() {
+			const value = parseInt(number.value)
+			let tableHTML = ''
+
+			for (let index = 1; index <= 100; index++) {
+				tableHTML += `${value} x ${index} = ${value * index}<br>`
+			}
+
+			output.innerHTML = tableHTML
+		}
+
+		function clean() {
+			number.value = ''
+			output.innerHTML = ''
+		}
+	</script>
+</body>
+
+</html>

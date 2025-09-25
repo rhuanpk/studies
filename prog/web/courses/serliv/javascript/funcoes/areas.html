@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Áreas</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Áreas</h1>
+	<div id="output"></div>
+
+	<script src="areas.js"></script>
+	<script>
+		try {
+			console.log(calcularAreaRetangulo(2, 'a'))
+		} catch (error) {
+			console.error(error.message)
+		}
+
+		try {
+			document.getElementById('output').textContent = calcularAreaTriangulo(3, 'b')
+		} catch (error) {
+			console.error(error.message)
+		}
+
+		try {
+			console.log(calcularAreaCirculo(10))
+		} catch (error) {
+			console.error(error.message)
+		}
+	</script>
+</body>
+
+</html>

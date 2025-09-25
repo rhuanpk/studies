@@ -265,11 +265,41 @@ Unidades: unidades de medidas usadas pelas propriedades:
 
 ## Javascript
 
+Código Javascript pode ser adicionado no HTML via tag `<script>`.
+
+Pode ser feito dentro da tag `<head>`:
+```html
+<head>
+	<script>alert('hello world')</script>
+	<script src="index.js"></script>
+	<script src="index.js" async></script>
+	<script src="index.js" defer></script>
+</head>
+```
+
+Ou antes do fechamento da tag `<body>`:
+```html
+<body>
+	<script>alert('hello world')</script>
+	<script src="index.js"></script>
+</body>
+```
+
+A chamada da _tag_ `<script>` é bloqueante, isso significa que se encontrada no head, antes de iniciar a _tag_ `<body>`, a renderização da página ficará travada até terminar a execução do _script_.
+
+Por isso que utilizamos a abordagem de chamar essa _tag_ antes do fechamento do _body_, porém, as vezes realmente vamos querer que algo um _script_ seja executado antes do body ou pelo menos que seja executando em paralelo, por isso temos os atributos `async` e `defer`:
+- `async`: Não bloqueia o _browser_, o _script_ é baixado de forma assíncrona enquanto o _browser_ continua o fluxo de rederização e é executado assim que é terminado de baixar
+- `defer`: Não bloqueia o _browser_, o _script_ é baixado de forma assíncrona enquanto o _browser_ continua o fluxo de rederização, porém, só é executado depois de todo o conteúdo ser rederizado
+
+Caso use o a _tag_ `<script>` dentro do _head_ e manipule o DOM, pode ser que alguns elementos ainda não existam naquele ponto.
+
 ### DOM
 
 - `document.getElementById()`: Retorna uma variável (do tipo `object`) que aponta para um objeto do DOM
 
-- `document.getElementById().textContent`: Retorna o conteúdo do objeto (também pode ser usado para atribuição)
+- `document.getElementById().textContent`: Retorna somente o conteúdo do objeto (também pode ser usado para atribuição)
+
+- `document.getElementById().innerHTML`: Mesmo que o atributo `textContent`, porém no formato _raw_ (puro), ou seja, retorna também as tags HTML inseridas no conteúdo (também pode ser usado para atribuição)
 
 - `document.getElementById().value`: Mesmo que o atributo `textContent`, porém, para elementos `<input>`
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista de Pessoas</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Lista de Pessoas</h1>
+	<ul id="lista"></ul>
+
+	<script>
+		const pessoas = [
+			{ nome: 'daniel', email: 'daniel@server.com' },
+			{ nome: 'maria', email: 'maria@server.com' },
+			{ nome: 'joão', email: 'joão@server.com' },
+			{ nome: 'luciene', email: 'luciene@server.com' },
+			{ nome: 'ricardo', email: 'ricardo@server.com' }
+		]
+
+		const lista = document.getElementById('lista')
+
+		for (let index = 0; index < pessoas.length; index++) {
+			const pessoa = pessoas[index]
+			console.log(pessoa)
+			lista.innerHTML += `<li>${pessoa.nome}: ${pessoa.email}</li>`
+		}
+	</script>
+</body>
+
+</html>

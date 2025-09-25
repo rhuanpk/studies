@@ -13,6 +13,11 @@
 			font-family: sans-serif;
 		}
 	</style>
+
+	<!-- <script>document.getElementById('titulo').textContent = 'Changed'</script> -->
+	<!-- <script src="introducao.js"></script> -->
+	<!-- <script src="introducao.js" async></script> -->
+	<!-- <script src="introducao.js" defer></script> -->
 </head>
 
 <body>
@@ -22,6 +27,29 @@
 	<hr>
 
 	<input type="text" id="user">
+
+	<hr>
+
+	<h2>Lista de Tarefas</h2>
+
+	<ol id="lista">
+		<li>Aprender CSS</li>
+		<li>Aprender Javascript</li>
+		<li>Aprender DOM</li>
+		<li>Criar algo</li>
+	</ol>
+
+	<script>
+		document.getElementById('titulo').textContent = 'Changed'
+
+		const lista = document.getElementById('lista')
+		let tarefa = 'Aplicar vaga'
+
+		lista.innerHTML += `<li>${tarefa}</li>`
+	</script>
+
+	<!-- <script>document.getElementById('titulo').textContent = 'Changed'</script> -->
+	<!-- <script src="introducao.js"></script> -->
 </body>
 
 </html>
