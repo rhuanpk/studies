@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Valor & Referência</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Valor & Referência</h1>
+
+	<p>
+		Em Javascript, há dois tipos de dados possíveis: primitivos (passados por valor) e objetos (passados por
+		referência).
+	</p>
+
+	<p>Tipos primitivos:</p>
+	<ul>
+		<li><code>String</code></li>
+		<li><code>Number</code></li>
+		<li><code>Boolean</code></li>
+		<li><code>null</code></li>
+		<li><code>undefined</code></li>
+		<li><code>undefined</code></li>
+		<li><code>Symbol</code></li>
+	</ul>
+
+	<p>Tipos compostos:</p>
+	<ul>
+		<li><code>Array</code></li>
+		<li><code>Object</code></li>
+		<li><code>function</code></li>
+	</ul>
+
+	<script>
+		let number = 10
+		function teste(number) {
+			console.log('internal:', ++number)
+		}
+		teste(number)
+		console.log('external:', number)
+
+		const arr = [1, 2, 3]
+		function addArray(arr, value) {
+			arr.push(value)
+		}
+		function resetArray(arr) {
+			arr.length = 0
+		}
+		addArray(arr, 'value')
+		console.log(arr)
+		resetArray(arr)
+		console.log(arr)
+
+		const obj = { name: 'daniel' }
+		function addPropObj(obj, prop, value) {
+			if (obj[prop] === undefined) {
+				obj[prop] = value
+			}
+		}
+		addPropObj(obj, 'name', 'joao')
+		addPropObj(obj, 'surname', 'maria')
+		console.log(obj)
+	</script>
+</body>
+
+</html>

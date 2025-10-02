@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Truthy & Falsy</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Truthy & Falsy</h1>
+
+	<p>
+		Em Javascript, valores como <code>0</code>, <code>''</code>, <code>NaN</code>, <code>undefined</code>,
+		<code>null</code>, <code>false</code> são avaliados como <code>false</code> quando convertidos para
+		<code>boolean</code>.
+	</p>
+	<p>
+		Todo o resto é avaliado como <code>true</code>.
+	</p>
+
+	<script>
+		let n = 0
+		// let n = ''
+		// let n = NaN
+		// let n = undefined
+		// let n = null
+		// let n = false
+
+		// let n = 42
+		// let n = 'xpto'
+
+		if (n) {
+			console.log(true)
+		} else {
+			console.log(false)
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Functions</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Functions</h1>
+
+	<script>
+		// functions declarations
+		function declaration(name) {
+			console.log('from declaration: hello ' + name)
+		}
+		declaration('daniel')
+
+		// functions expressions
+		const expression = function (name) {
+			console.log('from expression: hello ' + name)
+		}
+		expression('maria')
+
+		const arr = [
+			declaration,
+			expression,
+			function (name) {
+				console.log('from array: hello world')
+			}
+		]
+		arr[2]()
+
+		// arrow functions
+		const arrow = (name) => {
+			console.log('from arrow: hello ' + name)
+		}
+		arrow('joao')
+
+
+		// full body
+		const arrowFull = (number1, number2) => {
+			return number1 + number2
+		}
+		console.log(arrowFull(2, 3))
+
+		// only return
+		const arrowShort = (number1, number2) => number1 + number2
+		console.log(arrowShort(2, 3))
+
+		// single param
+		const arrowSmall = number => number * 2
+		console.log(arrowSmall(2.5))
+	</script>
+</body>
+
+</html>

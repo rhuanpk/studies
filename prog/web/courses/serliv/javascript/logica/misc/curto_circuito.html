@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Curto Circuito</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Curto Circuito</h1>
+
+	<script>
+		let n = 20
+		n = n && 10
+		console.log(n)
+
+		console.log(n.toString(), typeof n.toString())
+
+		console.log(n.toString(2), typeof n.toString(2))
+
+		console.log(n.toString(16), typeof n.toString(16))
+
+		function teste(param) {
+			// param = param || 10
+			param = param !== undefined ? param : 10
+			console.log(param)
+		}
+		teste()
+		teste(20)
+		teste(0)
+	</script>
+</body>
+
+</html>
