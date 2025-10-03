@@ -295,13 +295,19 @@ Caso use o a _tag_ `<script>` dentro do _head_ e manipule o DOM, pode ser que al
 
 ### DOM
 
-- `document.getElementById()`: Retorna uma variável (do tipo `object`) que aponta para um objeto do DOM
+Pegando elementos:
+- `document.getElementById()`: Pega o elemento pelo _ID_ no HTML
+- `document.getElementsByClassName()`: Pega todos os elementos pela _Class_ no HTML
+- `document.querySelector()`: Pega o elemento via seletor CSS
+- `document.querySelectorAll()`: Pega os elementos via seletor CSS
 
-- `document.getElementById().textContent`: Retorna somente o conteúdo do objeto (também pode ser usado para atribuição)
-
-- `document.getElementById().innerHTML`: Mesmo que o atributo `textContent`, porém no formato _raw_ (puro), ou seja, retorna também as tags HTML inseridas no conteúdo (também pode ser usado para atribuição)
-
-- `document.getElementById().value`: Mesmo que o atributo `textContent`, porém, para elementos `<input>`
+Atributos dos elementos:
+- `document.<method>()`: Retorna uma variável (do tipo `Object`) que aponta para um objeto do DOM (para os métodos que retornam apenas um elemento)
+	- Para os métodos que retornam mais de um elemento, as seguintes explicações valem, porém, é necessário especificar o índice
+	- Os métodos que retornam mais de um elemento podem retornar um `HTMLCollection` ou `NodeList`
+- `document.<method>().textContent`: Retorna somente o conteúdo do objeto (também pode ser usado para atribuição)
+- `document.<method>().innerHTML`: Mesmo que o atributo `textContent`, porém no formato _raw_ (puro), ou seja, retorna também as tags HTML inseridas no conteúdo (também pode ser usado para atribuição)
+- `document.<method>().value`: Mesmo que o atributo `textContent`, porém, para elementos `<input>`
 
 ---
 
