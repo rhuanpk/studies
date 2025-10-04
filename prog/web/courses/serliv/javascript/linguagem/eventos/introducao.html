@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Eventos</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+
+		button {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Eventos</h1>
+
+	<button id="btn1">Botão 1</button>
+	<button id="btn2">Botão 2</button>
+	<button id="btn3">Botão 3</button>
+
+	<script>
+		; (function () {
+			const btn1 = document.getElementById('btn1')
+			const btn2 = document.getElementById('btn2')
+			const btn3 = document.getElementById('btn3')
+
+			function click() { console.log('click') }
+
+			// dom lvl 0 will override a second "onclick" event
+			btn1.onclick = click
+			btn1.onclick = function () { console.log('click btn1') }
+
+			// dom lvl 2 will append a second "onclick" event
+			btn2.addEventListener('click', click)
+			btn2.addEventListener('click', function () { console.log('click anonymous') })
+		})()
+	</script>
+</body>
+
+</html>
