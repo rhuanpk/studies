@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>From & Of</title>
+</head>
+
+<body>
+	<h1>From & Of</h1>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum placeat aliquid sequi earum neque,
+		recusandae nulla consequatur, accusantium porro labore sit, quisquam laborum? Aliquid laborum ad perferendis
+		nemo deserunt!
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum placeat aliquid sequi earum neque,
+		recusandae nulla consequatur, accusantium porro labore sit, quisquam laborum? Aliquid laborum ad perferendis
+		nemo deserunt!
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum placeat aliquid sequi earum neque,
+		recusandae nulla consequatur, accusantium porro labore sit, quisquam laborum? Aliquid laborum ad perferendis
+		nemo deserunt!
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum placeat aliquid sequi earum neque,
+		recusandae nulla consequatur, accusantium porro labore sit, quisquam laborum? Aliquid laborum ad perferendis
+		nemo deserunt!
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem illum placeat aliquid sequi earum neque,
+		recusandae nulla consequatur, accusantium porro labore sit, quisquam laborum? Aliquid laborum ad perferendis
+		nemo deserunt!
+	</p>
+
+	<script>
+		const arr1 = new Array(7)
+		console.log(arr1)
+		console.log(arr1.length)
+
+		const arr2 = Array.of(7)
+		console.log(arr2)
+		console.log(arr2.length)
+
+		let paragrafos = document.querySelectorAll('p')
+		console.log(paragrafos)
+
+		let arr3 = Array.from(paragrafos)
+		arr3.map(function (p, i) {
+			p.textContent = `${++i} - ${p.textContent}`
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM Navigation</title>
+
+	<style>
+		body {
+			background-color: #111;
+			color: #eee;
+			font-family: sans-serif;
+		}
+
+		a {
+			color: inherit;
+		}
+
+		.container2 {
+			background-color: #333;
+			padding: 16px;
+		}
+
+		.container2 p {
+			border: 2px solid red;
+			padding: 12px;
+			margin: 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>DOM Navigation</h1>
+
+	<!-- beforebegin -->
+	<div class="container2">
+		<!-- afterbegin -->
+		<p>Parágrafo 1.</p>
+		<p>Parágrafo 2.</p>
+		<p>Parágrafo 3.</p>
+		<!-- beforeend -->
+	</div>
+	<!-- afterend -->
+
+	<div class="container">
+		<p>Teste 1.</p>
+		<p>Lorem <a href="#">link</a>.</p>
+		<p>Teste 2.</p>
+
+		<h2 id="h2">Lista</h2>
+		<ul>
+			<li>Item 1</li>
+			<li>
+				Item 2
+				<ul>
+					<li>Item 2.a</li>
+					<li>Item 2.b</li>
+					<li>Item 2.c</li>
+				</ul>
+			</li>
+			<li>Item <a href="#">link</a></li>
+		</ul>
+	</div>
+
+	<script>
+		const title = document.createElement('h2')
+		console.log(title)
+
+		// const attr = document.createAttribute('id')
+		// attr.value = 'title'
+		// title.setAttributeNode(attr)
+		title.setAttribute('id', 'title')
+
+		// const text = document.createTextNode('Criar Nós DOM')
+		// title.appendChild(text)
+		title.textContent = 'Criar Nós DOM'
+
+		// document.body.appendChild(title)
+		// document.querySelector('.container').appendChild(title)
+		// document.querySelector('.container').append(title)
+		// document.querySelector('.container').append(title, 'Extra content.')
+		// document.querySelector('.container').append(title, 'Extra content.', ' Extra extra content.')
+		// document.querySelector('.container').prepend(title)
+		// document.querySelector('.container').prepend(title, 'Extra content.')
+		// document.querySelector('.container').prepend(title, 'Extra content.', ' Extra extra content.')
+
+		const container = document.querySelector('.container')
+		const title2 = document.createElement('h2')
+		const list = document.querySelector('ul')
+		title2.textContent = 'Subtítulo 2'
+		// in this case, the title is show only in the last insert/append/prepend, because if the node already exists it's moved dont copied
+		container.insertBefore(title2, list)
+		container.insertBefore(title2, container.firstChild) // like "prepend()"
+
+		// more about moving nodes
+		// const sub = document.querySelector('ul ul') // only this will move the node instead copy
+		const sub = document.querySelector('ul ul').cloneNode(true) // pass the "true" param to clone their all child too
+		const h2 = document.querySelector('#h2')
+		container.insertBefore(sub, h2.nextElementSibling)
+
+		const segundoParagrafo = container.firstElementChild.nextElementSibling.nextElementSibling
+		console.log(container.firstElementChild)
+		console.log(segundoParagrafo)
+		const span = document.createElement('span')
+		span.textContent = 'SPAM'
+		// segundoParagrafo.after('After text.')
+		// segundoParagrafo.after('After text.', ' After after text.')
+		// segundoParagrafo.after(span)
+		// segundoParagrafo.after(span, 'After text.', ' After after text.')
+		// segundoParagrafo.before('After text.')
+		// segundoParagrafo.before('After text.', ' After after text.')
+		// segundoParagrafo.before(span)
+		// segundoParagrafo.before(span, 'After text.', ' After after text.')
+
+		const container2 = document.querySelector('.container2')
+		container2.insertAdjacentHTML('beforebegin', '<b>Texto inserido (beforebegin).</b>')
+		container2.insertAdjacentHTML('afterbegin', '<b>Texto inserido (afterbegin).</b>')
+		container2.insertAdjacentHTML('beforeend', '<b>Texto inserido (beforeend).</b>')
+		container2.insertAdjacentHTML('afterend', '<b>Texto inserido (afterend).</b>')
+		container2.insertAdjacentText('afterbegin', '<b>Texto inserido (afterbegin).</b>')
+		const em = document.createElement('em')
+		em.textContent = 'Texto com enfase.'
+		container2.insertAdjacentElement('beforeend', em)
+
+		// list.remove()
+		list.parentElement.removeChild(list)
+
+		const parent = document.body
+		// const newChild = container.querySelector('h2').cloneNode(true)
+		const newChild = container.querySelector('h2')
+		const oldChild = document.querySelector('h1')
+		parent.replaceChild(newChild, oldChild)
+	</script>
+</body>
+
+</html>

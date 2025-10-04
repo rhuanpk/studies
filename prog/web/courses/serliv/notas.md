@@ -296,8 +296,10 @@ Caso use o a _tag_ `<script>` dentro do _head_ e manipule o DOM, pode ser que al
 ### DOM
 
 Pegando elementos:
-- `document.getElementById()`: Pega o elemento pelo _ID_ no HTML
-- `document.getElementsByClassName()`: Pega todos os elementos pela _Class_ no HTML
+- `document.getElementById()`: Pega o elemento pelo _id_ no HTML
+- `document.getElementsByName()`: Pega todos os elementos pela _tag_ no HTML
+- `document.getElementsByTagName()`: Pega todos os elementos pela _tag_ no HTML
+- `document.getElementsByClassName()`: Pega todos os elementos pela _class_ no HTML
 - `document.querySelector()`: Pega o elemento via seletor CSS
 - `document.querySelectorAll()`: Pega os elementos via seletor CSS
 
@@ -308,6 +310,26 @@ Atributos dos elementos:
 - `document.<method>().textContent`: Retorna somente o conteúdo do objeto (também pode ser usado para atribuição)
 - `document.<method>().innerHTML`: Mesmo que o atributo `textContent`, porém no formato _raw_ (puro), ou seja, retorna também as tags HTML inseridas no conteúdo (também pode ser usado para atribuição)
 - `document.<method>().value`: Mesmo que o atributo `textContent`, porém, para elementos `<input>`
+
+### _Nodes_
+
+Todo o HTML (cada caractere) é formado de nós:
+1. `ELEMENT_NODE`
+2. `ATTRIBUTE_NODE`
+3. `TEXT_NODE`
+4. `CDATA_SECTION_NODE`
+5. `ENTITY_REFERENCE_NODE` (_deprecated_)
+6. `ENTITY_NODE` (_deprecated_)
+7. `PROCESSING_INSTRUCTION_NODE`
+8. `COMMENT_NODE`
+9. `DOCUMENT_NODE`
+10. `DOCUMENT_TYPE_NODE`
+11. `DOCUMENT_FRAGMENT_NODE`
+12. `NOTATION_NODE` (_deprecated_)
+
+Objetos retornados:
+- `HTMLCollection`: O objeto é uma referência (então é dinâmico), reage a alterações do DOM, é uma lista de nós do tipo elemento
+- `NodeList`: O objeto é um valor (então é estático), NÃO reage a alterações do DOM, é uma lista de nós de qualquer tipo
 
 ---
 
