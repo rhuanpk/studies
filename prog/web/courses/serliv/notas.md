@@ -311,7 +311,7 @@ Atributos dos elementos:
 - `document.<method>().innerHTML`: Mesmo que o atributo `textContent`, porém no formato _raw_ (puro), ou seja, retorna também as tags HTML inseridas no conteúdo (também pode ser usado para atribuição)
 - `document.<method>().value`: Mesmo que o atributo `textContent`, porém, para elementos `<input>`
 
-### _Nodes_
+#### _Nodes_
 
 Todo o HTML (cada caractere) é formado de nós:
 1. `ELEMENT_NODE`
@@ -330,6 +330,16 @@ Todo o HTML (cada caractere) é formado de nós:
 Objetos retornados:
 - `HTMLCollection`: O objeto é uma referência (então é dinâmico), reage a alterações do DOM, é uma lista de nós do tipo elemento
 - `NodeList`: O objeto é um valor (então é estático), NÃO reage a alterações do DOM, é uma lista de nós de qualquer tipo
+
+#### Fases
+
+Fase é o momento em que ocorre o evento. Quando um elemento recebe um evento, primeiro, até esse evento "acessar" esse elemento, ele "passa" por toda a árvore do DOM (do início ao destino) até chegar no elemento e depois para "sair", toda a árvore é acessada novamente para de baixo para cima (do destino ao início).
+
+Há dois momento possíveis:
+1. Fase de Captura: Momento inicial quando o acesso está acontecendo do início ao destino
+1. Fase de Borbulhamento: Momento final quando o acesso está acontecendo do destino ao início
+
+De forma simplista, podemos dizer que os eventos na fase de Captura acontecem antes dos eventos da fase de Borbulhamento.
 
 ---
 

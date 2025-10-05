@@ -16,15 +16,32 @@
 		button {
 			cursor: pointer;
 		}
+
+		.container2 {
+			background-color: #ccc;
+			padding: 20px;
+		}
 	</style>
 </head>
 
 <body>
 	<h1>Eventos</h1>
 
-	<button id="btn1">Botão 1</button>
-	<button id="btn2">Botão 2</button>
-	<button id="btn3">Botão 3</button>
+	<div id="container">
+		<button id="btn1">Botão 1</button>
+		<button id="btn2">Botão 2</button>
+		<button id="btn3">Botão 3</button>
+	</div>
+
+	<hr>
+
+	<h2>Delegação</h2>
+
+	<div class="container2">
+		<button>Botão 1</button>
+		<button>Botão 2</button>
+		<button>Botão 3</button>
+	</div>
 
 	<script>
 		; (function () {
@@ -41,6 +58,43 @@
 			// dom lvl 2 will append a second "onclick" event
 			btn2.addEventListener('click', click)
 			btn2.addEventListener('click', () => { console.log('click anonymous') })
+
+			// the third optional argument of function is "true" for capturing and "false" for bubbling (default)
+			// if a listener is set on a parent element, this also is triggered when a child recieve a event
+			//document.addEventListener('click', () => { console.log('click document') }, true)
+			//document.addEventListener('click', () => { console.log('click document') })
+			document.addEventListener('click', e => {
+				// "target" is the (final) element that triggered the event
+				// "currentTarget" is the (atual) element that has set the listener
+				console.log(e.target)
+				console.log(e.currentTarget)
+				console.log('click document')
+			})
+			//btn3.addEventListener('click', click)
+			btn3.addEventListener('click', event => {
+				console.log('click btn3')
+				event.stopPropagation()
+			})
+
+			const container = document.getElementById('container')
+			container.addEventListener('click', () => { console.log('click container') }, true)
+
+			const container2 = document.querySelector('.container2')
+			const btns = document.querySelectorAll('.container2 button')
+			// btns.forEach(btn => {
+			// 	btn.addEventListener('click', (evt) => {
+			// 		evt.stopPropagation()
+			// 		console.log(evt.target)
+			// 	})
+			// })
+			container2.addEventListener('click', function (e) {
+				//e.stopPropagation()
+				console.log(e.target)
+				console.log(e.currentTarget)
+				if (e.target.nodeName === 'BUTTON') {
+					//console.log(e.target)
+				}
+			})
 		})()
 	</script>
 </body>
