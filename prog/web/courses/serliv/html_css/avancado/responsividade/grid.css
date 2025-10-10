@@ -23,7 +23,7 @@
 	/* --gap-default: 1rem; */
 
 	/* 1  item :  12 col -> 100% (gap) */
-	--cols-12: calc(100%);
+	--cols-12: 100%;
 
 	/* 2  items:   6 col -> 50% (gap) */
 	--cols-6: calc(50% - var(--gap-default));
