@@ -1,8 +1,8 @@
 /* 
-	min-width: 0       -> sm
-	min-width: 48.75em -> md
-	min-width: 56.25em -> lg
-	min-width: 76em    -> xl
+	min-width: 0em     -> sm (0px)
+	min-width: 48em    -> md (768px)
+	min-width: 90em    -> lg (1440px)
+	min-width: 120em   -> xl (1920px)
 
 	12 cols grid
 	1  item :  12 col -> 100% (gap)
@@ -43,24 +43,24 @@
 }
 
 /* sm */
-@media screen and (min-width: 0em) {
+@media (width > 0) {
 	.sm-12 {
 		width: var(--cols-12);
 	}
 }
 
 /* md */
-@media screen and (min-width: 48.75em) {
+@media (width > 48em) {
 	.md-6 {
 		width: var(--cols-6);
 	}
 }
 
 /* lg */
-@media screen and (min-width: 56.25em) {}
+@media (width > 90em) {}
 
 /* xl */
-@media screen and (min-width: 76em) {
+@media (width > 120em) {
 	.xl-3 {
 		width: var(--cols-3);
 	}
