@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Consulta Endereço</title>
+
+	<script src="script.js" defer></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<dialog class="error-modal">
+		<p class="error-msg">Erro inesperado.</p>
+		<button class="error-close">Fechar</button>
+	</dialog>
+
+	<main>
+		<h1>Consulta Endereço</h1>
+
+		<form>
+			<label for="cep">Cep:</label>
+			<input type="text" name="cep" id="cep" minlength="8" maxlength="9" placeholder="00000-000">
+
+			<label for="place">Logradouro:</label>
+			<input type="text" name="place" id="place">
+
+			<label for="hood">Bairro:</label>
+			<input type="text" name="hood" id="hood">
+
+			<label for="city">Cidade:</label>
+			<input type="text" name="city" id="city">
+
+			<label for="state">Estado:</label>
+			<input type="text" name="state" id="state">
+		</form>
+	</main>
+</body>
+
+</html>

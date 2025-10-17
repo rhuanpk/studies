@@ -341,6 +341,10 @@ Há dois momento possíveis:
 
 De forma simplista, podemos dizer que os eventos na fase de Captura acontecem antes dos eventos da fase de Borbulhamento.
 
+### Destructuring
+
+É uma tecnica de extrair algo de algum array ou objeto.
+
 ---
 
 ## Misc

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise</title>
+</head>
+
+<body>
+	<h1>Fetch</h1>
+	<ul id="list"></ul>
+
+	<script>
+		console.log('inicio do programa')
+
+		function writeData(data) {
+			const list = document.getElementById('list')
+			let html = ''
+			data.forEach(data => {
+				html += `<li>Nome: ${data.name}, Email: ${data.email}</li>`
+			})
+			list.innerHTML = html
+		}
+
+		async function request() {
+			console.log('inicio "request"')
+			// await new Promise(resolve => setTimeout(resolve, 2000))
+			try {
+				const response = await fetch('./data.json')
+				if (!response.ok) {
+					throw new Error("fetch failure")
+				}
+
+				const data = await response.json()
+				console.log(data)
+				writeData(data)
+			} catch (error) {
+				console.error('error:', error)
+			}
+
+			console.log('fim "request"')
+		}
+		request() // the request continues asynchronous however what happens inside it can be synchronous
+
+		console.log('fim do programa')
+	</script>
+</body>
+
+</html>

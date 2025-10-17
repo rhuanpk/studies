@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise</title>
+</head>
+
+<body>
+	<h1>Promises</h1>
+
+	<script>
+		console.log('inicio do programa')
+
+		// resolve: executed if success
+		// reject: executed if failure
+		const promise = new Promise((resolve, reject) => {
+			console.log('inicio da promise')
+			setTimeout(function () {
+				resolve('sucesso timeout')
+				reject('falha timeout')
+			}, 1000)
+			console.log('fim da promise')
+		})
+
+		promise
+			.then(
+				response => console.log('primeiro then:', response)
+			)
+			.then(() => {
+				console.log('segundo then')
+				return 'retorno segundo then'
+			})
+			.then(response => {
+				console.log('terceiro then:', response)
+			})
+			.catch(
+				error => console.error('catch:', error)
+			)
+			.finally(() => {
+				console.log('finally executado')
+			})
+
+		console.log('fim do programa')
+	</script>
+</body>
+
+</html>

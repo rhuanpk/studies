@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promise</title>
+</head>
+
+<body>
+	<h1>Fetch</h1>
+	<ul id="list"></ul>
+
+	<script>
+		console.log('inicio do programa')
+
+		function writeData(data) {
+			const list = document.getElementById('list')
+			let html = ''
+			data.forEach(data => {
+				html += `<li>Nome: ${data.name}, Email: ${data.email}</li>`
+			})
+			list.innerHTML = html
+		}
+
+		// using fetch, your internal promise will call:
+		// - resolve: when the request is successful anyway your http status code is more then 2xx, to check the error (or success) of the server response the "ok" attribute used
+		// - reject: when the request is unsuccessful (that it, the application itself) like a internal problem (e.g. internet connection, wrong endpoint url)
+		fetch('./data.json')
+			.then(response => {
+				if (!response.ok) {
+					throw new Error("fetch failure")
+				}
+				return response.json()
+			})
+			.then(data => {
+				console.log(data)
+				writeData(data)
+			})
+			.catch(error => {
+				console.error('error:', error)
+			})
+
+		console.log('fim do programa')
+	</script>
+</body>
+
+</html>
