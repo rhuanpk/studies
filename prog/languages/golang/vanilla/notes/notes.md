@@ -13,19 +13,19 @@
     1. Esperar a extensão carregar e executar a paleta de comandos Go para baixar as _tools_.
 
 1. No VSCode definir nas configurações:
-```json
-    "go.lintTool": "golint",
-    "go.lintOnSave": "file",
-    "gopls": {
-        "ui.semanticTokens": true
-    },
-    "go.toolsManagement.autoUpdate": true
-```
+    ```json
+        "go.lintTool": "golint",
+        "go.lintOnSave": "file",
+        "gopls": {
+            "ui.semanticTokens": true
+        },
+        "go.toolsManagement.autoUpdate": true
+    ```
 
 1. No Linux, caso precise adicionar a pasta do binários do Go no `PATH`:
-```sh
-echo 'PATH+=":$HOME/.go/bin"' >> ~/.profile
-```
+    ```sh
+    echo 'PATH+=":$HOME/.go/bin"' >> ~/.profile
+    ```
 
 ### Repositórios Privados
 
