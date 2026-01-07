@@ -5,7 +5,7 @@ const arr = [1, 2, 3]
 //const n2 = arr[1]
 const [n1, n2] = arr
 
-// array destructuring
+// object destructuring
 const obj = { name: 'Daniel', surname: 'Morales', company: 'Serliv' }
 const person = { name: 'João', surname: 'Duarte', age: 'Serliv' }
 const family = { name: 'Souza', surname: 'Ferrer', count: '2' }
