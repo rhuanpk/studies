@@ -13,13 +13,16 @@
 	<script>
 		console.log('inicio do programa')
 
-		// resolve: executed if success
-		// reject: executed if failure
 		const promise = new Promise((resolve, reject) => {
 			console.log('inicio da promise')
 			setTimeout(function () {
-				resolve('sucesso timeout')
-				reject('falha timeout')
+				// processing...
+				const success = true
+				if (success) {
+					resolve('sucesso timeout')
+				} else {
+					reject('falha timeout')
+				}
 			}, 1000)
 			console.log('fim da promise')
 		})
