@@ -1,8 +1,8 @@
 /* 
-	min-width: 0em     -> sm (0px)
-	min-width: 48em    -> md (768px)
-	min-width: 90em    -> lg (1440px)
-	min-width: 120em   -> xl (1920px)
+	min-width: 0em   -> sm (0px)
+	min-width: 48em  -> md (768px)
+	min-width: 90em  -> lg (1440px)
+	min-width: 120em -> xl (1920px)
 
 	12 cols grid
 	1  item :  12 col -> 100% (gap)
