@@ -43,3 +43,97 @@ FROM (
 LEFT JOIN table_to_insert tti ON tti.field_1 = ? AND tti.field_2 = 42 AND tti.field_3 = t.column
 WHERE tti.id IS NULL
 ```
+
+- Manual Delete Cascade:
+```sql
+-- execute all together (select all then alt+x on dbeaver)
+DROP PROCEDURE IF EXISTS delete_cascade;
+DELIMITER $$
+CREATE PROCEDURE delete_cascade()
+BEGIN
+	DECLARE table_name TEXT;
+	DECLARE query_base TEXT;
+	DECLARE done INT DEFAULT FALSE;
+
+	DECLARE cur CURSOR FOR
+		SELECT td.name FROM tables_delete td;
+
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+	SET query_base =
+		"FROM parent p "
+		"LEFT JOIN child_1 c1 ON c1.parent_id = p.id "
+		"LEFT JOIN child_2 c2 ON c2.parent_id = p.id "
+		"LEFT JOIN child_3 c3 ON c3.parent_id = p.id "
+		"LEFT JOIN child_child_1 cc1 ON cc1.child_id = c3.id "
+		"LEFT JOIN other_1 o1 ON o1.parent_id = p.id "
+		"WHERE 1 = 1 "
+		"	AND p.id = 42 "
+	;
+
+	CREATE TEMPORARY TABLE tables_delete (name TEXT);
+	INSERT INTO tables_delete VALUES ('o1'), ('cc1'), ('c3'), ('c2'), ('c1'), ('p');
+
+	OPEN cur;
+	WHILE NOT done DO
+		FETCH cur INTO table_name;
+		IF NOT done THEN
+			SET @stmt = CONCAT('DELETE ', table_name, ' ', query_base);
+			PREPARE stmt FROM @stmt;
+			EXECUTE stmt;
+			DEALLOCATE PREPARE stmt;
+		END IF;
+	END WHILE;
+	CLOSE cur;
+
+	DROP TEMPORARY TABLE tables_delete;
+END$$
+DELIMITER ;
+
+-- CALL delete_cascade();
+
+-- execute one-by-one (select the query then ctrl+space on dbeaver)
+DROP PROCEDURE IF EXISTS delete_cascade;
+
+CREATE PROCEDURE delete_cascade()
+BEGIN
+	DECLARE table_name TEXT;
+	DECLARE query_base TEXT;
+	DECLARE done INT DEFAULT FALSE;
+
+	DECLARE cur CURSOR FOR
+		SELECT td.name FROM tables_delete td;
+
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+	SET query_base =
+		"FROM parent p "
+		"LEFT JOIN child_1 c1 ON c1.parent_id = p.id "
+		"LEFT JOIN child_2 c2 ON c2.parent_id = p.id "
+		"LEFT JOIN child_3 c3 ON c3.parent_id = p.id "
+		"LEFT JOIN child_child_1 cc1 ON cc1.child_id = c3.id "
+		"LEFT JOIN other_1 o1 ON o1.parent_id = p.id "
+		"WHERE 1 = 1 "
+		"	AND p.id = 42 "
+	;
+
+	CREATE TEMPORARY TABLE tables_delete (name TEXT);
+	INSERT INTO tables_delete VALUES ('o1'), ('cc1'), ('c3'), ('c2'), ('c1'), ('p');
+
+	OPEN cur;
+	WHILE NOT done DO
+		FETCH cur INTO table_name;
+		IF NOT done THEN
+			SET @stmt = CONCAT('DELETE ', table_name, ' ', query_base);
+			PREPARE stmt FROM @stmt;
+			EXECUTE stmt;
+			DEALLOCATE PREPARE stmt;
+		END IF;
+	END WHILE;
+	CLOSE cur;
+
+	DROP TEMPORARY TABLE tables_delete;
+END
+
+-- CALL delete_cascade();
+```
