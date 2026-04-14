@@ -44,7 +44,7 @@ LEFT JOIN table_to_insert tti ON tti.field_1 = ? AND tti.field_2 = 42 AND tti.fi
 WHERE tti.id IS NULL
 ```
 
-- Manual Delete Cascade:
+- Manual delete cascade:
 ```sql
 -- execute all together (select all then alt+x on dbeaver)
 DROP PROCEDURE IF EXISTS delete_cascade;
@@ -136,4 +136,15 @@ BEGIN
 END
 
 -- CALL delete_cascade();
+```
+
+- Mostrar tabelas com nome:
+```sql
+SELECT
+    TABLE_NAME, COLUMN_NAME
+FROM
+    INFORMATION_SCHEMA.COLUMNS
+WHERE
+    COLUMN_NAME LIKE '%<column>%'
+    AND TABLE_SCHEMA = '<database>'
 ```
