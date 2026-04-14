@@ -148,3 +148,11 @@ WHERE
     COLUMN_NAME LIKE '%<column>%'
     AND TABLE_SCHEMA = '<database>'
 ```
+
+- Tamanho de pacotes excedidos:
+    1. Alterar tamanho máximo permetido no servidor:
+        1. `set global net_buffer_length=16777216;`
+        1. `set global max_allowed_packet=536870912;`
+    1. Passar _flags_ no cliente:
+        1. `--net-buffer-length={16777216|16M}`
+        1. `--max_allowed_packet={536870912|512M}`
